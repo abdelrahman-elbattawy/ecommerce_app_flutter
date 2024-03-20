@@ -1,0 +1,199 @@
+import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
+import 'package:get/route_manager.dart';
+
+class AppTranslations extends Translations {
+  @override
+  Map<String, Map<String, String>> get keys => {
+        "AR": {
+          // Language View
+          AppTranslationsKeys.languageTitle: "اختر اللغة",
+          AppTranslationsKeys.languageButtonText: "انتقل الي الصفحة الرئيسية",
+
+          // OnBoarding View
+          AppTranslationsKeys.onBoardingButtonText: "التالي",
+          AppTranslationsKeys.onBoardingTitleOne: "اختر المنتج",
+          AppTranslationsKeys.onBoardingTitleTwo: "دفع سهل وآمن",
+          AppTranslationsKeys.onBoardingTitleThree: "أتبع طلبك",
+          AppTranslationsKeys.onBoardingTitleFour: "توصيل سريع",
+          AppTranslationsKeys.onBoardingBodyOne:
+              ".لدينا 100 ألف منتج\n اختر المنتج الخاص بك من متجر التجارة\n الإلكترونية الخاص بنا",
+          AppTranslationsKeys.onBoardingBodyTwo:
+              "طريقة الدفع السهلة والدفع الآمن\n.موثوق به من قبل عملائنا\n .من جميع أنحاء العالم",
+          AppTranslationsKeys.onBoardingBodyThree:
+              "تم استخدام أفضل أداة تعقب\n لتتبع طلبك. ستعرف مكان\n .منتجك في الوقت الحالي",
+          AppTranslationsKeys.onBoardingBodyFour:
+              "تسليم موثوق وسريع. نحن\n نقوم بتسليم منتجك بأسرع\n .طريقة ممكنة",
+
+          // Login View
+          AppTranslationsKeys.loginTitle: "تسجيل الدخول",
+          AppTranslationsKeys.loginHeaderOne: "مرحبًا بعودتك",
+          AppTranslationsKeys.loginHeadterTwo:
+              "قم بتسجيل الدخول باستخدام بريدك الإلكتروني\n أو تابع باستخدام وسائل التواصل الاجتماعي",
+          AppTranslationsKeys.loginEmailLabel: "البريد الالكتروني",
+          AppTranslationsKeys.loginEmailHint: "ادخل البريد الالكتروني",
+          AppTranslationsKeys.loginPasswordLabel: "كلمة المرور",
+          AppTranslationsKeys.loginPasswordHint: "ادخل كلمة المرور",
+          AppTranslationsKeys.loginRememberMe: "تذكرنى",
+          AppTranslationsKeys.loginForgotPassword: "هل نسيت كلمة المرور؟",
+          AppTranslationsKeys.loginButtonText: "تسجيل الدخول",
+          AppTranslationsKeys.loginDontHaveAccount: "ليس لديك حساب؟ ",
+          AppTranslationsKeys.loginSignUpLabel: "التسجيل",
+
+          // Register View
+          AppTranslationsKeys.registerTitle: "التسجيل",
+          AppTranslationsKeys.registerHeaderOne: "الملف الشخصي",
+          AppTranslationsKeys.registerHeaderTwo:
+              "أكمل التفاصيل الخاصة بك أو تابع باستخدام وسائل التواصل الاجتماعي",
+          AppTranslationsKeys.registerEmailLabel: "البريد الالكتروني",
+          AppTranslationsKeys.registerEmailHint: "ادخل البريد الالكتروني",
+          AppTranslationsKeys.registerPasswordLabel: "كلمة المرور",
+          AppTranslationsKeys.registerPasswordHint: "ادخل كلمة المرور",
+          AppTranslationsKeys.registerButtonText: "التسجيل",
+          AppTranslationsKeys.registerHaveAccount: "هل لديك حساب؟ ",
+          AppTranslationsKeys.registerSignInLabel: "تسجيل الدخول",
+          AppTranslationsKeys.registerUsernameLabel: "اسم المستخدم",
+          AppTranslationsKeys.registerUsernameHint: "ادخل اسم المستخدم",
+          AppTranslationsKeys.registerPhoneLabel: "رقم الهاتف",
+          AppTranslationsKeys.registerPhoneHint: "ادخل رقم الهاتف",
+
+          // Forgot Password View
+          AppTranslationsKeys.forgotPasswordHeaderOne: "هل نسيت كلمة السر؟",
+          AppTranslationsKeys.forgotPasswordHeaderTwo:
+              "لا تقلق! الرجاء إدخال البريد الإلكتروني المرتبط.\n سنرسل لك تعليمات إعادة التعيين.",
+          AppTranslationsKeys.forgotPasswordEmailLabel: "البريد الالكتروني",
+          AppTranslationsKeys.forgotPasswordEmailHint: "ادخل البريد الالكتروني",
+          AppTranslationsKeys.forgotPasswordButtonText: "ارسال",
+
+          // Verify Code View
+          AppTranslationsKeys.verifyCodeHeaderOne:
+              "التحقق من البريد الإلكتروني الخاص بك",
+          AppTranslationsKeys.verifyCodeHeaderTwo:
+              "أرسلنا رمزًا مكونًا من 5 أرقام إلى\n",
+          AppTranslationsKeys.verifyCodeButtonText: "تاكيد",
+          AppTranslationsKeys.verifyCodeDontReceive:
+              "لم يصل لك البريد الالكتروني؟ ",
+          AppTranslationsKeys.verifyCodeResendLabel: "إعادة إرسال",
+
+          // Reset Password View
+          AppTranslationsKeys.resetPasswordHeaderOne: "إعادة تعيين كلمة المرور",
+          AppTranslationsKeys.resetPasswordHeaderTwo:
+              "الرجاء التأكد من أن كلمة المرور الجديدة\n يجب أن تكون مختلفة عن كلمات المرور المستخدمة سابقًا.",
+          AppTranslationsKeys.resetPasswordPassLabel: "كلمة المرور",
+          AppTranslationsKeys.resetPasswordPassHint: "ادخل كلمة المرور",
+          AppTranslationsKeys.resetRePasswordPassLabel: "تاكيد كلمة المرور",
+          AppTranslationsKeys.resetRePasswordPassHint: "ادخل كلمة المرور",
+          AppTranslationsKeys.resetPasswordButtonText:
+              "إعادة تعيين كلمة المرور",
+
+          // Success View
+          AppTranslationsKeys.successViewButtonText:
+              "انتقل الي الصفحة الرئيسية",
+          AppTranslationsKeys.successViewLabel: "بنجاح",
+          AppTranslationsKeys.successViewText1:
+              "تم إعادة تعيين كلمة المرور الخاصة بك",
+          AppTranslationsKeys.successViewText2: "لقد تم تأكيد بريدك الإلكتروني",
+
+          // Valid Input
+          AppTranslationsKeys.userNameValid: "اسم مستخدم غير صالح",
+          AppTranslationsKeys.phoneNumberValid: "رقم الهاتف غير صالح",
+          AppTranslationsKeys.emailValid: "بريد إلكتروني غير صالح",
+          AppTranslationsKeys.emptyValid: "لا يمكن أن تكون فارغة",
+          AppTranslationsKeys.minValid: "لا يمكن أن يكون أقل من",
+          AppTranslationsKeys.maxValid: "لا يمكن أن يكون أكبر من",
+        },
+        "EN": {
+          // Language View
+          AppTranslationsKeys.languageTitle: "Choose Language",
+          AppTranslationsKeys.languageButtonText: "Go to home page",
+
+          // OnBoarding View
+          AppTranslationsKeys.onBoardingButtonText: "Continue",
+          AppTranslationsKeys.onBoardingTitleOne: "Choose Product",
+          AppTranslationsKeys.onBoardingTitleTwo: "Easy & Safe Payment",
+          AppTranslationsKeys.onBoardingTitleThree: "Track Your Order",
+          AppTranslationsKeys.onBoardingTitleFour: "Fast Delivery",
+          AppTranslationsKeys.onBoardingBodyOne:
+              "We Have a 100k Product. Choose \n Your Product From Our E-\n commerce Shop",
+          AppTranslationsKeys.onBoardingBodyTwo:
+              "Easy Checkout & Safe Payment\n method. Trusted by our Customers\n from all over the world.",
+          AppTranslationsKeys.onBoardingBodyThree:
+              "Best Tracker has been Used For\n Track your order. You'll know where\n your product is at the moment.",
+          AppTranslationsKeys.onBoardingBodyFour:
+              "Reliable And Fast Delivery. We\n Deliver your product the fastest\n way possible.",
+
+          // Login View
+          AppTranslationsKeys.loginTitle: "Sign In",
+          AppTranslationsKeys.loginHeaderOne: "Welcome Back",
+          AppTranslationsKeys.loginHeadterTwo:
+              "Sign in with your email and password\n or continue with social media",
+          AppTranslationsKeys.loginEmailLabel: "Email",
+          AppTranslationsKeys.loginEmailHint: "Enter your email",
+          AppTranslationsKeys.loginPasswordLabel: "Password",
+          AppTranslationsKeys.loginPasswordHint: "Enter your password",
+
+          AppTranslationsKeys.loginRememberMe: "Remember me",
+          AppTranslationsKeys.loginForgotPassword: "Forgot password?",
+          AppTranslationsKeys.loginButtonText: "Sign In",
+          AppTranslationsKeys.loginDontHaveAccount: "Don't have an account? ",
+          AppTranslationsKeys.loginSignUpLabel: "Sign Up",
+
+          // Register View
+          AppTranslationsKeys.registerTitle: "Sign Up",
+          AppTranslationsKeys.registerHeaderOne: "Complete Profile",
+          AppTranslationsKeys.registerHeaderTwo:
+              "Complete your details or continue with social media",
+          AppTranslationsKeys.registerEmailLabel: "Email",
+          AppTranslationsKeys.registerEmailHint: "Enter your email",
+          AppTranslationsKeys.registerPasswordLabel: "Password",
+          AppTranslationsKeys.registerPasswordHint: "Enter your password",
+          AppTranslationsKeys.registerButtonText: "Sign Up",
+          AppTranslationsKeys.registerHaveAccount: "have an account? ",
+          AppTranslationsKeys.registerSignInLabel: "Sign In",
+          AppTranslationsKeys.registerUsernameLabel: "Username",
+          AppTranslationsKeys.registerUsernameHint: "Enter your username",
+          AppTranslationsKeys.registerPhoneLabel: "Phone",
+          AppTranslationsKeys.registerPhoneHint: "Enter your phone",
+
+          // Forgot Password View
+          AppTranslationsKeys.forgotPasswordHeaderOne: "Forgot Password?",
+          AppTranslationsKeys.forgotPasswordHeaderTwo:
+              "Please enter email associated.\n We'll send your reset instructions.",
+          AppTranslationsKeys.forgotPasswordEmailLabel: "Email",
+          AppTranslationsKeys.forgotPasswordEmailHint: "Enter your email",
+          AppTranslationsKeys.forgotPasswordButtonText: "Send",
+
+          // Verify Code View
+          AppTranslationsKeys.verifyCodeHeaderOne: "Check your email",
+          AppTranslationsKeys.verifyCodeHeaderTwo:
+              "We sent on 5 digit code to\n",
+          AppTranslationsKeys.verifyCodeButtonText: "Verify",
+          AppTranslationsKeys.verifyCodeDontReceive:
+              "Don't receive the email? ",
+          AppTranslationsKeys.verifyCodeResendLabel: "Resend",
+
+          // Reset Password View
+          AppTranslationsKeys.resetPasswordHeaderOne: "Reset Password",
+          AppTranslationsKeys.resetPasswordHeaderTwo:
+              "Please make sure your new password must\n be different from previous used passwords.",
+          AppTranslationsKeys.resetPasswordPassLabel: "Password",
+          AppTranslationsKeys.resetPasswordPassHint: "Enter your password",
+          AppTranslationsKeys.resetRePasswordPassLabel: "Re Password",
+          AppTranslationsKeys.resetRePasswordPassHint: "Enter your password",
+          AppTranslationsKeys.resetPasswordButtonText: "Reset Password",
+
+          // Success View
+          AppTranslationsKeys.successViewButtonText: "Go to home page",
+          AppTranslationsKeys.successViewLabel: "Successfully",
+          AppTranslationsKeys.successViewText1: "Your password has been reset",
+          AppTranslationsKeys.successViewText2: "Your email has been confirm",
+
+          // Valid Input
+          AppTranslationsKeys.userNameValid: "Not valid username",
+          AppTranslationsKeys.phoneNumberValid: "Not valid phone number",
+          AppTranslationsKeys.emailValid: "Not valid email",
+          AppTranslationsKeys.emptyValid: "Can't be empty",
+          AppTranslationsKeys.minValid: "Can't be less than",
+          AppTranslationsKeys.maxValid: "Can't be larger than",
+        },
+      };
+}

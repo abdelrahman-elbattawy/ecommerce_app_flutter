@@ -1,0 +1,29 @@
+import 'package:ecommerce_app/features/auth/controller/register_controller.dart';
+import 'package:ecommerce_app/features/auth/views/widgets/register_footer_section.dart';
+import 'package:ecommerce_app/features/auth/views/widgets/register_header_section.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class RegisterViewBody extends GetView<RegisterControllerImpl> {
+  const RegisterViewBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Form(
+        key: controller.formState,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          physics: const BouncingScrollPhysics(),
+          children: const [
+            SizedBox(height: 35),
+            RegisterHeaderSection(),
+            SizedBox(height: 15),
+            RegisterFooterSection(),
+          ],
+        ),
+      ),
+    );
+  }
+}
