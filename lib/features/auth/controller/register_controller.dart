@@ -37,7 +37,7 @@ class RegisterControllerImpl extends RegisterController {
         phone.text,
       );
 
-      return results.fold(
+      results.fold(
         (failure) => CustomSnakBar.showSnack(
           context: Get.context!,
           snackBarType: SnackBarType.error,
