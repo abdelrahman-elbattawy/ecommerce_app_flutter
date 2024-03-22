@@ -13,10 +13,15 @@ class RegisterFooterSection extends GetView<RegisterControllerImpl> {
     return Column(
       children: [
         const SizedBox(height: 50),
-        CustomButton(
-          title: AppTranslationsKeys.registerButtonText.tr,
-          onPressed: () => controller.signUp(),
-          horizontalPadding: 16,
+        GetBuilder<RegisterControllerImpl>(
+          builder: (controller) {
+            return CustomButton(
+              isLoading: controller.isLoading,
+              title: AppTranslationsKeys.registerButtonText.tr,
+              onPressed: () => controller.signUp(),
+              horizontalPadding: 16,
+            );
+          },
         ),
         const SizedBox(height: 30),
         CustomTextClick(

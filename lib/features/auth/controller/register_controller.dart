@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/core/constants/app_routes.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
+import 'package:ecommerce_app/features/auth/controller/verify_code_controller.dart';
 import 'package:ecommerce_app/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,6 +19,7 @@ class RegisterControllerImpl extends RegisterController {
   late GlobalKey<FormState> formState;
 
   bool isHiddenPassword = true;
+  bool isLoading = false;
 
   late final AuthRepoImpl _authRepoImpl;
 
@@ -30,6 +32,8 @@ class RegisterControllerImpl extends RegisterController {
   signUp() async {
     var formData = formState.currentState;
     if (formData!.validate()) {
+      isLoading = true;
+
       var results = await _authRepoImpl.registerWithData(
         username.text,
         password.text,
@@ -37,23 +41,37 @@ class RegisterControllerImpl extends RegisterController {
         phone.text,
       );
 
-      results.fold(
-        (failure) => CustomSnakBar.showSnack(
-          context: Get.context!,
-          snackBarType: SnackBarType.error,
-          errMessage: failure.errMessage,
-        ),
-        (data) {
-          // Get.find<VerifyCodeControllerImpl>()
-          //     .setViewType(ViewType.successSignUp);
-          // Get.toNamed(AppRoutes.verifyCode);
-          CustomSnakBar.showSnack(
-            context: Get.context!,
-            snackBarType: SnackBarType.success,
-            errMessage: "Sigin up successfully!",
+      Future.delayed(
+        const Duration(milliseconds: 1500),
+        () {
+          isLoading = false;
+
+          results.fold(
+            (failure) {
+              CustomSnakBar.showSnack(
+                context: Get.context!,
+                snackBarType: SnackBarType.error,
+                errMessage: failure.errMessage,
+              );
+            },
+            (data) {
+              Get.find<VerifyCodeControllerImpl>()
+                  .setViewType(ViewType.successSignUp);
+              Get.toNamed(AppRoutes.verifyCode);
+
+              CustomSnakBar.showSnack(
+                context: Get.context!,
+                snackBarType: SnackBarType.success,
+                errMessage: "Sigin up successfully!",
+              );
+            },
           );
+
+          update();
         },
       );
+
+      update();
     }
   }
 

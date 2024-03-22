@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
+import 'package:ecommerce_app/core/shared/widgets/custom_button_circle_indicator.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -8,11 +9,13 @@ class CustomButton extends StatelessWidget {
     required this.title,
     this.onPressed,
     this.horizontalPadding = 50,
+    this.isLoading = false,
   });
 
   final String title;
   final double horizontalPadding;
   final void Function()? onPressed;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +34,14 @@ class CustomButton extends StatelessWidget {
             foregroundColor: Colors.white,
           ),
           onPressed: onPressed,
-          child: Text(
-            title,
-            style: AppTextStyle.textStyle18.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
+          child: !isLoading
+              ? Text(
+                  title,
+                  style: AppTextStyle.textStyle18.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                )
+              : const CustomButtonCircleIndicator(),
         ),
       ),
     );
