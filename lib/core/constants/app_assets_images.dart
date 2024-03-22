@@ -1,5 +1,6 @@
 final class AppAssetsImages {
   static const routePath = 'assets/images';
+  static const routePathLotties = 'assets/lotties';
 
   static const routeOnBoardingPath = "$routePath/onBoarding";
   static const routeFlagsPath = "$routePath/flags";
@@ -19,4 +20,10 @@ final class AppAssetsImages {
   static const googleIcon = "$routeSocialPath/google_icon.png";
 
   static const successLogo = "$routePath/success_logo.png";
+
+  // Lotties
+  static const loadingLottie = "$routePathLotties/loading.json";
+  static const nodataLottie = "$routePathLotties/nodata.json";
+  static const offlineLottie = "$routePathLotties/offline.json";
+  static const serverLottie = "$routePathLotties/server.json";
 }

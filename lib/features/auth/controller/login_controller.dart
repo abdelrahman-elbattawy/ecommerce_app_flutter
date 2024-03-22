@@ -32,6 +32,9 @@ class LoginControllerImpl extends LoginController {
 
   @override
   login() {
+    // AuthRepoImpl(apiService: Get.find())
+    //     .checkVerifyCode("abdelrahman@gmail.com", "16894");
+
     var formData = formState.currentState;
 
     if (formData!.validate()) {}

@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/core/constants/app_routes.dart';
-import 'package:ecommerce_app/features/auth/controller/verify_code_controller.dart';
+import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
+import 'package:ecommerce_app/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,17 +19,41 @@ class RegisterControllerImpl extends RegisterController {
 
   bool isHiddenPassword = true;
 
+  late final AuthRepoImpl _authRepoImpl;
+
   @override
   goToLogin() {
     Get.offAllNamed(AppRoutes.login);
   }
 
   @override
-  signUp() {
+  signUp() async {
     var formData = formState.currentState;
     if (formData!.validate()) {
-      Get.find<VerifyCodeControllerImpl>().setViewType(ViewType.successSignUp);
-      Get.toNamed(AppRoutes.verifyCode);
+      var results = await _authRepoImpl.registerWithData(
+        username.text,
+        password.text,
+        email.text,
+        phone.text,
+      );
+
+      return results.fold(
+        (failure) => CustomSnakBar.showSnack(
+          context: Get.context!,
+          snackBarType: SnackBarType.error,
+          errMessage: failure.errMessage,
+        ),
+        (data) {
+          // Get.find<VerifyCodeControllerImpl>()
+          //     .setViewType(ViewType.successSignUp);
+          // Get.toNamed(AppRoutes.verifyCode);
+          CustomSnakBar.showSnack(
+            context: Get.context!,
+            snackBarType: SnackBarType.success,
+            errMessage: "Sigin up successfully!",
+          );
+        },
+      );
     }
   }
 
@@ -45,6 +70,7 @@ class RegisterControllerImpl extends RegisterController {
     username = TextEditingController();
     phone = TextEditingController();
     formState = GlobalKey<FormState>();
+    _authRepoImpl = Get.find();
     super.onInit();
   }
 
