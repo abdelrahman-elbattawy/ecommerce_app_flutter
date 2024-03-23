@@ -9,6 +9,11 @@ abstract class AuthRepo {
     String phone,
   );
 
+  Future<Either<AppFailure, Map>> loginWithData(
+    String email,
+    String password,
+  );
+
   Future<Either<AppFailure, Map>> checkVerifyCodeWith(
     String email,
     String verifyCode,

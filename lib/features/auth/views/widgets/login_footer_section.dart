@@ -8,6 +8,7 @@ import 'package:ecommerce_app/core/shared/widgets/custom_text_click.dart';
 import 'package:ecommerce_app/features/auth/controller/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 
 class LoginFooterSection extends GetView<LoginControllerImpl> {
   const LoginFooterSection({super.key});
@@ -43,11 +44,14 @@ class LoginFooterSection extends GetView<LoginControllerImpl> {
           ],
         ),
         const SizedBox(height: 30),
-        CustomButton(
-          title: AppTranslationsKeys.loginButtonText.tr,
-          onPressed: () => controller.login(),
-          horizontalPadding: 16,
-        ),
+        GetBuilder<LoginControllerImpl>(builder: (controller) {
+          return CustomButton(
+            isLoading: controller.isLoading,
+            title: AppTranslationsKeys.loginButtonText.tr,
+            onPressed: () => controller.login(),
+            horizontalPadding: 16,
+          );
+        }),
         const SizedBox(height: 60),
         const Row(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -113,6 +113,7 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.snackBarBarWarringLabel: "تحـذير!",
           AppTranslationsKeys.snackBarRegisterSuccess: "تم التسجيل بنجاح!",
           AppTranslationsKeys.snackBarVerifyCodeSuccess: "تم التحقق بنجاح!",
+          AppTranslationsKeys.snackBarLoginSuccess: "تم تسجيل الدخول بنجاح!",
         },
         "EN": {
           // Language View
@@ -221,6 +222,7 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.snackBarRegisterSuccess: "Sign up successfully!",
           AppTranslationsKeys.snackBarVerifyCodeSuccess:
               "Verification successfully!",
+          AppTranslationsKeys.snackBarLoginSuccess: "Sign in successfully!",
         },
       };
 }

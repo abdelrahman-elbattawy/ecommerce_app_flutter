@@ -9,4 +9,7 @@ abstract class AppRoutes {
   static const forgotPassword = '/forgotPassword';
   static const verifyCode = '/verifyCode';
   static const resetPassword = '/resetPassword';
+
+  // Home
+  static const home = '/home';
 }

@@ -28,7 +28,7 @@ class VerifyCodeViewBody extends GetView<VerifyCodeControllerImpl> {
           const SizedBox(height: 12),
           CustomBodyAuth(
             text:
-                "${AppTranslationsKeys.verifyCodeHeaderTwo.tr} abdelrahman.elbattawy@gmail.com",
+                "${AppTranslationsKeys.verifyCodeHeaderTwo.tr} ${controller.email}",
           ),
           const SizedBox(height: 40),
           OtpTextField(

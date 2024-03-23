@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/errors/app_failure.dart';
@@ -27,21 +28,23 @@ class AuthRepoImpl implements AuthRepo {
       },
     );
 
-    return results.fold(
-      (failure) => left(failure),
-      (data) {
-        if (data['status'] == 'success') {
-          return right(data);
-        } else {
-          return left(
-            AppFailure(
-              data['message'],
-              StatusFailure.failure,
-            ),
-          );
-        }
+    return foldMethod(results);
+  }
+
+  @override
+  Future<Either<AppFailure, Map>> loginWithData(
+    String email,
+    String password,
+  ) async {
+    final results = await apiService.post(
+      AppServerLinks.login,
+      {
+        "email": email,
+        "password": password,
       },
     );
+
+    return foldMethod(results);
   }
 
   @override
@@ -57,6 +60,12 @@ class AuthRepoImpl implements AuthRepo {
       },
     );
 
+    return foldMethod(results);
+  }
+
+  FutureOr<Either<AppFailure, Map<dynamic, dynamic>>> foldMethod(
+    Either<AppFailure, Map<dynamic, dynamic>> results,
+  ) {
     return results.fold(
       (failure) => left(failure),
       (data) {

@@ -91,4 +91,5 @@ final class AppTranslationsKeys {
   static const snackBarBarWarringLabel = "SnackBarBarWarringLabel";
   static const snackBarRegisterSuccess = "snackBarRegisterSuccess";
   static const snackBarVerifyCodeSuccess = "snackBarVerifyCodeSuccess";
+  static const snackBarLoginSuccess = "snackBarLoginSuccess";
 }
