@@ -40,14 +40,20 @@ class VerifyCodeViewBody extends GetView<VerifyCodeControllerImpl> {
             showFieldAsBox: true,
             onCodeChanged: (String code) {},
             onSubmit: (String verificationCode) {
+              controller.verifyCode = verificationCode;
               controller.goToCustomView();
             },
           ),
           const SizedBox(height: 25),
-          CustomButton(
-            title: AppTranslationsKeys.verifyCodeButtonText.tr,
-            onPressed: () => controller.goToCustomView(),
-            horizontalPadding: 16,
+          GetBuilder<VerifyCodeControllerImpl>(
+            builder: (controller) {
+              return CustomButton(
+                isLoading: controller.isLoading,
+                title: AppTranslationsKeys.verifyCodeButtonText.tr,
+                onPressed: () => controller.goToCustomView(),
+                horizontalPadding: 16,
+              );
+            },
           ),
           const SizedBox(height: 30),
           CustomTextClick(

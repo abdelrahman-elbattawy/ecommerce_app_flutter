@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/core/constants/app_routes.dart';
+import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
 import 'package:ecommerce_app/features/auth/controller/verify_code_controller.dart';
 import 'package:ecommerce_app/features/auth/data/repos/auth_repo_impl.dart';
@@ -55,14 +56,18 @@ class RegisterControllerImpl extends RegisterController {
               );
             },
             (data) {
-              Get.find<VerifyCodeControllerImpl>()
-                  .setViewType(ViewType.successSignUp);
-              Get.toNamed(AppRoutes.verifyCode);
+              Get.toNamed(
+                AppRoutes.verifyCode,
+                arguments: {
+                  "viewType": ViewType.successSignUp,
+                  "email": email.text,
+                },
+              );
 
               CustomSnakBar.showSnack(
                 context: Get.context!,
                 snackBarType: SnackBarType.success,
-                errMessage: "Sigin up successfully!",
+                errMessage: AppTranslationsKeys.snackBarRegisterSuccess.tr,
               );
             },
           );

@@ -100,6 +100,19 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.emptyValid: "لا يمكن أن تكون فارغة",
           AppTranslationsKeys.minValid: "لا يمكن أن يكون أقل من",
           AppTranslationsKeys.maxValid: "لا يمكن أن يكون أكبر من",
+
+          // Api Service
+          AppTranslationsKeys.validInternet:
+              "تحقق من الإنترنت لديك، يرجى المحاولة مرة أخرى",
+          AppTranslationsKeys.validGeneral:
+              "عفوًا، حدث خطأ، يرجى المحاولة مرة أخرى",
+
+          // Snack Bar
+          AppTranslationsKeys.snackBarSuccessLabel: "تهنئة!",
+          AppTranslationsKeys.snackBarBarErrorLabel: "هناك خطأ ما!",
+          AppTranslationsKeys.snackBarBarWarringLabel: "تحـذير!",
+          AppTranslationsKeys.snackBarRegisterSuccess: "تم التسجيل بنجاح!",
+          AppTranslationsKeys.snackBarVerifyCodeSuccess: "تم التحقق بنجاح!",
         },
         "EN": {
           // Language View
@@ -194,6 +207,20 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.emptyValid: "Can't be empty",
           AppTranslationsKeys.minValid: "Can't be less than",
           AppTranslationsKeys.maxValid: "Can't be larger than",
+
+          // Api Service
+          AppTranslationsKeys.validInternet:
+              "Check your internet, Please try again",
+          AppTranslationsKeys.validGeneral:
+              "Opps There was an Error, Please try again",
+
+          // Snack Bar
+          AppTranslationsKeys.snackBarSuccessLabel: "Congratulation!",
+          AppTranslationsKeys.snackBarBarErrorLabel: "Something went wrong!",
+          AppTranslationsKeys.snackBarBarWarringLabel: "Warring",
+          AppTranslationsKeys.snackBarRegisterSuccess: "Sign up successfully!",
+          AppTranslationsKeys.snackBarVerifyCodeSuccess:
+              "Verification successfully!",
         },
       };
 }

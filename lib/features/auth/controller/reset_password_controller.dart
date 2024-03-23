@@ -1,6 +1,5 @@
 import 'package:ecommerce_app/core/constants/app_routes.dart';
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
-import 'package:ecommerce_app/features/success/controller/success_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,9 +31,12 @@ class ResetPasswordControllerImpl extends ResetPasswordController {
     var formData = formState.currentState;
 
     if (formData!.validate()) {
-      Get.find<SuccessControllerImpl>()
-          .setSuccessLabel(AppTranslationsKeys.successViewText1.tr);
-      Get.offNamed(AppRoutes.successView);
+      Get.offNamed(
+        AppRoutes.successView,
+        arguments: {
+          "textLabelSuccessView": AppTranslationsKeys.successViewText1.tr,
+        },
+      );
     }
   }
 

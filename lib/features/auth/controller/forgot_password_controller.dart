@@ -24,8 +24,12 @@ class ForgotPasswordControllerImpl extends ForgotPasswordController {
     var formData = formState.currentState;
 
     if (formData!.validate()) {
-      Get.find<VerifyCodeControllerImpl>().setViewType(ViewType.resetPassword);
-      Get.toNamed(AppRoutes.verifyCode);
+      Get.toNamed(
+        AppRoutes.verifyCode,
+        arguments: {
+          "viewType": ViewType.resetPassword,
+        },
+      );
     }
   }
 

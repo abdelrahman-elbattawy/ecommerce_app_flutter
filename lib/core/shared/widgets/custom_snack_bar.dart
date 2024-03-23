@@ -1,4 +1,7 @@
+import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
+import 'package:ecommerce_app/core/localization/locale_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 enum SnackBarType {
   warring(
@@ -8,7 +11,7 @@ enum SnackBarType {
       Icons.error,
       color: Colors.white,
     ),
-    snackLabel: 'Warring',
+    snackLabel: AppTranslationsKeys.snackBarBarWarringLabel,
     aplhaColor: Color(0xffFFF8EB),
   ),
   error(
@@ -18,7 +21,7 @@ enum SnackBarType {
       Icons.cancel,
       color: Colors.white,
     ),
-    snackLabel: 'Something went wrong!',
+    snackLabel: AppTranslationsKeys.snackBarBarErrorLabel,
     aplhaColor: Color(0xffFBF0ED),
   ),
   success(
@@ -28,7 +31,7 @@ enum SnackBarType {
       Icons.shield,
       color: Colors.white,
     ),
-    snackLabel: 'Congratulation!',
+    snackLabel: AppTranslationsKeys.snackBarSuccessLabel,
     aplhaColor: Color(0xffF2F8F4),
   );
 
@@ -53,67 +56,75 @@ class CustomSnakBar {
     required SnackBarType snackBarType,
     required String errMessage,
   }) {
+    LocaleController localCont = Get.find();
+
     SnackBar snackBar = SnackBar(
-      content: Container(
-        height: 70,
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: snackBarType.color.withAlpha(90), width: 2),
-          color: snackBarType.aplhaColor,
-        ),
-        child: Row(
-          children: [
-            Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: snackBarType.acentColor,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: snackBarType.icon),
-            const SizedBox(
-              width: 16,
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      snackBarType.snackLabel,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
+      content: Directionality(
+        textDirection:
+            localCont.codeLang == "AR" ? TextDirection.rtl : TextDirection.ltr,
+        child: Container(
+          height: 70,
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            border:
+                Border.all(color: snackBarType.color.withAlpha(90), width: 2),
+            color: snackBarType.aplhaColor,
+          ),
+          child: Row(
+            children: [
+              Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: snackBarType.acentColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: snackBarType.icon),
+              const SizedBox(
+                width: 16,
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        snackBarType.snackLabel.tr,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
                       ),
-                    ),
-                    Text(
-                      errMessage,
-                      style: TextStyle(
-                        color: Colors.black.withOpacity(0.5),
-                        fontSize: 12,
-                      ),
-                    )
-                  ],
+                      Text(
+                        errMessage,
+                        style: TextStyle(
+                          color: Colors.black.withOpacity(0.5),
+                          fontSize: 12,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () => ScaffoldMessenger.of(context).hideCurrentSnackBar(),
-              child: SizedBox(
-                width: 40,
-                height: 40,
-                child: Icon(
-                  Icons.close,
-                  color: Colors.black.withOpacity(.8),
+              InkWell(
+                onTap: () =>
+                    ScaffoldMessenger.of(context).hideCurrentSnackBar(),
+                child: SizedBox(
+                  width: 40,
+                  height: 40,
+                  child: Icon(
+                    Icons.close,
+                    color: Colors.black.withOpacity(.8),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       margin: const EdgeInsets.symmetric(vertical: 16),

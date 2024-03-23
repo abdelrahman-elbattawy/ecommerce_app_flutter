@@ -43,4 +43,34 @@ class AuthRepoImpl implements AuthRepo {
       },
     );
   }
+
+  @override
+  Future<Either<AppFailure, Map>> checkVerifyCodeWith(
+    String email,
+    String verifyCode,
+  ) async {
+    final results = await apiService.post(
+      AppServerLinks.verifyCode,
+      {
+        "email": email,
+        "verifycode": verifyCode,
+      },
+    );
+
+    return results.fold(
+      (failure) => left(failure),
+      (data) {
+        if (data['status'] == 'success') {
+          return right(data);
+        } else {
+          return left(
+            AppFailure(
+              data['message'],
+              StatusFailure.failure,
+            ),
+          );
+        }
+      },
+    );
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/errors/failure.dart';
 
 class AppFailure extends Failure {
@@ -6,12 +7,12 @@ class AppFailure extends Failure {
   factory AppFailure.fromStatusFailure(StatusFailure statusFailure) {
     if (statusFailure == StatusFailure.offlineFailure) {
       return AppFailure(
-        'Check your internet, Please try again',
+        AppTranslationsKeys.validInternet,
         statusFailure,
       );
     } else {
       return AppFailure(
-        'Opps There was an Error, Please try again',
+        AppTranslationsKeys.validGeneral,
         statusFailure,
       );
     }

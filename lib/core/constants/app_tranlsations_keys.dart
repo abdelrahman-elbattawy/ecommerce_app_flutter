@@ -80,4 +80,15 @@ final class AppTranslationsKeys {
   static const emptyValid = "emptyValid";
   static const minValid = "minValid";
   static const maxValid = "maxValid";
+
+  // App Service
+  static const validInternet = "validInternet";
+  static const validGeneral = "validGeneral";
+
+  // Snack Bar
+  static const snackBarSuccessLabel = "snackBarSuccessLabel";
+  static const snackBarBarErrorLabel = "SnackBarBarErrorLabel";
+  static const snackBarBarWarringLabel = "SnackBarBarWarringLabel";
+  static const snackBarRegisterSuccess = "snackBarRegisterSuccess";
+  static const snackBarVerifyCodeSuccess = "snackBarVerifyCodeSuccess";
 }

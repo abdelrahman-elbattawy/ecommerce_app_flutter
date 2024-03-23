@@ -8,4 +8,9 @@ abstract class AuthRepo {
     String email,
     String phone,
   );
+
+  Future<Either<AppFailure, Map>> checkVerifyCodeWith(
+    String email,
+    String verifyCode,
+  );
 }
