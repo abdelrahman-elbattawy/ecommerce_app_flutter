@@ -80,6 +80,7 @@ final class AppTranslationsKeys {
   static const emptyValid = "emptyValid";
   static const minValid = "minValid";
   static const maxValid = "maxValid";
+  static const passwordMatchValid = "passwordMatchValid";
 
   // App Service
   static const validInternet = "validInternet";
@@ -92,4 +93,5 @@ final class AppTranslationsKeys {
   static const snackBarRegisterSuccess = "snackBarRegisterSuccess";
   static const snackBarVerifyCodeSuccess = "snackBarVerifyCodeSuccess";
   static const snackBarLoginSuccess = "snackBarLoginSuccess";
+  static const snackBarResetPasswordSuccess = "snackBarResetPasswordSuccess";
 }

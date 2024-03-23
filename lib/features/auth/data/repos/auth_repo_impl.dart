@@ -63,6 +63,50 @@ class AuthRepoImpl implements AuthRepo {
     return foldMethod(results);
   }
 
+  @override
+  Future<Either<AppFailure, Map>> forgotPassowdWith(String email) async {
+    final results = await apiService.post(
+      AppServerLinks.forgotPassword,
+      {
+        "email": email,
+      },
+    );
+
+    return foldMethod(results);
+  }
+
+  @override
+  Future<Either<AppFailure, Map>> checkVerifyCodePasswordWith(
+    String email,
+    String verifyCode,
+  ) async {
+    final results = await apiService.post(
+      AppServerLinks.verifyCodePassowrd,
+      {
+        "email": email,
+        "verifycode": verifyCode,
+      },
+    );
+
+    return foldMethod(results);
+  }
+
+  @override
+  Future<Either<AppFailure, Map>> resetPasswordWith(
+    String email,
+    String password,
+  ) async {
+    final results = await apiService.post(
+      AppServerLinks.resetPassowrd,
+      {
+        "email": email,
+        "password": password,
+      },
+    );
+
+    return foldMethod(results);
+  }
+
   FutureOr<Either<AppFailure, Map<dynamic, dynamic>>> foldMethod(
     Either<AppFailure, Map<dynamic, dynamic>> results,
   ) {

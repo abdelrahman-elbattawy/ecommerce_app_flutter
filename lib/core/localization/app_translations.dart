@@ -100,6 +100,7 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.emptyValid: "لا يمكن أن تكون فارغة",
           AppTranslationsKeys.minValid: "لا يمكن أن يكون أقل من",
           AppTranslationsKeys.maxValid: "لا يمكن أن يكون أكبر من",
+          AppTranslationsKeys.passwordMatchValid: "كلمة المرور غير متطابقة",
 
           // Api Service
           AppTranslationsKeys.validInternet:
@@ -114,6 +115,8 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.snackBarRegisterSuccess: "تم التسجيل بنجاح!",
           AppTranslationsKeys.snackBarVerifyCodeSuccess: "تم التحقق بنجاح!",
           AppTranslationsKeys.snackBarLoginSuccess: "تم تسجيل الدخول بنجاح!",
+          AppTranslationsKeys.snackBarResetPasswordSuccess:
+              "تم إعادة تعيين كلمة المرور بنجاح!",
         },
         "EN": {
           // Language View
@@ -208,6 +211,7 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.emptyValid: "Can't be empty",
           AppTranslationsKeys.minValid: "Can't be less than",
           AppTranslationsKeys.maxValid: "Can't be larger than",
+          AppTranslationsKeys.passwordMatchValid: "Password doesn't match",
 
           // Api Service
           AppTranslationsKeys.validInternet:
@@ -223,6 +227,8 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.snackBarVerifyCodeSuccess:
               "Verification successfully!",
           AppTranslationsKeys.snackBarLoginSuccess: "Sign in successfully!",
+          AppTranslationsKeys.snackBarResetPasswordSuccess:
+              "Reset password successfully!",
         },
       };
 }

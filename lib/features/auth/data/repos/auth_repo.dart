@@ -18,4 +18,18 @@ abstract class AuthRepo {
     String email,
     String verifyCode,
   );
+
+  Future<Either<AppFailure, Map>> forgotPassowdWith(
+    String email,
+  );
+
+  Future<Either<AppFailure, Map>> checkVerifyCodePasswordWith(
+    String email,
+    String verifyCode,
+  );
+
+  Future<Either<AppFailure, Map>> resetPasswordWith(
+    String email,
+    String password,
+  );
 }

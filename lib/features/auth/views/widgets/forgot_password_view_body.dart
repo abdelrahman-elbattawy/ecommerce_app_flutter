@@ -38,10 +38,15 @@ class ForgotPasswordViewBody extends GetView<ForgotPasswordControllerImpl> {
               validator: (val) => validInput(val!, 5, 100, InputType.email),
             ),
             const SizedBox(height: 25),
-            CustomButton(
-              title: AppTranslationsKeys.forgotPasswordButtonText.tr,
-              onPressed: () => controller.goToVerifyCode(),
-              horizontalPadding: 16,
+            GetBuilder<ForgotPasswordControllerImpl>(
+              builder: (controller) {
+                return CustomButton(
+                  isLoading: controller.isLoading,
+                  title: AppTranslationsKeys.forgotPasswordButtonText.tr,
+                  onPressed: () => controller.checkEmail(),
+                  horizontalPadding: 16,
+                );
+              },
             ),
           ],
         ),

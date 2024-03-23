@@ -95,7 +95,47 @@ class VerifyCodeControllerImpl extends VerifyCodeController {
   }
 
   @override
-  goToResetPassword() {
-    Get.offAllNamed(AppRoutes.resetPassword);
+  goToResetPassword() async {
+    isLoading = true;
+
+    var results = await _authRepoImpl.checkVerifyCodePasswordWith(
+      email,
+      verifyCode!,
+    );
+
+    Future.delayed(
+      const Duration(milliseconds: 1500),
+      () {
+        isLoading = false;
+
+        results.fold(
+          (failure) {
+            CustomSnakBar.showSnack(
+              context: Get.context!,
+              snackBarType: SnackBarType.error,
+              errMessage: failure.errMessage,
+            );
+          },
+          (data) {
+            Get.offAllNamed(
+              AppRoutes.resetPassword,
+              arguments: {
+                "email": email,
+              },
+            );
+
+            CustomSnakBar.showSnack(
+              context: Get.context!,
+              snackBarType: SnackBarType.success,
+              errMessage: AppTranslationsKeys.snackBarVerifyCodeSuccess.tr,
+            );
+          },
+        );
+
+        update();
+      },
+    );
+
+    update();
   }
 }

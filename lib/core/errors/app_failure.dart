@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/errors/failure.dart';
+import 'package:get/get.dart';
 
 class AppFailure extends Failure {
   AppFailure(super.errMessage, super.statusFailure);
@@ -7,12 +8,12 @@ class AppFailure extends Failure {
   factory AppFailure.fromStatusFailure(StatusFailure statusFailure) {
     if (statusFailure == StatusFailure.offlineFailure) {
       return AppFailure(
-        AppTranslationsKeys.validInternet,
+        AppTranslationsKeys.validInternet.tr,
         statusFailure,
       );
     } else {
       return AppFailure(
-        AppTranslationsKeys.validGeneral,
+        AppTranslationsKeys.validGeneral.tr,
         statusFailure,
       );
     }

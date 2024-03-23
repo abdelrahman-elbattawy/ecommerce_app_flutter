@@ -49,16 +49,24 @@ class ResetPasswordViewBody extends GetView<ResetPasswordControllerImpl> {
                 iconData: Icons.lock_outlined,
                 isSecure: controller.isHiddenRePassword,
                 controller: controller.rePassword,
-                validator: (val) => validInput(val!, 5, 30, InputType.password),
+                validator: (val) {
+                  if (val != controller.password.text) {
+                    return AppTranslationsKeys.passwordMatchValid.tr;
+                  }
+                  return validInput(val!, 5, 30, InputType.password);
+                },
                 onTapIcon: () => controller.showRePassword(),
               );
             }),
             const SizedBox(height: 25),
-            CustomButton(
-              title: AppTranslationsKeys.resetPasswordButtonText.tr,
-              onPressed: () => controller.goToSuccessReset(),
-              horizontalPadding: 16,
-            ),
+            GetBuilder<ResetPasswordControllerImpl>(builder: (controller) {
+              return CustomButton(
+                isLoading: controller.isLoading,
+                title: AppTranslationsKeys.resetPasswordButtonText.tr,
+                onPressed: () => controller.savePassword(),
+                horizontalPadding: 16,
+              );
+            }),
           ],
         ),
       ),
