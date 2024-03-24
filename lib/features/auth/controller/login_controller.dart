@@ -29,6 +29,13 @@ class LoginControllerImpl extends LoginController {
     password = TextEditingController();
     formState = GlobalKey<FormState>();
     _authRepoImpl = Get.find();
+
+    // await FirebaseMessaging.instance.requestPermission();
+
+    // await FirebaseMessaging.instance.getToken().then((value) {
+    //   debugPrint(value);
+    // });
+
     super.onInit();
   }
 

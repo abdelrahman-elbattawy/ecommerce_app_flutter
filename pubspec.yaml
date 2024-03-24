@@ -30,6 +30,8 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.6
   dartz: ^0.10.1
+  firebase_core: ^2.27.1
+  firebase_messaging: ^14.7.20
   flutter:
     sdk: flutter
   flutter_otp_text_field: ^1.1.2+1
