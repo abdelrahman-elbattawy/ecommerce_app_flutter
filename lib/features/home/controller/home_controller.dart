@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:ecommerce_app/core/constants/app_preferences_keys.dart';
 import 'package:ecommerce_app/core/services/app_services.dart';
 import 'package:ecommerce_app/features/auth/data/models/user_model.dart';
 import 'package:get/get.dart';
@@ -23,7 +24,7 @@ class HomeControllerImpl extends HomeController {
   @override
   void getUserMode() {
     final String? userData =
-        _appServices.sharedPreferences.getString('userModel');
+        _appServices.sharedPreferences.getString(AppPreferencesKeys.userModel);
 
     userModel = UserModel.fromJson(jsonDecode(userData!));
   }
