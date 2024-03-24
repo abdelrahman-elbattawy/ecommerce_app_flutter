@@ -12,11 +12,12 @@ class AppMiddleWare extends GetMiddleware {
 
   @override
   RouteSettings? redirect(String? route) {
-    bool onBoardingFinish = appServices.sharedPreferences
-            .getBool(AppPreferencesKeys.onBoardingFinish) ??
-        false;
+    String? appSteps =
+        appServices.sharedPreferences.getString(AppPreferencesKeys.onAppSteps);
 
-    if (onBoardingFinish) {
+    if (appSteps == "2") {
+      return const RouteSettings(name: AppRoutes.home);
+    } else if (appSteps == "1") {
       return const RouteSettings(name: AppRoutes.login);
     }
     return null;

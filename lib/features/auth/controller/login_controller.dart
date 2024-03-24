@@ -1,5 +1,9 @@
+import 'dart:convert';
+
+import 'package:ecommerce_app/core/constants/app_preferences_keys.dart';
 import 'package:ecommerce_app/core/constants/app_routes.dart';
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
+import 'package:ecommerce_app/core/services/app_services.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
 import 'package:ecommerce_app/features/auth/controller/verify_code_controller.dart';
 import 'package:ecommerce_app/features/auth/data/repos/auth_repo_impl.dart';
@@ -22,6 +26,7 @@ class LoginControllerImpl extends LoginController {
   bool isLoading = false;
 
   late final AuthRepoImpl _authRepoImpl;
+  late final AppServices _appServices;
 
   @override
   void onInit() {
@@ -29,6 +34,7 @@ class LoginControllerImpl extends LoginController {
     password = TextEditingController();
     formState = GlobalKey<FormState>();
     _authRepoImpl = Get.find();
+    _appServices = Get.find();
 
     // await FirebaseMessaging.instance.requestPermission();
 
@@ -82,6 +88,14 @@ class LoginControllerImpl extends LoginController {
                 }
               },
               (data) {
+                _appServices.sharedPreferences
+                    .setString(AppPreferencesKeys.onAppSteps, "2");
+
+                _appServices.sharedPreferences.setString(
+                  AppPreferencesKeys.userModel,
+                  jsonEncode(data['data']),
+                );
+
                 Get.toNamed(AppRoutes.home);
 
                 CustomSnakBar.showSnack(

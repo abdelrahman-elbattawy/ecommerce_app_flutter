@@ -22,7 +22,7 @@ class OnBoardingControllerImpl extends OnBoardingController {
 
     if (currentPage > onBoardingList.length - 1) {
       appServices.sharedPreferences
-          .setBool(AppPreferencesKeys.onBoardingFinish, true);
+          .setString(AppPreferencesKeys.onAppSteps, "1");
       Get.offAllNamed(AppRoutes.login);
     } else {
       pageController.animateToPage(
