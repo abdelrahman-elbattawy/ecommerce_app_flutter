@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/core/constants/app_assets_images.dart';
-import 'package:ecommerce_app/core/constants/app_colors.dart';
+// import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_button.dart';
@@ -15,34 +15,45 @@ class LoginFooterSection extends GetView<LoginControllerImpl> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Row(
-          children: [
-            Checkbox(
-              activeColor: AppColors.primaryColor,
-              value: true,
-              onChanged: (val) {},
+        // Row(
+        //   children: [
+        //     // Checkbox(
+        //     //   activeColor: AppColors.primaryColor,
+        //     //   value: true,
+        //     //   onChanged: (val) {},
+        //     // ),
+        //     // Text(
+        //     //   AppTranslationsKeys.loginRememberMe.tr,
+        //     //   style: AppTextStyle.textStyle16.copyWith(
+        //     //     fontWeight: FontWeight.normal,
+        //     //   ),
+        //     // ),
+        //     // const Spacer(),
+        //     InkWell(
+        //       onTap: () => controller.goToForgotPassword(),
+        //       child: Text(
+        //         AppTranslationsKeys.loginForgotPassword.tr,
+        //         style: AppTextStyle.textStyle16.copyWith(
+        //           fontWeight: FontWeight.normal,
+        //           decoration: TextDecoration.underline,
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // ),
+        InkWell(
+          onTap: () => controller.goToForgotPassword(),
+          child: Text(
+            AppTranslationsKeys.loginForgotPassword.tr,
+            style: AppTextStyle.textStyle16.copyWith(
+              fontWeight: FontWeight.normal,
+              decoration: TextDecoration.underline,
             ),
-            Text(
-              AppTranslationsKeys.loginRememberMe.tr,
-              style: AppTextStyle.textStyle16.copyWith(
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-            const Spacer(),
-            InkWell(
-              onTap: () => controller.goToForgotPassword(),
-              child: Text(
-                AppTranslationsKeys.loginForgotPassword.tr,
-                style: AppTextStyle.textStyle16.copyWith(
-                  fontWeight: FontWeight.normal,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 20),
         GetBuilder<LoginControllerImpl>(builder: (controller) {
           return CustomButton(
             isLoading: controller.isLoading,
@@ -51,7 +62,7 @@ class LoginFooterSection extends GetView<LoginControllerImpl> {
             horizontalPadding: 16,
           );
         }),
-        const SizedBox(height: 60),
+        const SizedBox(height: 25),
         const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

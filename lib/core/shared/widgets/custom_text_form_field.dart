@@ -2,6 +2,7 @@ import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
 import 'package:ecommerce_app/core/localization/locale_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -41,8 +42,10 @@ class CustomTextFormField extends StatelessWidget {
         obscureText: isSecure,
         decoration: InputDecoration(
           floatingLabelBehavior: FloatingLabelBehavior.always,
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 24,
+            vertical: MediaQuery.of(context).size.width * .05,
+          ),
           hintText: hintText,
           labelText: " $labelText ",
           labelStyle: AppTextStyle.textStyle20.copyWith(

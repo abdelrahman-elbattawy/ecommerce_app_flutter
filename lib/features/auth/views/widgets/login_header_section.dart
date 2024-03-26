@@ -21,7 +21,7 @@ class LoginHeaderSection extends GetView<LoginControllerImpl> {
         CustomBodyAuth(
           text: AppTranslationsKeys.loginHeadterTwo.tr,
         ),
-        const SizedBox(height: 65),
+        const SizedBox(height: 50),
         CustomTextFormField(
           labelText: AppTranslationsKeys.loginEmailLabel.tr,
           hintText: AppTranslationsKeys.loginEmailHint.tr,
@@ -29,7 +29,7 @@ class LoginHeaderSection extends GetView<LoginControllerImpl> {
           controller: controller.email,
           validator: (val) => validInput(val!, 5, 100, InputType.email),
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 20),
         GetBuilder<LoginControllerImpl>(builder: (controller) {
           return CustomTextFormField(
             labelText: AppTranslationsKeys.loginPasswordLabel.tr,

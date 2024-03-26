@@ -18,9 +18,8 @@ class LoginViewBody extends GetView<LoginControllerImpl> {
           padding: EdgeInsets.zero,
           physics: const BouncingScrollPhysics(),
           children: const [
-            SizedBox(height: 35),
             LoginHeaderSection(),
-            SizedBox(height: 15),
+            SizedBox(height: 10),
             LoginFooterSection(),
           ],
         ),
