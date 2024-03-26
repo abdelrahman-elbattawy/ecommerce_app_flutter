@@ -19,7 +19,7 @@ class RegisterHeaderSection extends GetView<RegisterControllerImpl> {
         ),
         const SizedBox(height: 12),
         CustomBodyAuth(text: AppTranslationsKeys.registerHeaderTwo.tr),
-        const SizedBox(height: 65),
+        const SizedBox(height: 40),
         CustomTextFormField(
           labelText: AppTranslationsKeys.registerUsernameLabel.tr,
           hintText: AppTranslationsKeys.registerUsernameHint.tr,
@@ -27,7 +27,7 @@ class RegisterHeaderSection extends GetView<RegisterControllerImpl> {
           controller: controller.username,
           validator: (val) => validInput(val!, 5, 50, InputType.userName),
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 20),
         CustomTextFormField(
           labelText: AppTranslationsKeys.registerEmailLabel.tr,
           hintText: AppTranslationsKeys.registerEmailHint.tr,
@@ -35,7 +35,7 @@ class RegisterHeaderSection extends GetView<RegisterControllerImpl> {
           controller: controller.email,
           validator: (val) => validInput(val!, 5, 100, InputType.email),
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 20),
         CustomTextFormField(
           keyboardType: TextInputType.phone,
           labelText: AppTranslationsKeys.registerPhoneLabel.tr,
@@ -44,7 +44,7 @@ class RegisterHeaderSection extends GetView<RegisterControllerImpl> {
           controller: controller.phone,
           validator: (val) => validInput(val!, 5, 100, InputType.phone),
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 20),
         GetBuilder<RegisterControllerImpl>(builder: (controller) {
           return CustomTextFormField(
             labelText: AppTranslationsKeys.registerPasswordLabel.tr,

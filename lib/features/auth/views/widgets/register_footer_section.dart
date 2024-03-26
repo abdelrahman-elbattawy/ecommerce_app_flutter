@@ -12,7 +12,7 @@ class RegisterFooterSection extends GetView<RegisterControllerImpl> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 50),
+        const SizedBox(height: 20),
         GetBuilder<RegisterControllerImpl>(
           builder: (controller) {
             return CustomButton(
@@ -23,7 +23,7 @@ class RegisterFooterSection extends GetView<RegisterControllerImpl> {
             );
           },
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 20),
         CustomTextClick(
           text: AppTranslationsKeys.registerHaveAccount.tr,
           textClick: AppTranslationsKeys.registerSignInLabel.tr,

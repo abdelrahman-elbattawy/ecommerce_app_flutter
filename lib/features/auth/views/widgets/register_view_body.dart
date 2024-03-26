@@ -17,7 +17,6 @@ class RegisterViewBody extends GetView<RegisterControllerImpl> {
           padding: EdgeInsets.zero,
           physics: const BouncingScrollPhysics(),
           children: const [
-            SizedBox(height: 35),
             RegisterHeaderSection(),
             SizedBox(height: 15),
             RegisterFooterSection(),
