@@ -32,7 +32,7 @@ class VerifyCodeViewBody extends GetView<VerifyCodeControllerImpl> {
           ),
           const SizedBox(height: 40),
           OtpTextField(
-            fieldWidth: 60,
+            fieldWidth: MediaQuery.of(context).size.width * .15,
             borderRadius: BorderRadius.circular(12),
             numberOfFields: 5,
             borderColor: AppColors.primaryColor,
