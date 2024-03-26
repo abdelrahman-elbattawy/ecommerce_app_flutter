@@ -22,14 +22,13 @@ class OnBoardingSlider extends GetView<OnBoardingControllerImpl> {
                 onBoardingList[index].title!.tr,
                 style: AppTextStyle.textStyle20,
               ),
-              const SizedBox(height: 80),
+              SizedBox(height: MediaQuery.of(context).size.width * .08),
               Image.asset(
                 onBoardingList[index].image!,
-                height: 250,
-                width: 200,
+                height: MediaQuery.of(context).size.width * .6,
                 fit: BoxFit.fill,
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
               Text(
                 onBoardingList[index].body!.tr,
                 textAlign: TextAlign.center,
