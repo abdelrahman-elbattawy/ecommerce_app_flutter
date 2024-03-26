@@ -21,7 +21,6 @@ class ResetPasswordViewBody extends GetView<ResetPasswordControllerImpl> {
           padding: EdgeInsets.zero,
           physics: const BouncingScrollPhysics(),
           children: [
-            const SizedBox(height: 35),
             CustomTitleAuth(
               text: AppTranslationsKeys.resetPasswordHeaderOne.tr,
             ),
@@ -29,7 +28,7 @@ class ResetPasswordViewBody extends GetView<ResetPasswordControllerImpl> {
             CustomBodyAuth(
               text: AppTranslationsKeys.resetPasswordHeaderTwo.tr,
             ),
-            const SizedBox(height: 65),
+            const SizedBox(height: 30),
             GetBuilder<ResetPasswordControllerImpl>(builder: (controller) {
               return CustomTextFormField(
                 labelText: AppTranslationsKeys.resetPasswordPassLabel.tr,
