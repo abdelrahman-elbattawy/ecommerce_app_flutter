@@ -22,13 +22,13 @@ class CustomButton extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
       child: SizedBox(
-        height: 60,
+        height: MediaQuery.of(context).size.width * .14,
         width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             elevation: 3,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(12),
             ),
             backgroundColor: AppColors.primaryColor,
             foregroundColor: Colors.white,
@@ -37,7 +37,7 @@ class CustomButton extends StatelessWidget {
           child: !isLoading
               ? Text(
                   title,
-                  style: AppTextStyle.textStyle18.copyWith(
+                  style: AppTextStyle.textStyle16.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
                 )

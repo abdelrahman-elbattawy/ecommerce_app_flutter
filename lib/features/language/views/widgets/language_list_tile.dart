@@ -21,6 +21,11 @@ class LanguageListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      dense: true,
+      contentPadding: EdgeInsets.symmetric(
+        vertical: MediaQuery.of(context).size.width * .015,
+        horizontal: 12,
+      ),
       shape: RoundedRectangleBorder(
         side: BorderSide(
           color: isSelected == true
@@ -37,12 +42,12 @@ class LanguageListTile extends StatelessWidget {
             style:
                 AppTextStyle.textStyle18.copyWith(fontWeight: FontWeight.w600),
           ),
-          Text(
-            ' ($abbreviation)',
-            style: AppTextStyle.textStyle16.copyWith(
-              fontWeight: FontWeight.normal,
-            ),
-          ),
+          // Text(
+          //   ' ($abbreviation)',
+          //   style: AppTextStyle.textStyle16.copyWith(
+          //     fontWeight: FontWeight.normal,
+          //   ),
+          // ),
         ],
       ),
       trailing: Text(
