@@ -63,7 +63,7 @@ class CustomSnakBar {
         textDirection:
             localCont.codeLang == "AR" ? TextDirection.rtl : TextDirection.ltr,
         child: Container(
-          height: 70,
+          // height: 100,
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
@@ -94,6 +94,7 @@ class CustomSnakBar {
                     children: [
                       Text(
                         snackBarType.snackLabel.tr,
+                        maxLines: 2,
                         style: const TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,

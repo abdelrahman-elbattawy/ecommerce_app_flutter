@@ -26,9 +26,9 @@ class CustomButtonCircleIndicator extends StatelessWidget {
         ),
         Text(
           'Please Wait...',
-          style: AppTextStyle.textStyle18.copyWith(
+          style: AppTextStyle.textStyle16.copyWith(
             color: textColor,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w600,
           ),
         )
       ],
