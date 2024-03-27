@@ -96,7 +96,7 @@ class LoginControllerImpl extends LoginController {
                   jsonEncode(data['data']),
                 );
 
-                Get.toNamed(AppRoutes.home);
+                Get.offAllNamed(AppRoutes.home);
 
                 CustomSnakBar.showSnack(
                   context: Get.context!,
