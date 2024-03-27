@@ -7,15 +7,19 @@ class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
     this.hintText,
-    this.iconData,
+    this.suffixIcon,
+    this.prefixIcon,
     this.controller,
-    this.onTapIcon,
+    this.onSuffixIcon,
+    this.onPrefixIcon,
   });
 
   final String? hintText;
-  final IconData? iconData;
+  final IconData? suffixIcon;
+  final IconData? prefixIcon;
   final TextEditingController? controller;
-  final void Function()? onTapIcon;
+  final void Function()? onSuffixIcon;
+  final void Function()? onPrefixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -23,31 +27,40 @@ class CustomTextField extends StatelessWidget {
     return Directionality(
       textDirection:
           localCont.codeLang == "AR" ? TextDirection.rtl : TextDirection.ltr,
-      child: TextFormField(
+      child: TextField(
         controller: controller,
         autocorrect: false,
         enableSuggestions: false,
         decoration: InputDecoration(
-          floatingLabelBehavior: FloatingLabelBehavior.always,
+          filled: true,
+          fillColor: const Color(0xffF3F4F6),
           contentPadding: EdgeInsets.symmetric(
             horizontal: 24,
-            vertical: MediaQuery.of(context).size.width * .05,
+            vertical: MediaQuery.of(context).size.width * .035,
           ),
           hintText: hintText,
           suffixIcon: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: InkWell(
-              onTap: onTapIcon,
+              onTap: onSuffixIcon,
               child: Icon(
-                iconData,
+                suffixIcon,
+                size: 26,
+              ),
+            ),
+          ),
+          prefixIconColor: AppColors.primaryColor,
+          prefixIcon: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: InkWell(
+              onTap: onPrefixIcon,
+              child: Icon(
+                prefixIcon,
                 size: 26,
               ),
             ),
           ),
           enabledBorder: bulidBorder(Colors.black),
-          focusedBorder: bulidBorder(AppColors.primaryColor),
-          errorBorder: bulidBorder(Colors.red),
-          focusedErrorBorder: bulidBorder(Colors.red),
           border: bulidBorder(Colors.black),
         ),
       ),
@@ -56,10 +69,7 @@ class CustomTextField extends StatelessWidget {
 
   OutlineInputBorder bulidBorder(color) {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(16),
-      borderSide: BorderSide(
-        color: color,
-      ),
-    );
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(color: Color(0xffF3F4F6)));
   }
 }

@@ -117,6 +117,9 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.snackBarLoginSuccess: "تم تسجيل الدخول بنجاح!",
           AppTranslationsKeys.snackBarResetPasswordSuccess:
               "تم إعادة تعيين كلمة المرور بنجاح!",
+
+          // Home View
+          AppTranslationsKeys.homeViewSeachHint: "بحث",
         },
         "EN": {
           // Language View
@@ -229,6 +232,9 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.snackBarLoginSuccess: "Sign in successfully!",
           AppTranslationsKeys.snackBarResetPasswordSuccess:
               "Reset password successfully!",
+
+          // Home View
+          AppTranslationsKeys.homeViewSeachHint: "Search",
         },
       };
 }
