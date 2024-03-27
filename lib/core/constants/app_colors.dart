@@ -5,4 +5,5 @@ final class AppColors {
   static const customGrey = Color(0xff808080);
   static const borderSideColor = Color(0xffE5EAFF);
   static const primaryBackgroundColor = Color(0xffFAFBFE);
+  static const primartForegroundColor = Color(0xffF3F4F6);
 }

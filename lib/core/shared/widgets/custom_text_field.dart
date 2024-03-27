@@ -70,6 +70,6 @@ class CustomTextField extends StatelessWidget {
   OutlineInputBorder bulidBorder(color) {
     return OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: Color(0xffF3F4F6)));
+        borderSide: const BorderSide(color: AppColors.primartForegroundColor));
   }
 }

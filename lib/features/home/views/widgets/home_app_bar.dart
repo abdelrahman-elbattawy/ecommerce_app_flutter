@@ -11,13 +11,13 @@ class HomeAppBar extends GetView<HomeControllerImpl> {
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
-      title: Row(
+    return SliverToBoxAdapter(
+      child: Row(
         children: [
           CircleAvatar(
             radius: MediaQuery.of(context).size.width * .06,
             child: Image.network(
-              "${AppServerLinks.userAvatar}/${controller.userModel.image}",
+              "${AppServerLinks.imageUserAvatar}/${controller.userModel.image}",
               height: MediaQuery.of(context).size.width * .13,
               width: MediaQuery.of(context).size.width * .13,
             ),

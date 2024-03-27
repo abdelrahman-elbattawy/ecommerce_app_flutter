@@ -7,7 +7,7 @@ import 'package:ecommerce_app/core/functions/check_internet_func.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  Future<Either<AppFailure, Map>> post(String endPoint, Map body) async {
+  Future<Either<AppFailure, Map>> post(String endPoint, [Map? body]) async {
     try {
       if (await checkInternet()) {
         final response = await http.post(Uri.parse(endPoint), body: body);

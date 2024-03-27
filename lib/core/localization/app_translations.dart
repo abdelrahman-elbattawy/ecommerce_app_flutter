@@ -120,6 +120,8 @@ class AppTranslations extends Translations {
 
           // Home View
           AppTranslationsKeys.homeViewSeachHint: "بحث",
+          AppTranslationsKeys.homeViewCategoriesLabel: "الاقسام",
+          AppTranslationsKeys.homeViewSeeAllLabel: "المزيد",
         },
         "EN": {
           // Language View
@@ -235,6 +237,8 @@ class AppTranslations extends Translations {
 
           // Home View
           AppTranslationsKeys.homeViewSeachHint: "Search",
+          AppTranslationsKeys.homeViewCategoriesLabel: "Categories",
+          AppTranslationsKeys.homeViewSeeAllLabel: "See All",
         },
       };
 }
