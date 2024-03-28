@@ -26,7 +26,7 @@ class HomeItemCard extends StatelessWidget {
                 ),
               ],
               borderRadius: BorderRadius.circular(16),
-              color: AppColors.primartForegroundColor,
+              color: AppColors.primaryForegroundColor,
             ),
           ),
           Positioned.fill(
@@ -49,7 +49,7 @@ class HomeItemCard extends StatelessWidget {
                     style: AppTextStyle.textStyle16,
                   ),
                   Text(
-                    "Super Market",
+                    "Supermarket",
                     style: AppTextStyle.textStyle16.copyWith(
                       color: AppColors.customGrey,
                     ),
@@ -59,6 +59,17 @@ class HomeItemCard extends StatelessWidget {
                     style: AppTextStyle.textStyle16,
                   ),
                 ],
+              ),
+            ),
+          ),
+          Positioned(
+            top: 0,
+            right: 0,
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.favorite_outline,
+                color: Colors.red,
               ),
             ),
           ),

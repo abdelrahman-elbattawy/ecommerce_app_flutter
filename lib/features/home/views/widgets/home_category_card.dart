@@ -29,7 +29,7 @@ class HomeCategoryCard extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * .23,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: AppColors.primartForegroundColor,
+                  color: AppColors.primaryForegroundColor,
                 ),
               ),
               Positioned.fill(

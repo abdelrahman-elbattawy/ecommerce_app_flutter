@@ -33,7 +33,7 @@ class HomeCategoryTitle extends StatelessWidget {
           ],
           color: isSelected
               ? AppColors.primaryColor
-              : AppColors.primartForegroundColor,
+              : AppColors.primaryForegroundColor,
         ),
         child: Center(
           child: Padding(
