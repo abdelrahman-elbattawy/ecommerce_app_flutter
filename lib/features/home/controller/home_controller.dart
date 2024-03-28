@@ -15,6 +15,7 @@ abstract class HomeController extends GetxController {
   void intiailService();
   void intialTextControllers();
   void fetchAllData();
+  void setCategoyTitleIndex(int index);
 }
 
 class HomeControllerImpl extends HomeController {
@@ -28,6 +29,8 @@ class HomeControllerImpl extends HomeController {
   late final TextEditingController searchController;
 
   bool isLoading = false;
+
+  int categoryTitleIndexSelected = 0;
 
   @override
   void onInit() {
@@ -89,5 +92,11 @@ class HomeControllerImpl extends HomeController {
         update();
       },
     );
+  }
+
+  @override
+  void setCategoyTitleIndex(int index) {
+    categoryTitleIndexSelected = index;
+    update();
   }
 }

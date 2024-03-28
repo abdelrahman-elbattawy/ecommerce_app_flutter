@@ -4,6 +4,8 @@ import 'package:ecommerce_app/core/shared/widgets/page_loading_indicator.dart';
 import 'package:ecommerce_app/features/home/controller/home_controller.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_app_bar.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_categories_list.dart';
+import 'package:ecommerce_app/features/home/views/widgets/home_categories_title_list.dart';
+import 'package:ecommerce_app/features/home/views/widgets/home_items_list.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_offers_card.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_section_title.dart';
 import 'package:flutter/material.dart';
@@ -62,11 +64,14 @@ class HomeViewBody extends StatelessWidget {
                     const SliverToBoxAdapter(child: SizedBox(height: 20)),
                     SliverToBoxAdapter(
                       child: HomeSectionTitle(
-                        title: AppTranslationsKeys.homeViewTodayOffersLabel.tr,
+                        title: AppTranslationsKeys.homeViewRecommendedLabel.tr,
                         buttonText: AppTranslationsKeys.homeViewSeeAllLabel.tr,
                         onPressed: () {},
                       ),
                     ),
+                    const SliverToBoxAdapter(child: HomeCategoriesTitleList()),
+                    const SliverToBoxAdapter(child: SizedBox(height: 20)),
+                    const SliverToBoxAdapter(child: HomeItemsList()),
                   ],
                 ),
               );
