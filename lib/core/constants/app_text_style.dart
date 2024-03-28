@@ -25,4 +25,10 @@ final class AppTextStyle {
     fontSize: 28,
     fontWeight: FontWeight.bold,
   );
+
+  static const textStyle40 = TextStyle(
+    fontSize: 40,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
 }

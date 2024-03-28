@@ -12,7 +12,8 @@ class HomeCategoriesList extends GetView<HomeControllerImpl> {
 
   @override
   Widget build(BuildContext context) {
-    return SliverFillRemaining(
+    return SizedBox(
+      height: MediaQuery.of(context).size.width * .25,
       child: ListView.builder(
         padding: EdgeInsets.zero,
         scrollDirection: Axis.horizontal,
@@ -24,7 +25,7 @@ class HomeCategoriesList extends GetView<HomeControllerImpl> {
               Stack(
                 children: [
                   Container(
-                    height: MediaQuery.of(context).size.width * .15,
+                    height: MediaQuery.of(context).size.width * .16,
                     width: MediaQuery.of(context).size.width * .23,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
@@ -43,6 +44,7 @@ class HomeCategoriesList extends GetView<HomeControllerImpl> {
                   ),
                 ],
               ),
+              const SizedBox(height: 10),
               Text(
                 controller.localCont.codeLang == "AR"
                     ? controller.categoriesList[index].categoriesNameAr!

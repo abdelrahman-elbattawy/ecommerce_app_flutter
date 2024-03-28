@@ -16,26 +16,24 @@ class HomeSectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Row(
-        children: [
-          Text(
-            title,
-            style: AppTextStyle.textStyle20,
+    return Row(
+      children: [
+        Text(
+          title,
+          style: AppTextStyle.textStyle20,
+        ),
+        const Spacer(),
+        TextButton(
+          style: TextButton.styleFrom(
+            foregroundColor: AppColors.primaryColor,
           ),
-          const Spacer(),
-          TextButton(
-            style: TextButton.styleFrom(
-              foregroundColor: AppColors.primaryColor,
-            ),
-            onPressed: onPressed,
-            child: Text(
-              buttonText,
-              style: AppTextStyle.textStyle16,
-            ),
+          onPressed: onPressed,
+          child: Text(
+            buttonText,
+            style: AppTextStyle.textStyle16,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
