@@ -1,20 +1,23 @@
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
-import 'package:ecommerce_app/features/home/controller/home_controller.dart';
+import 'package:ecommerce_app/core/localization/locale_controller.dart';
+import 'package:ecommerce_app/features/home/data/models/category_model.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-class HomeCategoryCard extends GetView<HomeControllerImpl> {
+class HomeCategoryCard extends StatelessWidget {
   const HomeCategoryCard({
     super.key,
-    required this.index,
+    required this.categoryModel,
   });
 
-  final int index;
+  final CategoryModel categoryModel;
 
   @override
   Widget build(BuildContext context) {
+    LocaleController localCont = Get.find();
+
     return Padding(
       padding: const EdgeInsets.only(right: 16),
       child: Column(
@@ -33,7 +36,7 @@ class HomeCategoryCard extends GetView<HomeControllerImpl> {
                 child: Align(
                   alignment: Alignment.center,
                   child: Image.network(
-                    "${AppServerLinks.imageCategoriesPath}/${controller.categoriesList[index].categoriesImage}",
+                    "${AppServerLinks.imageCategoriesPath}/${categoryModel.categoriesImage}",
                     height: MediaQuery.of(context).size.width * .12,
                     width: MediaQuery.of(context).size.width * .12,
                   ),
@@ -43,9 +46,9 @@ class HomeCategoryCard extends GetView<HomeControllerImpl> {
           ),
           const SizedBox(height: 10),
           Text(
-            controller.localCont.codeLang == "AR"
-                ? controller.categoriesList[index].categoriesNameAr!
-                : controller.categoriesList[index].categoriesName!,
+            localCont.codeLang == "AR"
+                ? categoryModel.categoriesNameAr!
+                : categoryModel.categoriesName!,
             style: AppTextStyle.textStyle16,
           ),
         ],

@@ -16,7 +16,9 @@ class HomeCategoriesList extends GetView<HomeControllerImpl> {
         padding: EdgeInsets.zero,
         scrollDirection: Axis.horizontal,
         itemCount: controller.categoriesList.length,
-        itemBuilder: (context, index) => HomeCategoryCard(index: index),
+        itemBuilder: (context, index) => HomeCategoryCard(
+          categoryModel: controller.categoriesList[index],
+        ),
       ),
     );
   }
