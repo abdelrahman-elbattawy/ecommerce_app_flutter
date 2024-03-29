@@ -16,24 +16,27 @@ class HomeSectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          title,
-          style: AppTextStyle.textStyle20,
-        ),
-        const Spacer(),
-        TextButton(
-          style: TextButton.styleFrom(
-            foregroundColor: AppColors.primaryColor,
+    return Container(
+      margin: const EdgeInsets.only(top: 20, bottom: 10),
+      child: Row(
+        children: [
+          Text(
+            title,
+            style: AppTextStyle.textStyle20,
           ),
-          onPressed: onPressed,
-          child: Text(
-            buttonText,
-            style: AppTextStyle.textStyle16,
+          const Spacer(),
+          TextButton(
+            style: TextButton.styleFrom(
+              foregroundColor: AppColors.primaryColor,
+            ),
+            onPressed: onPressed,
+            child: Text(
+              buttonText,
+              style: AppTextStyle.textStyle16,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

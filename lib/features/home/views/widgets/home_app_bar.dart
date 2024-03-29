@@ -11,32 +11,30 @@ class HomeAppBar extends GetView<HomeControllerImpl> {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: MediaQuery.of(context).size.width * .06,
-            child: Image.network(
-              "${AppServerLinks.imageUserAvatar}/${controller.userModel.image}",
-              height: MediaQuery.of(context).size.width * .13,
-              width: MediaQuery.of(context).size.width * .13,
-            ),
+    return Row(
+      children: [
+        CircleAvatar(
+          radius: MediaQuery.of(context).size.width * .06,
+          child: Image.network(
+            "${AppServerLinks.imageUserAvatar}/${controller.userModel.image}",
+            height: MediaQuery.of(context).size.width * .13,
+            width: MediaQuery.of(context).size.width * .13,
           ),
-          const Spacer(),
-          Text(
-            controller.userModel.userName!,
-            style: AppTextStyle.textStyle18,
+        ),
+        const Spacer(),
+        Text(
+          controller.userModel.userName!,
+          style: AppTextStyle.textStyle18,
+        ),
+        const Spacer(flex: 10),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.notifications_active_outlined,
+            size: 28,
           ),
-          const Spacer(flex: 10),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.notifications_active_outlined,
-              size: 28,
-            ),
-          )
-        ],
-      ),
+        )
+      ],
     );
   }
 }

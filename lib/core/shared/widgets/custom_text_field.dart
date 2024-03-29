@@ -60,8 +60,9 @@ class CustomTextField extends StatelessWidget {
               ),
             ),
           ),
-          enabledBorder: bulidBorder(Colors.black),
-          border: bulidBorder(Colors.black),
+          enabledBorder: bulidBorder(AppColors.primaryForegroundColor),
+          border: bulidBorder(AppColors.primaryForegroundColor),
+          focusedBorder: bulidBorder(AppColors.primaryForegroundColor),
         ),
       ),
     );
@@ -69,7 +70,8 @@ class CustomTextField extends StatelessWidget {
 
   OutlineInputBorder bulidBorder(color) {
     return OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: AppColors.primaryForegroundColor));
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(color: color),
+    );
   }
 }
