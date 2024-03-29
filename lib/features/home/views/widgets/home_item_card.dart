@@ -2,10 +2,17 @@ import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
 import 'package:flutter/material.dart';
 
-class HomeItemCard extends StatelessWidget {
+class HomeItemCard extends StatefulWidget {
   const HomeItemCard({
     super.key,
   });
+
+  @override
+  State<HomeItemCard> createState() => _HomeItemCardState();
+}
+
+class _HomeItemCardState extends State<HomeItemCard> {
+  IconData favoriteIcon = Icons.favorite_outline;
 
   @override
   Widget build(BuildContext context) {
@@ -63,13 +70,25 @@ class HomeItemCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 0,
-            right: 0,
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.favorite_outline,
-                color: Colors.red,
+            top: 8,
+            right: 8,
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40),
+                color: AppColors.primaryBackgroundColor,
+              ),
+              child: IconButton(
+                onPressed: () => setState(
+                  () => favoriteIcon == Icons.favorite_outline
+                      ? favoriteIcon = Icons.favorite
+                      : favoriteIcon = Icons.favorite_outline,
+                ),
+                icon: Icon(
+                  favoriteIcon,
+                  color: Colors.red,
+                ),
               ),
             ),
           ),
