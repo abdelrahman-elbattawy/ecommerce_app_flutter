@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
 
 final class AppTextStyle {
+  static const textStyle10 = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const textStyle12 = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const textStyle14 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+  );
+
   static const textStyle16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,

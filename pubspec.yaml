@@ -36,7 +36,9 @@ dependencies:
     sdk: flutter
   flutter_otp_text_field: ^1.1.2+1
   get: ^4.6.6
+  google_nav_bar: ^5.0.6
   http: ^1.2.1
+  line_icons: ^2.0.3
   lottie: ^3.1.0
   shared_preferences: ^2.2.2
 

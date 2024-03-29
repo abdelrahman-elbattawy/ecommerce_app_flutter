@@ -29,7 +29,7 @@ class HomeViewBody extends StatelessWidget {
                       child: SizedBox(
                           height: MediaQuery.of(context).size.width * .18),
                     ),
-                    const HomeAppBar(),
+                    const SliverToBoxAdapter(child: HomeAppBar()),
                     const SliverToBoxAdapter(child: SizedBox(height: 20)),
                     SliverToBoxAdapter(
                       child: CustomTextField(
