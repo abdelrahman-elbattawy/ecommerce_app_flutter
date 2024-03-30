@@ -125,6 +125,25 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.homeViewTodayOffersLabel: "عروض اليوم",
           AppTranslationsKeys.homeViewRecommendedLabel: "موصى به لك",
           AppTranslationsKeys.homeViewAllLabel: "الكل",
+
+          // Home Tab Bar
+          AppTranslationsKeys.homeTabBarHome: "الرئيسية",
+          AppTranslationsKeys.homeTabBarFavorite: "المفضلة",
+          AppTranslationsKeys.homeTabBarCart: "التسوق",
+          AppTranslationsKeys.homeTabBarProfile: "حسابي",
+
+          // Home Profile
+          AppTranslationsKeys.homeProfileMyAccount: "حسابي",
+          AppTranslationsKeys.homeProfileSettings: "اعدادات التطبيق",
+          AppTranslationsKeys.homeProfileHelpCenter: "مركز المساعدة",
+          AppTranslationsKeys.homeProfileSignOut: "خروج",
+          AppTranslationsKeys.homeProfilePaymentMethods: "طرق الدفع",
+
+          // Show Dialog
+          AppTranslationsKeys.showDialogSignOutConfirm: "متاكد",
+          AppTranslationsKeys.showDialogSignOutCancel: "لا",
+          AppTranslationsKeys.showDialogSignOutTitle: "تسجيل خروج",
+          AppTranslationsKeys.showDialogSignOutBody: "هل ترغب بالخروج؟",
         },
         "EN": {
           // Language View
@@ -245,6 +264,25 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.homeViewTodayOffersLabel: "Today's Offers",
           AppTranslationsKeys.homeViewRecommendedLabel: "Recommended For You",
           AppTranslationsKeys.homeViewAllLabel: "All",
+
+          // Home Tab Bar
+          AppTranslationsKeys.homeTabBarHome: "Home",
+          AppTranslationsKeys.homeTabBarFavorite: "Favorites",
+          AppTranslationsKeys.homeTabBarCart: "Cart",
+          AppTranslationsKeys.homeTabBarProfile: "Profile",
+
+          // Home Profile
+          AppTranslationsKeys.homeProfileMyAccount: "My Account",
+          AppTranslationsKeys.homeProfileSettings: "App Settings",
+          AppTranslationsKeys.homeProfileHelpCenter: "Help Center",
+          AppTranslationsKeys.homeProfileSignOut: "Sign Out",
+          AppTranslationsKeys.homeProfilePaymentMethods: "Payment Methods",
+
+          // Show Dialog
+          AppTranslationsKeys.showDialogSignOutConfirm: "Confirm",
+          AppTranslationsKeys.showDialogSignOutCancel: "Cancel",
+          AppTranslationsKeys.showDialogSignOutTitle: "Sign Out",
+          AppTranslationsKeys.showDialogSignOutBody: "Do you want to log out?",
         },
       };
 }

@@ -102,4 +102,23 @@ final class AppTranslationsKeys {
   static const homeViewTodayOffersLabel = "homeViewTodayOffersLabel";
   static const homeViewRecommendedLabel = "homeViewRecommendedLabel";
   static const homeViewAllLabel = "homeViewAllLabel";
+
+  // Home Tab Bar
+  static const homeTabBarHome = "homeTabBarHome";
+  static const homeTabBarFavorite = "homeTabBarFavorite";
+  static const homeTabBarCart = "homeTabBarCart";
+  static const homeTabBarProfile = "homeTabBarProfile";
+
+  // Home Profile
+  static const homeProfileMyAccount = "homeProfileMyAccount";
+  static const homeProfilePaymentMethods = "homeProfilePaymentMethods";
+  static const homeProfileSettings = "homeProfileSettings";
+  static const homeProfileHelpCenter = "homeProfileHelpCenter";
+  static const homeProfileSignOut = "homeProfileLogOut";
+
+  // Show Dialog
+  static const showDialogSignOutConfirm = "showDialogSignOutConfirm";
+  static const showDialogSignOutCancel = "showDialogSignOutCancel";
+  static const showDialogSignOutTitle = "showDialogSignOutTitle";
+  static const showDialogSignOutBody = "showDialogSignOutBody";
 }
