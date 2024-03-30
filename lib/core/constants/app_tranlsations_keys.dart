@@ -121,6 +121,8 @@ final class AppTranslationsKeys {
   static const showDialogSignOutCancel = "showDialogSignOutCancel";
   static const showDialogSignOutTitle = "showDialogSignOutTitle";
   static const showDialogSignOutBody = "showDialogSignOutBody";
+  static const showDialogDeleteAccountTitle = "showDialogDeleteAccountTitle";
+  static const showDialogDeleteAccountBody = "showDialogDeleteAccountBody";
 
   // Profile Settings
   static const tabProfileSettingsLanguage = "tabProfileSettingsLanguage";

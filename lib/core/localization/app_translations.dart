@@ -144,6 +144,9 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.showDialogSignOutCancel: "لا",
           AppTranslationsKeys.showDialogSignOutTitle: "تسجيل خروج",
           AppTranslationsKeys.showDialogSignOutBody: "هل ترغب بالخروج؟",
+          AppTranslationsKeys.showDialogDeleteAccountTitle: "حذف الحساب",
+          AppTranslationsKeys.showDialogDeleteAccountBody:
+              "هل ترغب بحذف الحساب؟",
 
           // Profile Settings
           AppTranslationsKeys.tabProfileSettingsLanguage: "اللغة",
@@ -287,6 +290,10 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.showDialogSignOutCancel: "Cancel",
           AppTranslationsKeys.showDialogSignOutTitle: "Sign Out",
           AppTranslationsKeys.showDialogSignOutBody: "Do you want to log out?",
+          AppTranslationsKeys.showDialogDeleteAccountTitle:
+              "Deactivating Account",
+          AppTranslationsKeys.showDialogDeleteAccountBody:
+              "Do you want to Deactivating Account?",
 
           // Profile Settings
           AppTranslationsKeys.tabProfileSettingsLanguage: "Language",

@@ -1,8 +1,10 @@
 final class AppServerLinks {
+  // Base Paths
   static const _baseUrl = "https://localhost/ecommerce";
+  static const _authPath = "$_baseUrl/modules/auth";
+  static const _profilePath = "$_baseUrl/modules/profile";
 
   // Auth
-  static const _authPath = "$_baseUrl/modules/auth";
   static const verifyCode = "$_authPath/verifycode.php";
   static const register = "$_authPath/register.php";
   static const login = "$_authPath/login.php";
@@ -18,4 +20,7 @@ final class AppServerLinks {
   // Home
   static const _homePath = "$_baseUrl/modules/home";
   static const home = "$_homePath/home_page.php";
+
+  // Profile
+  static const deleteAccount = "$_profilePath/delete_account.php";
 }
