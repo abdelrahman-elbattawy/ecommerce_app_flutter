@@ -24,12 +24,12 @@ class ProfileSettingsControllerImpl extends ProfileSettingsController {
     listTiles = [
       ListTileModel(
         iconData: Icons.language,
-        title: AppTranslationsKeys.tabProfileSettingsLanguage.tr,
+        title: AppTranslationsKeys.tabProfileSettingsLanguage,
         func: goToLanguageView,
       ),
       ListTileModel(
         iconData: Icons.delete,
-        title: AppTranslationsKeys.tabProfileSettingsDeleteAccount.tr,
+        title: AppTranslationsKeys.tabProfileSettingsDeleteAccount,
       ),
     ];
   }

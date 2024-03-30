@@ -35,7 +35,7 @@ List<LanguageModel> languageList = [
   ),
   LanguageModel(
     countryName: 'Egypt',
-    languageName: 'Arabic',
+    languageName: 'العربية',
     abbreviation: 'AR',
     image: AppAssetsImages.egyptFlag,
   ),

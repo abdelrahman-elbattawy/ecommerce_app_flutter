@@ -57,24 +57,24 @@ class ProfileControllerImpl extends ProfileController {
     listTiles = [
       ListTileModel(
         iconData: Icons.person_2,
-        title: AppTranslationsKeys.tabProfileMyAccount.tr,
+        title: AppTranslationsKeys.tabProfileMyAccount,
       ),
       ListTileModel(
         iconData: Icons.credit_card,
-        title: AppTranslationsKeys.tabProfilePaymentMethods.tr,
+        title: AppTranslationsKeys.tabProfilePaymentMethods,
       ),
       ListTileModel(
         iconData: Icons.help_center,
-        title: AppTranslationsKeys.tabProfileHelpCenter.tr,
+        title: AppTranslationsKeys.tabProfileHelpCenter,
       ),
       ListTileModel(
         iconData: Icons.settings,
-        title: AppTranslationsKeys.tabProfileSettings.tr,
+        title: AppTranslationsKeys.tabProfileSettings,
         func: () => goToTileBody(ProfileSettingsView.id),
       ),
       ListTileModel(
         iconData: Icons.logout,
-        title: AppTranslationsKeys.tabProfileSignOut.tr,
+        title: AppTranslationsKeys.tabProfileSignOut,
         func: signOut,
       ),
     ];

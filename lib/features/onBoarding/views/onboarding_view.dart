@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/localization/locale_controller.dart';
 import 'package:ecommerce_app/features/onBoarding/controller/onboarding_controller.dart';
 import 'package:ecommerce_app/features/onBoarding/views/widgets/onboarding_view_body.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +10,14 @@ class OnBoadingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(OnBoardingControllerImpl());
-    return const Scaffold(
-      body: OnBoardingViewBody(),
+    final LocaleController localCont = Get.find();
+
+    return Scaffold(
+      body: Directionality(
+        textDirection:
+            localCont.codeLang == "AR" ? TextDirection.rtl : TextDirection.ltr,
+        child: const OnBoardingViewBody(),
+      ),
     );
   }
 }

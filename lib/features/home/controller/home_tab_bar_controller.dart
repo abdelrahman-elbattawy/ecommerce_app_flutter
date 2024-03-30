@@ -25,19 +25,19 @@ class HomeTabBarControllerImpl extends HomeTabBarController {
 
   List<TabModel> tabs = [
     TabModel(
-      title: AppTranslationsKeys.homeTabBarHome.tr,
+      title: AppTranslationsKeys.homeTabBarHome,
       iconData: Icons.home,
     ),
     TabModel(
-      title: AppTranslationsKeys.homeTabBarFavorite.tr,
+      title: AppTranslationsKeys.homeTabBarFavorite,
       iconData: Icons.favorite,
     ),
     TabModel(
-      title: AppTranslationsKeys.homeTabBarCart.tr,
+      title: AppTranslationsKeys.homeTabBarCart,
       iconData: Icons.shopping_cart,
     ),
     TabModel(
-      title: AppTranslationsKeys.homeTabBarProfile.tr,
+      title: AppTranslationsKeys.homeTabBarProfile,
       iconData: Icons.person_2,
     ),
   ];

@@ -123,7 +123,7 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.homeViewCategoriesLabel: "الاقسام",
           AppTranslationsKeys.homeViewSeeAllLabel: "المزيد",
           AppTranslationsKeys.homeViewTodayOffersLabel: "عروض اليوم",
-          AppTranslationsKeys.homeViewRecommendedLabel: "موصى به لك",
+          AppTranslationsKeys.homeViewRecommendedLabel: "من اجلك",
           AppTranslationsKeys.homeViewAllLabel: "الكل",
 
           // Home Tab Bar

@@ -27,7 +27,7 @@ class ProfileSettingsView extends StatelessWidget {
           ...List.generate(
             controller.listTiles.length,
             (index) => CustomListTile(
-              titleText: controller.listTiles[index].title,
+              titleText: controller.listTiles[index].title.tr,
               leadingIconData: controller.listTiles[index].iconData,
               titleColor: index == controller.listTiles.length - 1
                   ? Colors.white
