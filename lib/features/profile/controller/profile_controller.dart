@@ -5,6 +5,7 @@ import 'package:ecommerce_app/core/functions/show_dialog_func.dart';
 import 'package:ecommerce_app/core/services/app_services.dart';
 import 'package:ecommerce_app/features/home/controller/home_tab_bar_controller.dart';
 import 'package:ecommerce_app/features/profile/data/models/list_tile_model.dart';
+import 'package:ecommerce_app/features/profile/views/profile_help_center_view.dart';
 import 'package:ecommerce_app/features/profile/views/profile_settings_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -66,6 +67,7 @@ class ProfileControllerImpl extends ProfileController {
       ListTileModel(
         iconData: Icons.help_center,
         title: AppTranslationsKeys.tabProfileHelpCenter,
+        func: () => goToTileBody(ProfileHelpCenterView.id),
       ),
       ListTileModel(
         iconData: Icons.settings,

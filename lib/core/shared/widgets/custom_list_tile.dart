@@ -6,7 +6,7 @@ class CustomListTile extends StatelessWidget {
   const CustomListTile({
     super.key,
     required this.titleText,
-    required this.leadingIconData,
+    this.leadingIconData,
     this.trailingIconData = Icons.arrow_forward_ios,
     this.onTap,
     this.backgroundColor = AppColors.primaryBackgroundColor,
@@ -15,7 +15,7 @@ class CustomListTile extends StatelessWidget {
   });
 
   final String titleText;
-  final IconData leadingIconData;
+  final IconData? leadingIconData;
   final IconData trailingIconData;
   final Function()? onTap;
   final Color backgroundColor;
@@ -45,7 +45,7 @@ class CustomListTile extends StatelessWidget {
           title: Text(
             titleText,
             style: AppTextStyle.textStyle16.copyWith(
-              fontWeight: FontWeight.normal,
+              fontWeight: FontWeight.w600,
               color: titleColor,
             ),
           ),

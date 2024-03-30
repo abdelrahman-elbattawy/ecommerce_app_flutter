@@ -129,4 +129,11 @@ final class AppTranslationsKeys {
   static const tabProfileSettingsLanguage = "tabProfileSettingsLanguage";
   static const tabProfileSettingsDeleteAccount =
       "tabProfileSettingsDeleteAccount";
+
+  // Profile Help Center
+  static const tabProfileHelpCenterTile1 = "tabProfileHelpCenterTile1";
+  static const tabProfileHelpCenterTile2 = "tabProfileHelpCenterTile2";
+  static const tabProfileHelpCenterTile3 = "tabProfileHelpCenterTile3";
+  static const tabProfileHelpCenterTile4 = "tabProfileHelpCenterTile4";
+  static const tabProfileHelpCenterTile5 = "tabProfileHelpCenterTile5";
 }

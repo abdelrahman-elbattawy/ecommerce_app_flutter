@@ -153,6 +153,17 @@ class AppTranslations extends Translations {
           // Profile Settings
           AppTranslationsKeys.tabProfileSettingsLanguage: "اللغة",
           AppTranslationsKeys.tabProfileSettingsDeleteAccount: "حذف الحساب",
+
+          // Profile Help Center
+          AppTranslationsKeys.tabProfileHelpCenterTile1:
+              "كم مرة يتم تحديث القوائم؟",
+          AppTranslationsKeys.tabProfileHelpCenterTile2: "هل هناك أي رسوم؟",
+          AppTranslationsKeys.tabProfileHelpCenterTile3:
+              "هل يمكنني مشاركة القوائم على وسائل التواصل الاجتماعي؟",
+          AppTranslationsKeys.tabProfileHelpCenterTile4:
+              "هل يدعم لغات متعددة ؟",
+          AppTranslationsKeys.tabProfileHelpCenterTile5:
+              "هل الجولات الافتراضية متاحة؟",
         },
         "EN": {
           // Language View
@@ -303,6 +314,17 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.tabProfileSettingsLanguage: "Language",
           AppTranslationsKeys.tabProfileSettingsDeleteAccount:
               "Deactivating Account",
+
+          // Profile Help Center
+          AppTranslationsKeys.tabProfileHelpCenterTile1:
+              "How often are listings updated?",
+          AppTranslationsKeys.tabProfileHelpCenterTile2: "Are there any fees?",
+          AppTranslationsKeys.tabProfileHelpCenterTile3:
+              "Can I share listings on social media?",
+          AppTranslationsKeys.tabProfileHelpCenterTile4:
+              "Does it support multiple languages?",
+          AppTranslationsKeys.tabProfileHelpCenterTile5:
+              "Are virtual tours available?",
         },
       };
 }
