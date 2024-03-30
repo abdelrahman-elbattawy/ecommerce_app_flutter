@@ -9,7 +9,7 @@ class CustomListTile extends StatelessWidget {
     required this.leadingIconData,
     this.trailingIconData = Icons.arrow_forward_ios,
     this.onTap,
-    this.backgroundColor = AppColors.primaryForegroundColor,
+    this.backgroundColor = AppColors.primaryBackgroundColor,
     this.titleColor = Colors.black,
     this.iconColor = Colors.black,
   });

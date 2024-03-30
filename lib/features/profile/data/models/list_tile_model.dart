@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ProfileModel {
+class ListTileModel {
   final IconData iconData;
   final String title;
   final Function()? func;
 
-  ProfileModel({
+  ListTileModel({
     required this.iconData,
     required this.title,
     this.func,

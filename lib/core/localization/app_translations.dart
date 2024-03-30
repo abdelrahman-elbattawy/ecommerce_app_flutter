@@ -133,17 +133,21 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.homeTabBarProfile: "حسابي",
 
           // Home Profile
-          AppTranslationsKeys.homeProfileMyAccount: "حسابي",
-          AppTranslationsKeys.homeProfileSettings: "اعدادات التطبيق",
-          AppTranslationsKeys.homeProfileHelpCenter: "مركز المساعدة",
-          AppTranslationsKeys.homeProfileSignOut: "خروج",
-          AppTranslationsKeys.homeProfilePaymentMethods: "طرق الدفع",
+          AppTranslationsKeys.tabProfileMyAccount: "حسابي",
+          AppTranslationsKeys.tabProfileSettings: "اعدادات",
+          AppTranslationsKeys.tabProfileHelpCenter: "مركز المساعدة",
+          AppTranslationsKeys.tabProfileSignOut: "خروج",
+          AppTranslationsKeys.tabProfilePaymentMethods: "طرق الدفع",
 
           // Show Dialog
           AppTranslationsKeys.showDialogSignOutConfirm: "متاكد",
           AppTranslationsKeys.showDialogSignOutCancel: "لا",
           AppTranslationsKeys.showDialogSignOutTitle: "تسجيل خروج",
           AppTranslationsKeys.showDialogSignOutBody: "هل ترغب بالخروج؟",
+
+          // Profile Settings
+          AppTranslationsKeys.tabProfileSettingsLanguage: "اللغة",
+          AppTranslationsKeys.tabProfileSettingsDeleteAccount: "حذف الحساب",
         },
         "EN": {
           // Language View
@@ -271,18 +275,23 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.homeTabBarCart: "Cart",
           AppTranslationsKeys.homeTabBarProfile: "Profile",
 
-          // Home Profile
-          AppTranslationsKeys.homeProfileMyAccount: "My Account",
-          AppTranslationsKeys.homeProfileSettings: "App Settings",
-          AppTranslationsKeys.homeProfileHelpCenter: "Help Center",
-          AppTranslationsKeys.homeProfileSignOut: "Sign Out",
-          AppTranslationsKeys.homeProfilePaymentMethods: "Payment Methods",
+          // Tab Profile
+          AppTranslationsKeys.tabProfileMyAccount: "My Account",
+          AppTranslationsKeys.tabProfileSettings: "Settings",
+          AppTranslationsKeys.tabProfileHelpCenter: "Help Center",
+          AppTranslationsKeys.tabProfileSignOut: "Sign Out",
+          AppTranslationsKeys.tabProfilePaymentMethods: "Payment Methods",
 
           // Show Dialog
           AppTranslationsKeys.showDialogSignOutConfirm: "Confirm",
           AppTranslationsKeys.showDialogSignOutCancel: "Cancel",
           AppTranslationsKeys.showDialogSignOutTitle: "Sign Out",
           AppTranslationsKeys.showDialogSignOutBody: "Do you want to log out?",
+
+          // Profile Settings
+          AppTranslationsKeys.tabProfileSettingsLanguage: "Language",
+          AppTranslationsKeys.tabProfileSettingsDeleteAccount:
+              "Deactivating Account",
         },
       };
 }

@@ -15,8 +15,8 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: const HomeBottomBar(),
       body: GetBuilder<HomeTabBarControllerImpl>(
-          builder: (controller) =>
-              controller.tabs[controller.currentIndex].widget!),
+        builder: (controller) => controller.widgets[controller.currentIndex],
+      ),
     );
   }
 }

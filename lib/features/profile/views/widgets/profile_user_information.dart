@@ -18,7 +18,7 @@ class ProfileUserInformation extends StatelessWidget {
 
     return Column(
       children: [
-        const SizedBox(height: 20),
+        const SizedBox(height: 10),
         Text(
           AppTranslationsKeys.homeTabBarProfile.tr,
           style: AppTextStyle.textStyle20,

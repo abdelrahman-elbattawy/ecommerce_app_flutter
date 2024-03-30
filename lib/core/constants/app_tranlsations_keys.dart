@@ -109,16 +109,21 @@ final class AppTranslationsKeys {
   static const homeTabBarCart = "homeTabBarCart";
   static const homeTabBarProfile = "homeTabBarProfile";
 
-  // Home Profile
-  static const homeProfileMyAccount = "homeProfileMyAccount";
-  static const homeProfilePaymentMethods = "homeProfilePaymentMethods";
-  static const homeProfileSettings = "homeProfileSettings";
-  static const homeProfileHelpCenter = "homeProfileHelpCenter";
-  static const homeProfileSignOut = "homeProfileLogOut";
+  // Tab Profile
+  static const tabProfileMyAccount = "tabProfileMyAccount";
+  static const tabProfilePaymentMethods = "tabProfilePaymentMethods";
+  static const tabProfileSettings = "tabProfileSettings";
+  static const tabProfileHelpCenter = "tabProfileHelpCenter";
+  static const tabProfileSignOut = "tabProfileSignOut";
 
   // Show Dialog
   static const showDialogSignOutConfirm = "showDialogSignOutConfirm";
   static const showDialogSignOutCancel = "showDialogSignOutCancel";
   static const showDialogSignOutTitle = "showDialogSignOutTitle";
   static const showDialogSignOutBody = "showDialogSignOutBody";
+
+  // Profile Settings
+  static const tabProfileSettingsLanguage = "tabProfileSettingsLanguage";
+  static const tabProfileSettingsDeleteAccount =
+      "tabProfileSettingsDeleteAccount";
 }

@@ -13,7 +13,7 @@ class HomeBottomBar extends GetView<HomeTabBarControllerImpl> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.primaryForegroundColor,
+        color: AppColors.primaryBackgroundColor,
         boxShadow: [
           BoxShadow(
             blurRadius: 20,
@@ -29,11 +29,11 @@ class HomeBottomBar extends GetView<HomeTabBarControllerImpl> {
             rippleColor: Colors.grey[300]!,
             hoverColor: Colors.grey[100]!,
             gap: 8,
-            activeColor: Colors.white,
+            activeColor: AppColors.primaryColor,
             iconSize: 28,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             duration: const Duration(milliseconds: 400),
-            tabBackgroundColor: AppColors.primaryColor,
+            tabBackgroundColor: AppColors.primaryForegroundColor,
             color: Colors.black,
             tabs: [
               ...List.generate(
