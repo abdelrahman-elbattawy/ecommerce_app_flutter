@@ -117,6 +117,8 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.snackBarLoginSuccess: "تم تسجيل الدخول بنجاح!",
           AppTranslationsKeys.snackBarResetPasswordSuccess:
               "تم إعادة تعيين كلمة المرور بنجاح!",
+          AppTranslationsKeys.snackBarDeleteAccountSuccess:
+              "لقد تم حذف حسابك بنجاح!",
 
           // Home View
           AppTranslationsKeys.homeViewSeachHint: "بحث",
@@ -263,6 +265,8 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.snackBarLoginSuccess: "Sign in successfully!",
           AppTranslationsKeys.snackBarResetPasswordSuccess:
               "Reset password successfully!",
+          AppTranslationsKeys.snackBarDeleteAccountSuccess:
+              "Your account has been deleted successfully!",
 
           // Home View
           AppTranslationsKeys.homeViewSeachHint: "Search",

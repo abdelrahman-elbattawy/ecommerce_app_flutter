@@ -78,7 +78,7 @@ class ProfileSettingsControllerImpl extends ProfileSettingsController {
               CustomSnakBar.showSnack(
                 context: Get.context!,
                 snackBarType: SnackBarType.success,
-                errMessage: "Your account has been deleted!",
+                errMessage: AppTranslationsKeys.snackBarDeleteAccountSuccess.tr,
               );
 
               Future.delayed(
