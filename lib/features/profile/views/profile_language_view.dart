@@ -6,8 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ProfileSettingsLanguage extends StatelessWidget {
-  const ProfileSettingsLanguage({super.key});
+class ProfileLanguageView extends StatelessWidget {
+  const ProfileLanguageView({super.key});
 
   static int id = 5;
 

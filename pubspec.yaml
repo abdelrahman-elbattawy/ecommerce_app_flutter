@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  async: ^2.11.0
   cupertino_icons: ^1.0.6
   dartz: ^0.10.1
   firebase_core: ^2.27.1
@@ -38,8 +39,10 @@ dependencies:
   get: ^4.6.6
   google_nav_bar: ^5.0.6
   http: ^1.2.1
+  image_picker: ^1.0.7
   line_icons: ^2.0.3
   lottie: ^3.1.0
+  path: ^1.9.0
   shared_preferences: ^2.2.2
 
 dev_dependencies:

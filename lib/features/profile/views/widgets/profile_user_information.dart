@@ -1,9 +1,8 @@
 import 'package:ecommerce_app/core/constants/app_colors.dart';
-import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
-import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/features/auth/data/models/user_model.dart';
 import 'package:ecommerce_app/features/home/controller/home_controller.dart';
+import 'package:ecommerce_app/features/profile/views/widgets/profile_user_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,21 +17,7 @@ class ProfileUserInformation extends StatelessWidget {
 
     return Column(
       children: [
-        const SizedBox(height: 10),
-        Text(
-          AppTranslationsKeys.homeTabBarProfile.tr,
-          style: AppTextStyle.textStyle20,
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(height: 20),
-        CircleAvatar(
-          radius: MediaQuery.of(context).size.width * .15,
-          child: Image.network(
-            "${AppServerLinks.imageUserAvatar}/${userModel.image}",
-            height: MediaQuery.of(context).size.width * .3,
-            width: MediaQuery.of(context).size.width * .3,
-          ),
-        ),
+        ProfileUserAvatar(imagePath: userModel.image!),
         const SizedBox(height: 10),
         Text(
           userModel.userName!,

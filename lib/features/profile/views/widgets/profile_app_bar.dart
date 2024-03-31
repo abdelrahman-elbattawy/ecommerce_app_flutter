@@ -17,6 +17,7 @@ class ProfileAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final HomeTabBarControllerImpl homeTabBarController =
         Get.find<HomeTabBarControllerImpl>();
+
     return Row(
       children: [
         Expanded(

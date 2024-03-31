@@ -43,7 +43,7 @@ class CustomTextField extends StatelessWidget {
             ),
           ),
         ),
-        prefixIconColor: AppColors.primaryColor,
+        // prefixIconColor: AppColors.primaryColor,
         prefixIcon: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: InkWell(
@@ -56,7 +56,7 @@ class CustomTextField extends StatelessWidget {
         ),
         enabledBorder: bulidBorder(AppColors.primaryForegroundColor),
         border: bulidBorder(AppColors.primaryForegroundColor),
-        focusedBorder: bulidBorder(AppColors.primaryForegroundColor),
+        focusedBorder: bulidBorder(AppColors.primaryColor),
       ),
     );
   }

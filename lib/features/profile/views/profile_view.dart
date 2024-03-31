@@ -1,4 +1,6 @@
 import 'package:ecommerce_app/core/constants/app_colors.dart';
+import 'package:ecommerce_app/core/constants/app_text_style.dart';
+import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_list_tile.dart';
 import 'package:ecommerce_app/features/profile/controller/profile_controller.dart';
 import 'package:ecommerce_app/features/profile/views/widgets/profile_user_information.dart';
@@ -17,6 +19,13 @@ class ProfileView extends StatelessWidget {
     return SafeArea(
       child: ListView(
         children: [
+          const SizedBox(height: 10),
+          Text(
+            AppTranslationsKeys.homeTabBarProfile.tr,
+            style: AppTextStyle.textStyle20,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 20),
           const ProfileUserInformation(),
           const SizedBox(height: 20),
           ...List.generate(

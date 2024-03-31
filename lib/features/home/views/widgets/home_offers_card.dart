@@ -1,6 +1,8 @@
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
+import 'package:ecommerce_app/core/localization/locale_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeOffersCard extends StatelessWidget {
   const HomeOffersCard({
@@ -9,6 +11,8 @@ class HomeOffersCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final LocaleController localCont = Get.find();
+
     return Stack(
       children: [
         Container(
@@ -70,11 +74,12 @@ class HomeOffersCard extends StatelessWidget {
           ),
         ),
         Positioned.fill(
-          right: 0,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Align(
-              alignment: Alignment.centerRight,
+              alignment: localCont.codeLang == "AR"
+                  ? Alignment.centerLeft
+                  : Alignment.centerRight,
               child: Image.network(
                 "https://localhost/ecommerce/uploads/categories/supermarkets.png",
                 height: MediaQuery.of(context).size.width * .33,

@@ -1,10 +1,11 @@
 import 'package:ecommerce_app/core/constants/app_preferences_keys.dart';
 import 'package:ecommerce_app/core/constants/app_routes.dart';
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
+import 'package:ecommerce_app/core/functions/goto_tile_body_func.dart';
 import 'package:ecommerce_app/core/functions/show_dialog_func.dart';
 import 'package:ecommerce_app/core/services/app_services.dart';
-import 'package:ecommerce_app/features/home/controller/home_tab_bar_controller.dart';
 import 'package:ecommerce_app/features/profile/data/models/list_tile_model.dart';
+import 'package:ecommerce_app/features/profile/views/profile_account_view.dart';
 import 'package:ecommerce_app/features/profile/views/profile_help_center_view.dart';
 import 'package:ecommerce_app/features/profile/views/profile_settings_view.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,6 @@ abstract class ProfileController extends GetxController {
   void signOut();
   void intialServices();
   void intialListTile();
-  void goToTileBody(int index);
 }
 
 class ProfileControllerImpl extends ProfileController {
@@ -59,6 +59,7 @@ class ProfileControllerImpl extends ProfileController {
       ListTileModel(
         iconData: Icons.person_2,
         title: AppTranslationsKeys.tabProfileMyAccount,
+        func: () => goToTileBody(ProfileAccountView.id),
       ),
       ListTileModel(
         iconData: Icons.credit_card,
@@ -80,11 +81,5 @@ class ProfileControllerImpl extends ProfileController {
         func: signOut,
       ),
     ];
-  }
-
-  @override
-  void goToTileBody(int index) {
-    final controller = Get.find<HomeTabBarControllerImpl>();
-    controller.setCurrentIndex(index);
   }
 }

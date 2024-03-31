@@ -136,7 +136,7 @@ class AppTranslations extends Translations {
 
           // Home Profile
           AppTranslationsKeys.tabProfileMyAccount: "حسابي",
-          AppTranslationsKeys.tabProfileSettings: "اعدادات",
+          AppTranslationsKeys.tabProfileSettings: "اعدادات التطبيق",
           AppTranslationsKeys.tabProfileHelpCenter: "مركز المساعدة",
           AppTranslationsKeys.tabProfileSignOut: "خروج",
           AppTranslationsKeys.tabProfilePaymentMethods: "طرق الدفع",
@@ -164,6 +164,15 @@ class AppTranslations extends Translations {
               "هل يدعم لغات متعددة ؟",
           AppTranslationsKeys.tabProfileHelpCenterTile5:
               "هل الجولات الافتراضية متاحة؟",
+
+          // Profile My Account
+          AppTranslationsKeys.tabProfileMyAccountOldPassword:
+              "كلمة المرور القديمة",
+          AppTranslationsKeys.tabProfileMyAccountNewPassword:
+              "كلمة المرور الجديدة",
+          AppTranslationsKeys.tabProfileMyAccountTitleButton: "تحديث",
+          AppTranslationsKeys.tabProfileMyAccountPersonalInfo: "معلومات شخصية",
+          AppTranslationsKeys.tabProfileMyAccountSecurity: "الحماية",
         },
         "EN": {
           // Language View
@@ -295,7 +304,7 @@ class AppTranslations extends Translations {
 
           // Tab Profile
           AppTranslationsKeys.tabProfileMyAccount: "My Account",
-          AppTranslationsKeys.tabProfileSettings: "Settings",
+          AppTranslationsKeys.tabProfileSettings: "App Settings",
           AppTranslationsKeys.tabProfileHelpCenter: "Help Center",
           AppTranslationsKeys.tabProfileSignOut: "Sign Out",
           AppTranslationsKeys.tabProfilePaymentMethods: "Payment Methods",
@@ -325,6 +334,14 @@ class AppTranslations extends Translations {
               "Does it support multiple languages?",
           AppTranslationsKeys.tabProfileHelpCenterTile5:
               "Are virtual tours available?",
+
+          // Profile My Account
+          AppTranslationsKeys.tabProfileMyAccountOldPassword: "Old Password",
+          AppTranslationsKeys.tabProfileMyAccountNewPassword: "New Password",
+          AppTranslationsKeys.tabProfileMyAccountTitleButton: "Update",
+          AppTranslationsKeys.tabProfileMyAccountPersonalInfo:
+              "Personal Information",
+          AppTranslationsKeys.tabProfileMyAccountSecurity: "Security",
         },
       };
 }

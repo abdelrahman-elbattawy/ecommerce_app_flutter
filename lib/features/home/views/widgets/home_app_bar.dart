@@ -13,12 +13,14 @@ class HomeAppBar extends GetView<HomeControllerImpl> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CircleAvatar(
-          radius: MediaQuery.of(context).size.width * .06,
+        Container(
+          height: MediaQuery.of(context).size.width * .115,
+          width: MediaQuery.of(context).size.width * .115,
+          clipBehavior: Clip.antiAlias,
+          decoration: const BoxDecoration(shape: BoxShape.circle),
           child: Image.network(
             "${AppServerLinks.imageUserAvatar}/${controller.userModel.image}",
-            height: MediaQuery.of(context).size.width * .13,
-            width: MediaQuery.of(context).size.width * .13,
+            fit: BoxFit.fill,
           ),
         ),
         const Spacer(),

@@ -136,4 +136,15 @@ final class AppTranslationsKeys {
   static const tabProfileHelpCenterTile3 = "tabProfileHelpCenterTile3";
   static const tabProfileHelpCenterTile4 = "tabProfileHelpCenterTile4";
   static const tabProfileHelpCenterTile5 = "tabProfileHelpCenterTile5";
+
+  // Profile My Account
+  static const tabProfileMyAccountPersonalInfo =
+      "tabProfileMyAccountPersonalInfo";
+  static const tabProfileMyAccountSecurity = "tabProfileMyAccountSecurity";
+  static const tabProfileMyAccountOldPassword =
+      "tabProfileMyAccountOldPassword";
+  static const tabProfileMyAccountNewPassword =
+      "tabProfileMyAccountNewPassword";
+  static const tabProfileMyAccountTitleButton =
+      "tabProfileMyAccountTitleButton";
 }

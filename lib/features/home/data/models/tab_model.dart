@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TabModel {
-  final String? title;
-  final IconData? iconData;
+  final String title;
+  final IconData iconData;
 
   TabModel({
     required this.title,

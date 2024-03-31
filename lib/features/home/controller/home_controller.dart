@@ -19,7 +19,7 @@ abstract class HomeController extends GetxController {
 }
 
 class HomeControllerImpl extends HomeController {
-  late final UserModel userModel;
+  late UserModel userModel;
   late final AppServices _appServices;
   late final HomeRepoImpl _homeRepoImpl;
   late final LocaleController localCont;

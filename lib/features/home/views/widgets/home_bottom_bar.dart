@@ -45,8 +45,8 @@ class HomeBottomBar extends GetView<HomeTabBarControllerImpl> {
                 ...List.generate(
                   controller.tabs.length,
                   (index) => GButton(
-                    icon: controller.tabs[index].iconData!,
-                    text: controller.tabs[index].title!.tr,
+                    icon: controller.tabs[index].iconData,
+                    text: controller.tabs[index].title.tr,
                   ),
                 ),
               ],

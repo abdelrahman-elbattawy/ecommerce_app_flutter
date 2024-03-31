@@ -23,4 +23,8 @@ final class AppServerLinks {
 
   // Profile
   static const deleteAccount = "$_profilePath/delete_account.php";
+  static const uploadAvatar = "$_profilePath/upload_avatar.php";
+  static const updateAccountInfo =
+      "$_profilePath/upload_personal_informations.php";
+  static const updatePassword = "$_profilePath/update_password.php";
 }
