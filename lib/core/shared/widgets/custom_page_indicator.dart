@@ -1,13 +1,14 @@
 import 'package:ecommerce_app/core/constants/app_colors.dart';
-import 'package:ecommerce_app/core/shared/datasources/static_data.dart';
 import 'package:flutter/material.dart';
 
 class CustomPageIndicator extends StatelessWidget {
   const CustomPageIndicator({
     super.key,
-    this.currentValue = 0,
+    required this.currentValue,
+    required this.listLength,
   });
 
+  final int listLength;
   final int currentValue;
 
   @override
@@ -15,7 +16,7 @@ class CustomPageIndicator extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(
-        onBoardingList.length,
+        listLength,
         (index) => Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5),
           child: AnimatedContainer(

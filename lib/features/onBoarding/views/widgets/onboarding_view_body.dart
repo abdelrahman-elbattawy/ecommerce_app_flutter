@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
+import 'package:ecommerce_app/core/shared/datasources/static_data.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_button.dart';
 import 'package:ecommerce_app/features/onBoarding/controller/onboarding_controller.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_page_indicator.dart';
@@ -14,7 +15,7 @@ class OnBoardingViewBody extends GetView<OnBoardingControllerImpl> {
     return SafeArea(
       child: ListView(
         physics: const BouncingScrollPhysics(),
-        shrinkWrap: true,
+        // shrinkWrap: true,
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.width * 1.2,
@@ -23,6 +24,7 @@ class OnBoardingViewBody extends GetView<OnBoardingControllerImpl> {
           GetBuilder<OnBoardingControllerImpl>(
             builder: (controler) {
               return CustomPageIndicator(
+                listLength: onBoardingList.length,
                 currentValue: controler.currentPage,
               );
             },
