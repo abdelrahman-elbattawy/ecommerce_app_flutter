@@ -13,6 +13,7 @@ class OnBoadingView extends StatelessWidget {
     final LocaleController localCont = Get.find();
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Directionality(
         textDirection:
             localCont.codeLang == "AR" ? TextDirection.rtl : TextDirection.ltr,
