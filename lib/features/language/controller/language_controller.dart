@@ -11,12 +11,6 @@ class LanguageControllerImpl extends LanguageController {
   AppServices appServices = Get.find();
 
   @override
-  setCurrentIndex(int index) {
-    currentIndex = index;
-    update();
-  }
-
-  @override
   void onInit() {
     String? codeLang = appServices.sharedPreferences
         .getString(AppPreferencesKeys.languageCode);
@@ -30,5 +24,11 @@ class LanguageControllerImpl extends LanguageController {
     }
 
     super.onInit();
+  }
+
+  @override
+  setCurrentIndex(int index) {
+    currentIndex = index;
+    update();
   }
 }
