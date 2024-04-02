@@ -8,10 +8,15 @@ import 'package:ecommerce_app/features/auth/views/verify_code_view.dart';
 import 'package:ecommerce_app/features/home/views/home_view.dart';
 import 'package:ecommerce_app/features/language/views/language_view.dart';
 import 'package:ecommerce_app/features/onBoarding/views/onboarding_view.dart';
+import 'package:ecommerce_app/features/splash/views/splash_view.dart';
 import 'package:ecommerce_app/features/success/views/success_view.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 final getPages = [
+  GetPage(
+    name: AppRoutes.splash,
+    page: () => const SplashView(),
+  ),
   GetPage(
     name: AppRoutes.language,
     page: () => const LanguageView(),

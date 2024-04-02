@@ -1,5 +1,6 @@
 abstract class AppRoutes {
-  static const language = '/';
+  static const splash = '/';
+  static const language = '/language';
   static const onBoarding = '/onBoarding';
   static const successView = '/successView';
 
