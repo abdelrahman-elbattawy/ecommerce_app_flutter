@@ -9,6 +9,7 @@ enum SnackBarType {
     acentColor: Colors.orangeAccent,
     icon: Icon(
       Icons.error,
+      size: 20,
       color: Colors.white,
     ),
     snackLabel: AppTranslationsKeys.snackBarBarWarringLabel,
@@ -19,6 +20,7 @@ enum SnackBarType {
     acentColor: Colors.redAccent,
     icon: Icon(
       Icons.cancel,
+      size: 20,
       color: Colors.white,
     ),
     snackLabel: AppTranslationsKeys.snackBarBarErrorLabel,
@@ -29,6 +31,7 @@ enum SnackBarType {
     acentColor: Colors.greenAccent,
     icon: Icon(
       Icons.shield,
+      size: 20,
       color: Colors.white,
     ),
     snackLabel: AppTranslationsKeys.snackBarSuccessLabel,
@@ -75,13 +78,14 @@ class CustomSnakBar {
           child: Row(
             children: [
               Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: snackBarType.acentColor,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: snackBarType.icon),
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: snackBarType.acentColor,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: snackBarType.icon,
+              ),
               const SizedBox(
                 width: 16,
               ),
