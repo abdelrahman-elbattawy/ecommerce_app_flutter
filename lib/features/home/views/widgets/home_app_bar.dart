@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
 import 'package:ecommerce_app/features/home/controller/home_controller.dart';
@@ -18,8 +19,9 @@ class HomeAppBar extends GetView<HomeControllerImpl> {
           width: MediaQuery.of(context).size.width * .115,
           clipBehavior: Clip.antiAlias,
           decoration: const BoxDecoration(shape: BoxShape.circle),
-          child: Image.network(
-            "${AppServerLinks.imageUserAvatar}/${controller.userModel.image}",
+          child: CachedNetworkImage(
+            imageUrl:
+                "${AppServerLinks.imageUserAvatar}/${controller.userModel.image}",
             fit: BoxFit.fill,
           ),
         ),

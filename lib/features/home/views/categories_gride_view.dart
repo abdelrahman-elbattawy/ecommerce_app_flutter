@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
@@ -78,8 +79,9 @@ class CategoryCardList extends StatelessWidget {
               bottom: 15,
               child: Align(
                 alignment: Alignment.center,
-                child: Image.network(
-                  "${AppServerLinks.imageCategoriesPath}/${categoryModel.categoriesImage}",
+                child: CachedNetworkImage(
+                  imageUrl:
+                      "${AppServerLinks.imageCategoriesPath}/${categoryModel.categoriesImage}",
                   height: MediaQuery.of(context).size.width * .25,
                   width: MediaQuery.of(context).size.width * .25,
                 ),

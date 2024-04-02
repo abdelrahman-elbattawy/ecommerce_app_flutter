@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
@@ -50,8 +51,9 @@ class _HomeItemCardState extends State<HomeItemCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
-                    child: Image.network(
-                      "${AppServerLinks.imageItemsPath}/${widget.itemModel.itemsImage}",
+                    child: CachedNetworkImage(
+                      imageUrl:
+                          "${AppServerLinks.imageItemsPath}/${widget.itemModel.itemsImage}",
                       height: MediaQuery.of(context).size.width * .22,
                       width: MediaQuery.of(context).size.width * .22,
                     ),

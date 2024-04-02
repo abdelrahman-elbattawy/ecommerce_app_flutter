@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
 import 'package:ecommerce_app/core/localization/locale_controller.dart';
@@ -80,8 +81,9 @@ class HomeOffersCard extends StatelessWidget {
               alignment: localCont.codeLang == "AR"
                   ? Alignment.centerLeft
                   : Alignment.centerRight,
-              child: Image.network(
-                "https://localhost/ecommerce/uploads/categories/supermarkets.png",
+              child: CachedNetworkImage(
+                imageUrl:
+                    "https://localhost/ecommerce/uploads/categories/supermarkets.png",
                 height: MediaQuery.of(context).size.width * .33,
                 width: MediaQuery.of(context).size.width * .33,
               ),

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:flutter/material.dart';
@@ -35,8 +36,8 @@ class ProfileUserAvatar extends StatelessWidget {
                     image: FileImage(fileImage!),
                     fit: BoxFit.fill,
                   )
-                : Image.network(
-                    "${AppServerLinks.imageUserAvatar}/$imagePath",
+                : CachedNetworkImage(
+                    imageUrl: "${AppServerLinks.imageUserAvatar}/$imagePath",
                     fit: BoxFit.fill,
                   ),
           ),
