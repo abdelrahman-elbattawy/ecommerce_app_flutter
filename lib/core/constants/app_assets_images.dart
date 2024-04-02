@@ -23,7 +23,5 @@ final class AppAssetsImages {
 
   // Lotties
   static const loadingLottie = "$routePathLotties/loading.json";
-  static const nodataLottie = "$routePathLotties/nodata.json";
-  static const offlineLottie = "$routePathLotties/offline.json";
-  static const serverLottie = "$routePathLotties/server.json";
+  static const productLottie = "$routePathLotties/product.json";
 }

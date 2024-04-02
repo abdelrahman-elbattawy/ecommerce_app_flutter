@@ -4,8 +4,10 @@ import 'package:ecommerce_app/core/shared/widgets/custom_button.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_circle_positioned.dart';
 import 'package:ecommerce_app/features/onBoarding/controller/onboarding_controller.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_page_indicator.dart';
-import 'package:ecommerce_app/features/onBoarding/views/widgets/onboarding_slider.dart';
+import 'package:ecommerce_app/features/onBoarding/views/widgets/onboarding_content.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class OnBoardingViewBody extends GetView<OnBoardingControllerImpl> {
@@ -16,13 +18,20 @@ class OnBoardingViewBody extends GetView<OnBoardingControllerImpl> {
     return Stack(
       children: [
         const CustomCirclePositioned(),
-        ListView(
-          physics: const BouncingScrollPhysics(),
-          shrinkWrap: true,
+        Column(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.width * 1.2,
-              child: const OnBoardingSlider(),
+              height: MediaQuery.of(context).size.height * .8,
+              child: PageView.builder(
+                controller: controller.pageController,
+                onPageChanged: (value) => controller.onPageChanged(value),
+                itemCount: onBoardingList.length,
+                itemBuilder: (context, index) => OnBoardingContent(
+                  image: onBoardingList[index].image!,
+                  title: onBoardingList[index].title!,
+                  body: onBoardingList[index].body!,
+                ),
+              ),
             ),
             GetBuilder<OnBoardingControllerImpl>(
               builder: (controler) {
@@ -32,11 +41,12 @@ class OnBoardingViewBody extends GetView<OnBoardingControllerImpl> {
                 );
               },
             ),
-            SizedBox(height: MediaQuery.of(context).size.width * .25),
+            const Spacer(),
             CustomButton(
               title: AppTranslationsKeys.onBoardingButtonText.tr,
               onPressed: () => controller.next(),
             ),
+            const Spacer(),
           ],
         ),
       ],
