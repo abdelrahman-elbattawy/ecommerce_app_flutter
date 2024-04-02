@@ -1,16 +1,14 @@
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
-import 'package:ecommerce_app/core/functions/goto_tile_body_func.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class ProfileAppBar extends StatelessWidget {
-  const ProfileAppBar({
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({
     super.key,
     required this.title,
-    required this.backViewId,
   });
 
   final String title;
-  final int backViewId;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +17,7 @@ class ProfileAppBar extends StatelessWidget {
         Expanded(
           child: IconButton(
             padding: EdgeInsets.zero,
-            onPressed: () => goToTileBody(backViewId),
+            onPressed: () => Get.back(),
             icon: const Icon(Icons.arrow_back_ios_new),
           ),
         ),

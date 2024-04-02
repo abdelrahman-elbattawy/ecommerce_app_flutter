@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/features/home/data/models/tab_model.dart';
+import 'package:ecommerce_app/features/home/views/categories_gride_view.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_view_body.dart';
 import 'package:ecommerce_app/features/profile/controller/profile_account_controller.dart';
 import 'package:ecommerce_app/features/profile/controller/profile_help_center_controller.dart';
@@ -35,6 +36,7 @@ class HomeTabBarControllerImpl extends HomeTabBarController {
     const ProfileAccountView(),
     const ProfilePersonalInfoView(),
     const ProfileSecurityView(),
+    const CategoriesGrideView(),
   ];
 
   List<TabModel> tabs = [

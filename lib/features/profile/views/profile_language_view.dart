@@ -18,7 +18,7 @@ class ProfileLanguageView extends StatelessWidget {
         children: [
           ProfileAppBar(
             title: AppTranslationsKeys.tabProfileSettingsLanguage.tr,
-            profileId: ProfileSettingsView.id,
+            backViewId: ProfileSettingsView.id,
           ),
           const SizedBox(height: 30),
           const Padding(

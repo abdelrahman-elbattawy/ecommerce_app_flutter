@@ -22,7 +22,7 @@ class ProfileAccountView extends StatelessWidget {
         children: [
           ProfileAppBar(
             title: AppTranslationsKeys.tabProfileMyAccount.tr,
-            profileId: ProfileView.id,
+            backViewId: ProfileView.id,
           ),
           const SizedBox(height: 20),
           ...List.generate(

@@ -24,7 +24,7 @@ class ProfileSecurityView extends StatelessWidget {
           children: [
             ProfileAppBar(
               title: AppTranslationsKeys.tabProfileMyAccountSecurity.tr,
-              profileId: ProfileAccountView.id,
+              backViewId: ProfileAccountView.id,
             ),
             const SizedBox(height: 20),
             ...List.generate(

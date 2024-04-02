@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:ecommerce_app/core/constants/app_preferences_keys.dart';
+import 'package:ecommerce_app/core/constants/app_routes.dart';
 import 'package:ecommerce_app/core/localization/locale_controller.dart';
 import 'package:ecommerce_app/core/services/app_services.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
@@ -16,6 +17,7 @@ abstract class HomeController extends GetxController {
   void intialTextControllers();
   void fetchAllData();
   void setCategoyTitleIndex(int index);
+  void goToCategories();
 }
 
 class HomeControllerImpl extends HomeController {
@@ -98,5 +100,15 @@ class HomeControllerImpl extends HomeController {
   void setCategoyTitleIndex(int index) {
     categoryTitleIndexSelected = index;
     update();
+  }
+
+  @override
+  void goToCategories() {
+    Get.toNamed(
+      AppRoutes.categories,
+      arguments: {
+        "categoriesList": categoriesList,
+      },
+    );
   }
 }

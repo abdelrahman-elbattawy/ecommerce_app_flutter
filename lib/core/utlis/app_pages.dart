@@ -5,6 +5,7 @@ import 'package:ecommerce_app/features/auth/views/login_view.dart';
 import 'package:ecommerce_app/features/auth/views/register_view.dart';
 import 'package:ecommerce_app/features/auth/views/reset_password_view.dart';
 import 'package:ecommerce_app/features/auth/views/verify_code_view.dart';
+import 'package:ecommerce_app/features/home/views/categories_gride_view.dart';
 import 'package:ecommerce_app/features/home/views/home_view.dart';
 import 'package:ecommerce_app/features/language/views/language_view.dart';
 import 'package:ecommerce_app/features/onBoarding/views/onboarding_view.dart';
@@ -57,5 +58,9 @@ final getPages = [
   GetPage(
     name: AppRoutes.home,
     page: () => const HomeView(),
+  ),
+  GetPage(
+    name: AppRoutes.categories,
+    page: () => const CategoriesGrideView(),
   ),
 ];

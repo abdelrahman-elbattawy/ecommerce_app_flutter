@@ -21,7 +21,7 @@ class ProfileSettingsView extends StatelessWidget {
         children: [
           ProfileAppBar(
             title: AppTranslationsKeys.tabProfileSettings.tr,
-            profileId: ProfileView.id,
+            backViewId: ProfileView.id,
           ),
           const SizedBox(height: 30),
           ...List.generate(

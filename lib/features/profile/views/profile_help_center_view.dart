@@ -22,7 +22,7 @@ class ProfileHelpCenterView extends StatelessWidget {
         children: [
           ProfileAppBar(
             title: AppTranslationsKeys.tabProfileHelpCenter.tr,
-            profileId: ProfileView.id,
+            backViewId: ProfileView.id,
           ),
           const SizedBox(height: 30),
           const Padding(

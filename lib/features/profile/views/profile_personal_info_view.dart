@@ -26,7 +26,7 @@ class ProfilePersonalInfoView extends StatelessWidget {
           children: [
             ProfileAppBar(
               title: AppTranslationsKeys.tabProfileMyAccountPersonalInfo.tr,
-              profileId: ProfileAccountView.id,
+              backViewId: ProfileAccountView.id,
             ),
             const SizedBox(height: 10),
             GetBuilder<ProfilePersonalInfoControllerImpl>(
