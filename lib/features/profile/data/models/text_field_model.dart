@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TextFieldModel {
   final IconData iconData;
   final TextEditingController controller;
-  final bool isPassword;
+  bool isPassword;
   final String? hintText;
   final String? Function(String?)? validator;
 
@@ -14,4 +14,8 @@ class TextFieldModel {
     this.hintText,
     this.validator,
   });
+
+  set setIsPassword(bool val) {
+    isPassword = val;
+  }
 }

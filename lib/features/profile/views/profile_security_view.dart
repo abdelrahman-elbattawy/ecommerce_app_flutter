@@ -32,24 +32,34 @@ class ProfileSecurityView extends StatelessWidget {
               (index) => Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-                child: CustomTextFormField2(
-                  controller: controller.textFieldList[index].controller,
-                  prefixIconData: controller.textFieldList[index].iconData,
-                  isSecure: controller.textFieldList[index].isPassword,
-                  hintText: controller.textFieldList[index].hintText!.tr,
-                  validator: controller.textFieldList[index].validator,
-                  onTapPrefix: () {},
-                  onTapSuffix: () {},
-                ),
+                child:
+                    GetBuilder<ProfileSecurityControllerImpl>(builder: (cont) {
+                  return CustomTextFormField2(
+                    controller: cont.textFieldList[index].controller,
+                    prefixIconData: cont.textFieldList[index].iconData,
+                    isSecure: cont.textFieldList[index].isPassword,
+                    hintText: cont.textFieldList[index].hintText!.tr,
+                    validator: cont.textFieldList[index].validator,
+                    onTapPrefix: () {},
+                    onTapSuffix: () => cont.showPassword(index),
+                    suffixIconData: cont.textFieldList[index].isPassword
+                        ? Icons.visibility_off
+                        : Icons.visibility,
+                  );
+                }),
               ),
             ),
             const SizedBox(height: 20),
             GetBuilder<ProfileSecurityControllerImpl>(
               builder: (cont) {
-                return CustomButton(
-                  title: AppTranslationsKeys.tabProfileMyAccountTitleButton.tr,
-                  onPressed: () => cont.saveNewPassowrd(),
-                  isLoading: cont.isLoading,
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: CustomButton(
+                    title:
+                        AppTranslationsKeys.tabProfileMyAccountTitleButton.tr,
+                    onPressed: () => cont.saveNewPassowrd(),
+                    isLoading: cont.isLoading,
+                  ),
                 );
               },
             ),

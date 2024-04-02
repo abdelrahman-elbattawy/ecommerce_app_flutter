@@ -13,6 +13,7 @@ abstract class ProfileSecurityController extends GetxController {
   void intialListTextField();
   void intialServices();
   void saveNewPassowrd();
+  void showPassword(int index);
 }
 
 class ProfileSecurityControllerImpl extends ProfileSecurityController {
@@ -42,6 +43,13 @@ class ProfileSecurityControllerImpl extends ProfileSecurityController {
     oldPassword = TextEditingController();
     newPassword = TextEditingController();
     newRePassword = TextEditingController();
+  }
+
+  @override
+  void showPassword(int index) {
+    textFieldList[index].setIsPassword =
+        textFieldList[index].isPassword ? false : true;
+    update();
   }
 
   @override
