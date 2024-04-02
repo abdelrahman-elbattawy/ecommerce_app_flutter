@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/functions/valid_input_func.dart';
-import 'package:ecommerce_app/core/shared/widgets/custom_text_form_field.dart';
+import 'package:ecommerce_app/core/shared/widgets/custom_text_form_field_2.dart';
 import 'package:ecommerce_app/features/auth/controller/register_controller.dart';
 import 'package:ecommerce_app/features/auth/views/widgets/custom_body_auth.dart';
 import 'package:ecommerce_app/features/auth/views/widgets/custom_title_auth.dart';
@@ -13,6 +13,7 @@ class RegisterHeaderSection extends GetView<RegisterControllerImpl> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomTitleAuth(
           text: AppTranslationsKeys.registerHeaderOne.tr,
@@ -20,40 +21,50 @@ class RegisterHeaderSection extends GetView<RegisterControllerImpl> {
         const SizedBox(height: 12),
         CustomBodyAuth(text: AppTranslationsKeys.registerHeaderTwo.tr),
         const SizedBox(height: 40),
-        CustomTextFormField(
-          labelText: AppTranslationsKeys.registerUsernameLabel.tr,
+        CustomTextFormField2(
+          // labelText: AppTranslationsKeys.registerUsernameLabel.tr,
           hintText: AppTranslationsKeys.registerUsernameHint.tr,
-          iconData: Icons.lock_outlined,
+          prefixIconData: Icons.person_2,
           controller: controller.username,
           validator: (val) => validInput(val!, 5, 50, InputType.userName),
+          isSuffixIcon: false,
+          onTapPrefix: () {},
         ),
         const SizedBox(height: 20),
-        CustomTextFormField(
-          labelText: AppTranslationsKeys.registerEmailLabel.tr,
+        CustomTextFormField2(
+          // labelText: AppTranslationsKeys.registerEmailLabel.tr,
           hintText: AppTranslationsKeys.registerEmailHint.tr,
-          iconData: Icons.email_outlined,
+          prefixIconData: Icons.email,
           controller: controller.email,
           validator: (val) => validInput(val!, 5, 100, InputType.email),
+          isSuffixIcon: false,
+          onTapPrefix: () {},
         ),
         const SizedBox(height: 20),
-        CustomTextFormField(
+        CustomTextFormField2(
           keyboardType: TextInputType.phone,
-          labelText: AppTranslationsKeys.registerPhoneLabel.tr,
+          // labelText: AppTranslationsKeys.registerPhoneLabel.tr,
           hintText: AppTranslationsKeys.registerPhoneHint.tr,
-          iconData: Icons.phone_outlined,
+          prefixIconData: Icons.phone,
           controller: controller.phone,
           validator: (val) => validInput(val!, 5, 100, InputType.phone),
+          isSuffixIcon: false,
+          onTapPrefix: () {},
         ),
         const SizedBox(height: 20),
         GetBuilder<RegisterControllerImpl>(builder: (controller) {
-          return CustomTextFormField(
-            labelText: AppTranslationsKeys.registerPasswordLabel.tr,
+          return CustomTextFormField2(
+            // labelText: AppTranslationsKeys.registerPasswordLabel.tr,
             hintText: AppTranslationsKeys.registerPasswordHint.tr,
-            iconData: Icons.lock_outlined,
+            prefixIconData: Icons.lock,
             isSecure: controller.isHiddenPassword,
             controller: controller.password,
             validator: (val) => validInput(val!, 5, 100, InputType.password),
-            onTapIcon: () => controller.showPassword(),
+            onTapSuffix: () => controller.showPassword(),
+            onTapPrefix: () {},
+            suffixIconData: controller.isHiddenPassword
+                ? Icons.visibility_off
+                : Icons.visibility,
           );
         }),
       ],

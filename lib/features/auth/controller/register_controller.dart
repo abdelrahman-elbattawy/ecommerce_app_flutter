@@ -96,13 +96,4 @@ class RegisterControllerImpl extends RegisterController {
     _authRepoImpl = Get.find();
     super.onInit();
   }
-
-  @override
-  void onClose() {
-    email.dispose();
-    password.dispose();
-    username.dispose();
-    phone.dispose();
-    super.onClose();
-  }
 }

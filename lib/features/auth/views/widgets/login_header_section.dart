@@ -44,6 +44,9 @@ class LoginHeaderSection extends GetView<LoginControllerImpl> {
             validator: (val) => validInput(val!, 5, 30, InputType.password),
             onTapSuffix: () => controller.showPassword(),
             onTapPrefix: () {},
+            suffixIconData: controller.isHiddenPassword
+                ? Icons.visibility_off
+                : Icons.visibility,
           );
         }),
       ],

@@ -124,11 +124,4 @@ class LoginControllerImpl extends LoginController {
   goToForgotPassword() {
     Get.toNamed(AppRoutes.forgotPassword);
   }
-
-  @override
-  void onClose() {
-    email.dispose();
-    password.dispose();
-    super.onClose();
-  }
 }

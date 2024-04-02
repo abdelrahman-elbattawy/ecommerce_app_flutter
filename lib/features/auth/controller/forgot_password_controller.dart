@@ -66,10 +66,4 @@ class ForgotPasswordControllerImpl extends ForgotPasswordController {
       update();
     }
   }
-
-  @override
-  void onClose() {
-    email.dispose();
-    super.onClose();
-  }
 }

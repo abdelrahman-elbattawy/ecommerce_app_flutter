@@ -94,12 +94,4 @@ class ResetPasswordControllerImpl extends ResetPasswordController {
     isHiddenRePassword = isHiddenRePassword ? false : true;
     update();
   }
-
-  @override
-  void onClose() {
-    password.dispose();
-    rePassword.dispose();
-
-    super.onClose();
-  }
 }

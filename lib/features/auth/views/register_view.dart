@@ -16,14 +16,6 @@ class RegisterView extends StatelessWidget {
     final LocaleController localCont = Get.find();
 
     return Scaffold(
-      appBar: AppBar(
-          // title: Text(
-          //   AppTranslationsKeys.registerTitle.tr,
-          //   style: AppTextStyle.textStyle26.copyWith(
-          //     color: AppColors.customGrey.withAlpha(150),
-          //   ),
-          // ),
-          ),
       body: Directionality(
         textDirection:
             localCont.codeLang == "AR" ? TextDirection.rtl : TextDirection.ltr,
