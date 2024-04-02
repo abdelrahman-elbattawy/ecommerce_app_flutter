@@ -42,9 +42,12 @@ class OnBoardingViewBody extends GetView<OnBoardingControllerImpl> {
               },
             ),
             const Spacer(),
-            CustomButton(
-              title: AppTranslationsKeys.onBoardingButtonText.tr,
-              onPressed: () => controller.next(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: CustomButton(
+                title: AppTranslationsKeys.onBoardingButtonText.tr,
+                onPressed: () => controller.next(),
+              ),
             ),
             const Spacer(),
           ],
