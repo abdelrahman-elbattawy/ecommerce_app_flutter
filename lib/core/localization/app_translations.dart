@@ -247,7 +247,7 @@ class AppTranslations extends Translations {
           // Reset Password View
           AppTranslationsKeys.resetPasswordHeaderOne: "Reset Password",
           AppTranslationsKeys.resetPasswordHeaderTwo:
-              "Please make sure your new password must\n be different from previous used passwords.",
+              "Please make sure your new password must\nbe different from previous used passwords.",
           AppTranslationsKeys.resetPasswordPassLabel: "Password",
           AppTranslationsKeys.resetPasswordPassHint: "Enter your password",
           AppTranslationsKeys.resetRePasswordPassLabel: "Re Password",
