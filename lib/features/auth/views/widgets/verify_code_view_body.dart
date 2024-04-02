@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_button.dart';
+import 'package:ecommerce_app/core/shared/widgets/custom_circle_positioned.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_text_click.dart';
 import 'package:ecommerce_app/features/auth/controller/verify_code_controller.dart';
 import 'package:ecommerce_app/features/auth/views/widgets/custom_body_auth.dart';
@@ -15,53 +16,59 @@ class VerifyCodeViewBody extends GetView<VerifyCodeControllerImpl> {
   @override
   Widget build(BuildContext context) {
     Get.put((VerifyCodeControllerImpl));
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: ListView(
-        padding: EdgeInsets.zero,
-        physics: const BouncingScrollPhysics(),
-        children: [
-          const SizedBox(height: 35),
-          CustomTitleAuth(
-            text: AppTranslationsKeys.verifyCodeHeaderOne.tr,
+    return Stack(
+      children: [
+        const CustomCirclePositioned(),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: ListView(
+            padding: EdgeInsets.zero,
+            physics: const BouncingScrollPhysics(),
+            children: [
+              SizedBox(height: MediaQuery.of(context).size.width * .4),
+              CustomTitleAuth(
+                text: AppTranslationsKeys.verifyCodeHeaderOne.tr,
+              ),
+              const SizedBox(height: 12),
+              CustomBodyAuth(
+                text:
+                    "${AppTranslationsKeys.verifyCodeHeaderTwo.tr} ${controller.email}",
+              ),
+              const SizedBox(height: 40),
+              OtpTextField(
+                fieldWidth: MediaQuery.of(context).size.width * .15,
+                borderRadius: BorderRadius.circular(12),
+                numberOfFields: 5,
+                borderColor: AppColors.primaryColor,
+                focusedBorderColor: AppColors.primaryColor,
+                showFieldAsBox: true,
+                onCodeChanged: (String code) {},
+                onSubmit: (String verificationCode) {
+                  controller.verifyCode = verificationCode;
+                  controller.goToCustomView();
+                },
+              ),
+              const SizedBox(height: 25),
+              GetBuilder<VerifyCodeControllerImpl>(
+                builder: (controller) {
+                  return CustomButton(
+                    isLoading: controller.isLoading,
+                    title: AppTranslationsKeys.verifyCodeButtonText.tr,
+                    onPressed: () => controller.goToCustomView(),
+                  );
+                },
+              ),
+              const SizedBox(height: 30),
+              CustomTextClick(
+                text: AppTranslationsKeys.verifyCodeDontReceive.tr,
+                textClick:
+                    "${AppTranslationsKeys.verifyCodeResendLabel.tr}(60)",
+                onTap: () => controller.resendCodeAgain(""),
+              ),
+            ],
           ),
-          const SizedBox(height: 12),
-          CustomBodyAuth(
-            text:
-                "${AppTranslationsKeys.verifyCodeHeaderTwo.tr} ${controller.email}",
-          ),
-          const SizedBox(height: 40),
-          OtpTextField(
-            fieldWidth: MediaQuery.of(context).size.width * .15,
-            borderRadius: BorderRadius.circular(12),
-            numberOfFields: 5,
-            borderColor: AppColors.primaryColor,
-            focusedBorderColor: AppColors.primaryColor,
-            showFieldAsBox: true,
-            onCodeChanged: (String code) {},
-            onSubmit: (String verificationCode) {
-              controller.verifyCode = verificationCode;
-              controller.goToCustomView();
-            },
-          ),
-          const SizedBox(height: 25),
-          GetBuilder<VerifyCodeControllerImpl>(
-            builder: (controller) {
-              return CustomButton(
-                isLoading: controller.isLoading,
-                title: AppTranslationsKeys.verifyCodeButtonText.tr,
-                onPressed: () => controller.goToCustomView(),
-              );
-            },
-          ),
-          const SizedBox(height: 30),
-          CustomTextClick(
-            text: AppTranslationsKeys.verifyCodeDontReceive.tr,
-            textClick: "${AppTranslationsKeys.verifyCodeResendLabel.tr}(60)",
-            onTap: () => controller.resendCodeAgain(""),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
