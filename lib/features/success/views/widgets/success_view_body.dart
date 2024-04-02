@@ -28,9 +28,12 @@ class SuccessViewBody extends GetView<SuccessControllerImpl> {
           style: AppTextStyle.textStyle20,
         ),
         const SizedBox(height: 30),
-        CustomButton(
-          title: AppTranslationsKeys.successViewButtonText.tr,
-          onPressed: () => controller.goToHomePage(),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: CustomButton(
+            title: AppTranslationsKeys.successViewButtonText.tr,
+            onPressed: () => controller.goToHomePage(),
+          ),
         ),
       ],
     );
