@@ -17,32 +17,6 @@ class LoginFooterSection extends GetView<LoginControllerImpl> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        // Row(
-        //   children: [
-        //     // Checkbox(
-        //     //   activeColor: AppColors.primaryColor,
-        //     //   value: true,
-        //     //   onChanged: (val) {},
-        //     // ),
-        //     // Text(
-        //     //   AppTranslationsKeys.loginRememberMe.tr,
-        //     //   style: AppTextStyle.textStyle16.copyWith(
-        //     //     fontWeight: FontWeight.normal,
-        //     //   ),
-        //     // ),
-        //     // const Spacer(),
-        //     InkWell(
-        //       onTap: () => controller.goToForgotPassword(),
-        //       child: Text(
-        //         AppTranslationsKeys.loginForgotPassword.tr,
-        //         style: AppTextStyle.textStyle16.copyWith(
-        //           fontWeight: FontWeight.normal,
-        //           decoration: TextDecoration.underline,
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // ),
         InkWell(
           onTap: () => controller.goToForgotPassword(),
           child: Text(
@@ -53,7 +27,7 @@ class LoginFooterSection extends GetView<LoginControllerImpl> {
             ),
           ),
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 30),
         GetBuilder<LoginControllerImpl>(builder: (controller) {
           return CustomButton(
             isLoading: controller.isLoading,

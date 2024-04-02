@@ -18,7 +18,7 @@ class CustomCirclePositioned extends StatelessWidget {
           borderRadius: BorderRadius.circular(
             MediaQuery.of(context).size.width * .6,
           ),
-          color: AppColors.primaryForegroundColor,
+          color: AppColors.primaryColor,
         ),
       ),
     );

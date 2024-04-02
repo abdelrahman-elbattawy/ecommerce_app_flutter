@@ -22,7 +22,7 @@ class CustomButton extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
       child: SizedBox(
-        height: MediaQuery.of(context).size.width * .14,
+        height: MediaQuery.of(context).size.width * .125,
         width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(

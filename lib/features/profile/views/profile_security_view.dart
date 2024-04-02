@@ -34,10 +34,12 @@ class ProfileSecurityView extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
                 child: CustomTextFormField2(
                   controller: controller.textFieldList[index].controller,
-                  iconData: controller.textFieldList[index].iconData,
+                  prefixIconData: controller.textFieldList[index].iconData,
                   isSecure: controller.textFieldList[index].isPassword,
                   hintText: controller.textFieldList[index].hintText!.tr,
                   validator: controller.textFieldList[index].validator,
+                  onTapPrefix: () {},
+                  onTapSuffix: () {},
                 ),
               ),
             ),

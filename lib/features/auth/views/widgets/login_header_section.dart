@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/functions/valid_input_func.dart';
-import 'package:ecommerce_app/core/shared/widgets/custom_text_form_field.dart';
+import 'package:ecommerce_app/core/shared/widgets/custom_text_form_field_2.dart';
 import 'package:ecommerce_app/features/auth/controller/login_controller.dart';
 import 'package:ecommerce_app/features/auth/views/widgets/custom_body_auth.dart';
 import 'package:ecommerce_app/features/auth/views/widgets/custom_title_auth.dart';
@@ -13,6 +13,7 @@ class LoginHeaderSection extends GetView<LoginControllerImpl> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomTitleAuth(
           text: AppTranslationsKeys.loginHeaderOne.tr,
@@ -22,23 +23,27 @@ class LoginHeaderSection extends GetView<LoginControllerImpl> {
           text: AppTranslationsKeys.loginHeadterTwo.tr,
         ),
         const SizedBox(height: 50),
-        CustomTextFormField(
-          labelText: AppTranslationsKeys.loginEmailLabel.tr,
+        CustomTextFormField2(
+          // labelText: AppTranslationsKeys.loginEmailLabel.tr,
           hintText: AppTranslationsKeys.loginEmailHint.tr,
-          iconData: Icons.email_outlined,
+          prefixIconData: Icons.email,
           controller: controller.email,
           validator: (val) => validInput(val!, 5, 100, InputType.email),
+          isSuffixIcon: false,
+          onTapSuffix: () {},
+          onTapPrefix: () {},
         ),
         const SizedBox(height: 20),
         GetBuilder<LoginControllerImpl>(builder: (controller) {
-          return CustomTextFormField(
-            labelText: AppTranslationsKeys.loginPasswordLabel.tr,
+          return CustomTextFormField2(
+            // labelText: AppTranslationsKeys.loginPasswordLabel.tr,
             hintText: AppTranslationsKeys.loginPasswordHint.tr,
-            iconData: Icons.lock_outlined,
+            prefixIconData: Icons.lock,
             isSecure: controller.isHiddenPassword,
             controller: controller.password,
             validator: (val) => validInput(val!, 5, 30, InputType.password),
-            onTapIcon: () => controller.showPassword(),
+            onTapSuffix: () => controller.showPassword(),
+            onTapPrefix: () {},
           );
         }),
       ],

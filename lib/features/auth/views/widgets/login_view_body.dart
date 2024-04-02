@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/shared/widgets/custom_circle_positioned.dart';
 import 'package:ecommerce_app/features/auth/controller/login_controller.dart';
 import 'package:ecommerce_app/features/auth/views/widgets/login_footer_section.dart';
 import 'package:ecommerce_app/features/auth/views/widgets/login_header_section.dart';
@@ -10,20 +11,26 @@ class LoginViewBody extends GetView<LoginControllerImpl> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Form(
-        key: controller.formState,
-        child: ListView(
-          padding: EdgeInsets.zero,
-          physics: const BouncingScrollPhysics(),
-          children: const [
-            LoginHeaderSection(),
-            SizedBox(height: 10),
-            LoginFooterSection(),
-          ],
+    return Stack(
+      children: [
+        const CustomCirclePositioned(),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Form(
+            key: controller.formState,
+            child: ListView(
+              padding: EdgeInsets.zero,
+              physics: const BouncingScrollPhysics(),
+              children: [
+                SizedBox(height: MediaQuery.of(context).size.width * .4),
+                const LoginHeaderSection(),
+                const SizedBox(height: 8),
+                const LoginFooterSection(),
+              ],
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }

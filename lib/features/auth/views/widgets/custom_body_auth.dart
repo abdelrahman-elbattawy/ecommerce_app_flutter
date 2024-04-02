@@ -14,7 +14,7 @@ class CustomBodyAuth extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      textAlign: TextAlign.center,
+      textAlign: TextAlign.start,
       style: AppTextStyle.textStyle16.copyWith(
         color: AppColors.customGrey.withAlpha(150),
       ),
