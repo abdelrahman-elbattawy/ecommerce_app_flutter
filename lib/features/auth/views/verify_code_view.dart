@@ -13,7 +13,6 @@ class VerifyCodeView extends StatelessWidget {
     final LocaleController localCont = Get.find();
 
     return Scaffold(
-      appBar: AppBar(),
       body: Directionality(
           textDirection: localCont.codeLang == "AR"
               ? TextDirection.rtl

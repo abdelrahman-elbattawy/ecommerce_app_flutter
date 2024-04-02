@@ -32,7 +32,6 @@ class LanguageViewBody extends GetView<LanguageControllerImpl> {
               const SizedBox(height: 20),
               CustomButton(
                 title: AppTranslationsKeys.languageButtonText.tr,
-                horizontalPadding: 24,
                 onPressed: () => Get.toNamed(AppRoutes.onBoarding),
               ),
             ],

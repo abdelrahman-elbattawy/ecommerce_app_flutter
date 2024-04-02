@@ -19,7 +19,6 @@ class RegisterFooterSection extends GetView<RegisterControllerImpl> {
               isLoading: controller.isLoading,
               title: AppTranslationsKeys.registerButtonText.tr,
               onPressed: () => controller.signUp(),
-              horizontalPadding: 16,
             );
           },
         ),

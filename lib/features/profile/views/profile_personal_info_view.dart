@@ -67,7 +67,6 @@ class ProfilePersonalInfoView extends StatelessWidget {
                 return CustomButton(
                   title: AppTranslationsKeys.tabProfileMyAccountTitleButton.tr,
                   onPressed: () => cont.saveAllData(),
-                  horizontalPadding: 24,
                   isLoading: cont.isLoading,
                 );
               },

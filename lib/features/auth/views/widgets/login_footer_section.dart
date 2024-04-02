@@ -33,7 +33,6 @@ class LoginFooterSection extends GetView<LoginControllerImpl> {
             isLoading: controller.isLoading,
             title: AppTranslationsKeys.loginButtonText.tr,
             onPressed: () => controller.login(),
-            horizontalPadding: 16,
           );
         }),
         const SizedBox(height: 25),

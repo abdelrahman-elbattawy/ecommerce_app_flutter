@@ -49,7 +49,6 @@ class ProfileSecurityView extends StatelessWidget {
                 return CustomButton(
                   title: AppTranslationsKeys.tabProfileMyAccountTitleButton.tr,
                   onPressed: () => cont.saveNewPassowrd(),
-                  horizontalPadding: 24,
                   isLoading: cont.isLoading,
                 );
               },

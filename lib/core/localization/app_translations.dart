@@ -230,7 +230,7 @@ class AppTranslations extends Translations {
           // Forgot Password View
           AppTranslationsKeys.forgotPasswordHeaderOne: "Forgot Password?",
           AppTranslationsKeys.forgotPasswordHeaderTwo:
-              "Please enter email associated.\n We'll send your reset instructions.",
+              "Please enter email associated.\nWe'll send your reset instructions.",
           AppTranslationsKeys.forgotPasswordEmailLabel: "Email",
           AppTranslationsKeys.forgotPasswordEmailHint: "Enter your email",
           AppTranslationsKeys.forgotPasswordButtonText: "Send",

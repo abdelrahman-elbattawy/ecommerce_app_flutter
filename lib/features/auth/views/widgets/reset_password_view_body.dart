@@ -63,7 +63,6 @@ class ResetPasswordViewBody extends GetView<ResetPasswordControllerImpl> {
                 isLoading: controller.isLoading,
                 title: AppTranslationsKeys.resetPasswordButtonText.tr,
                 onPressed: () => controller.savePassword(),
-                horizontalPadding: 16,
               );
             }),
           ],

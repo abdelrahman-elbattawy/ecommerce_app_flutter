@@ -51,7 +51,6 @@ class VerifyCodeViewBody extends GetView<VerifyCodeControllerImpl> {
                 isLoading: controller.isLoading,
                 title: AppTranslationsKeys.verifyCodeButtonText.tr,
                 onPressed: () => controller.goToCustomView(),
-                horizontalPadding: 16,
               );
             },
           ),
