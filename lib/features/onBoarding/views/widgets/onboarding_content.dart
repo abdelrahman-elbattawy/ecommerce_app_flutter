@@ -22,7 +22,7 @@ class OnBoardingContent extends StatelessWidget {
         const Spacer(flex: 2),
         Image.asset(
           image,
-          height: MediaQuery.of(context).size.width * .7,
+          height: MediaQuery.of(context).size.width * .6,
           fit: BoxFit.fill,
         ),
         const SizedBox(height: 32),
