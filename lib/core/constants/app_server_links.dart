@@ -16,10 +16,12 @@ final class AppServerLinks {
   static const _imagePath = "$_baseUrl/uploads";
   static const imageUserAvatar = "$_imagePath/users";
   static const imageCategoriesPath = "$_imagePath/categories";
+  static const imageItemsPath = "$_imagePath/items";
 
   // Home
   static const _homePath = "$_baseUrl/modules/home";
   static const home = "$_homePath/home_page.php";
+  static const itemsPage = "$_homePath/items_page.php";
 
   // Profile
   static const deleteAccount = "$_profilePath/delete_account.php";

@@ -1,7 +1,9 @@
+import 'package:ecommerce_app/features/home/controller/home_controller.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_item_card.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class HomeItemsList extends StatelessWidget {
+class HomeItemsList extends GetView<HomeControllerImpl> {
   const HomeItemsList({
     super.key,
   });
@@ -10,11 +12,17 @@ class HomeItemsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.width * .65,
-      child: ListView.builder(
-        padding: EdgeInsets.zero,
-        scrollDirection: Axis.horizontal,
-        itemCount: 3,
-        itemBuilder: (context, index) => const HomeItemCard(),
+      child: GetBuilder<HomeControllerImpl>(
+        builder: (context) {
+          return ListView.builder(
+            padding: EdgeInsets.zero,
+            scrollDirection: Axis.horizontal,
+            itemCount: controller.itemsList.length,
+            itemBuilder: (context, index) => HomeItemCard(
+              itemModel: controller.itemsList[index],
+            ),
+          );
+        },
       ),
     );
   }

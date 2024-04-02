@@ -16,4 +16,16 @@ class HomeRepoImpl implements HomeRepo {
 
     return foldMethod(results);
   }
+
+  @override
+  Future<Either<AppFailure, Map>> fetchItemsBy(String categoryID) async {
+    final results = await apiService.post(
+      AppServerLinks.itemsPage,
+      {
+        "categoryID": categoryID,
+      },
+    );
+
+    return foldMethod(results);
+  }
 }

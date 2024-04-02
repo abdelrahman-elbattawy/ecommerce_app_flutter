@@ -1,11 +1,17 @@
 import 'package:ecommerce_app/core/constants/app_colors.dart';
+import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
+import 'package:ecommerce_app/core/functions/get_name_trans_func.dart';
+import 'package:ecommerce_app/features/home/data/models/item_model.dart';
 import 'package:flutter/material.dart';
 
 class HomeItemCard extends StatefulWidget {
   const HomeItemCard({
     super.key,
+    required this.itemModel,
   });
+
+  final ItemModel itemModel;
 
   @override
   State<HomeItemCard> createState() => _HomeItemCardState();
@@ -45,24 +51,34 @@ class _HomeItemCardState extends State<HomeItemCard> {
                 children: [
                   Center(
                     child: Image.network(
-                      "https://localhost/ecommerce/uploads/categories/supermarkets.png",
+                      "${AppServerLinks.imageItemsPath}/${widget.itemModel.itemsImage}",
                       height: MediaQuery.of(context).size.width * .22,
                       width: MediaQuery.of(context).size.width * .22,
                     ),
                   ),
                   const SizedBox(height: 15),
-                  const Text(
-                    "Brucoli",
+                  Text(
+                    getNameTrans(
+                      widget.itemModel.itemsNameAr!,
+                      widget.itemModel.itemsName!,
+                    ),
+                    maxLines: 1,
                     style: AppTextStyle.textStyle16,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    "Supermarket",
+                    getNameTrans(
+                      widget.itemModel.categoryModel!.categoriesNameAr!,
+                      widget.itemModel.categoryModel!.categoriesName!,
+                    ),
+                    maxLines: 1,
                     style: AppTextStyle.textStyle16.copyWith(
                       color: AppColors.customGrey,
                     ),
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  const Text(
-                    r"$18.00",
+                  Text(
+                    r"$ " + widget.itemModel.itemsPrice!,
                     style: AppTextStyle.textStyle16,
                   ),
                 ],
