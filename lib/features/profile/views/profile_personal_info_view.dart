@@ -55,19 +55,24 @@ class ProfilePersonalInfoView extends StatelessWidget {
                   isSecure: controller.textFieldList[index].isPassword,
                   hintText: controller.textFieldList[index].hintText!.tr,
                   validator: controller.textFieldList[index].validator,
-                  readOnly: index == 1 ? true : false,
+                  readOnly: index == 1,
                   onTapPrefix: () {},
                   onTapSuffix: () {},
+                  isSuffixIcon: index != 1,
                 ),
               ),
             ),
             const SizedBox(height: 20),
             GetBuilder<ProfilePersonalInfoControllerImpl>(
               builder: (cont) {
-                return CustomButton(
-                  title: AppTranslationsKeys.tabProfileMyAccountTitleButton.tr,
-                  onPressed: () => cont.saveAllData(),
-                  isLoading: cont.isLoading,
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: CustomButton(
+                    title:
+                        AppTranslationsKeys.tabProfileMyAccountTitleButton.tr,
+                    onPressed: () => cont.saveAllData(),
+                    isLoading: cont.isLoading,
+                  ),
                 );
               },
             ),
