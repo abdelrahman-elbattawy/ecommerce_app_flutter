@@ -52,8 +52,7 @@ class HomeViewBody extends StatelessWidget {
                     SliverToBoxAdapter(
                       child: HomeSectionTitle(
                         title: AppTranslationsKeys.homeViewTodayOffersLabel.tr,
-                        buttonText: AppTranslationsKeys.homeViewSeeAllLabel.tr,
-                        onPressed: () {},
+                        buttonText: "",
                       ),
                     ),
                     const SliverToBoxAdapter(child: HomeOffersCard()),
