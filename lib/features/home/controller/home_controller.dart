@@ -133,7 +133,7 @@ class HomeControllerImpl extends HomeController {
   void fetchItemsBy(String categoryID) async {
     itemsList.clear();
 
-    final results = await _homeRepoImpl.fetchItemsBy(categoryID);
+    final results = await _homeRepoImpl.fetchItemsBy(categoryID, "5");
 
     results.fold(
       (failure) {

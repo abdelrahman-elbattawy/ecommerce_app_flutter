@@ -18,11 +18,15 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<AppFailure, Map>> fetchItemsBy(String categoryID) async {
+  Future<Either<AppFailure, Map>> fetchItemsBy(
+    String categoryID,
+    String countLimit,
+  ) async {
     final results = await apiService.post(
       AppServerLinks.itemsPage,
       {
         "categoryID": categoryID,
+        "countLimit": countLimit,
       },
     );
 
