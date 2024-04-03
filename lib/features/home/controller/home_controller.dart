@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:ecommerce_app/core/constants/app_preferences_keys.dart';
 import 'package:ecommerce_app/core/constants/app_routes.dart';
+import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/localization/locale_controller.dart';
 import 'package:ecommerce_app/core/services/app_services.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
@@ -156,7 +157,7 @@ class HomeControllerImpl extends HomeController {
           CustomSnakBar.showSnack(
             context: Get.context!,
             snackBarType: SnackBarType.warring,
-            errMessage: failure.errMessage,
+            errMessage: AppTranslationsKeys.snackBarNoData.tr,
           );
         } else {
           CustomSnakBar.showSnack(

@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
 import 'package:ecommerce_app/features/home/data/models/category_model.dart';
 import 'package:ecommerce_app/features/home/data/models/item_model.dart';
@@ -60,7 +61,7 @@ class ItemsControllerImpl extends ItemsController {
           CustomSnakBar.showSnack(
             context: Get.context!,
             snackBarType: SnackBarType.warring,
-            errMessage: failure.errMessage,
+            errMessage: AppTranslationsKeys.snackBarNoData.tr,
           );
         } else {
           CustomSnakBar.showSnack(

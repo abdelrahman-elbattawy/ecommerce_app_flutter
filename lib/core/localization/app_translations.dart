@@ -119,6 +119,7 @@ class AppTranslations extends Translations {
               "تم إعادة تعيين كلمة المرور بنجاح!",
           AppTranslationsKeys.snackBarDeleteAccountSuccess:
               "لقد تم حذف حسابك بنجاح!",
+          AppTranslationsKeys.snackBarNoData: "لا يوجد بيانات",
 
           // Home View
           AppTranslationsKeys.homeViewSeachHint: "بحث",
@@ -176,6 +177,9 @@ class AppTranslations extends Translations {
 
           // Items View
           AppTranslationsKeys.itemsViewTitle: "كل المنتجات",
+
+          // Categories View
+          AppTranslationsKeys.categoriesViewTitle: "كل الاقسام",
         },
         "EN": {
           // Language View
@@ -290,6 +294,7 @@ class AppTranslations extends Translations {
               "Reset password successfully!",
           AppTranslationsKeys.snackBarDeleteAccountSuccess:
               "Your account has been deleted successfully!",
+          AppTranslationsKeys.snackBarNoData: "No Data!",
 
           // Home View
           AppTranslationsKeys.homeViewSeachHint: "Search",
@@ -348,6 +353,9 @@ class AppTranslations extends Translations {
 
           // Items View
           AppTranslationsKeys.itemsViewTitle: "All Products",
+
+          // Categories View
+          AppTranslationsKeys.categoriesViewTitle: "All Categories",
         },
       };
 }

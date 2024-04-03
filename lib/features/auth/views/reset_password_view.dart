@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/core/localization/locale_controller.dart';
+import 'package:ecommerce_app/core/functions/get_text_direction_func.dart';
 import 'package:ecommerce_app/features/auth/controller/reset_password_controller.dart';
 import 'package:ecommerce_app/features/auth/views/widgets/reset_password_view_body.dart';
 import 'package:flutter/material.dart';
@@ -10,12 +10,10 @@ class ResetPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(ResetPasswordControllerImpl());
-    final LocaleController localCont = Get.find();
 
     return Scaffold(
       body: Directionality(
-        textDirection:
-            localCont.codeLang == "AR" ? TextDirection.rtl : TextDirection.ltr,
+        textDirection: getTextDirection(),
         child: const ResetPasswordViewBody(),
       ),
     );

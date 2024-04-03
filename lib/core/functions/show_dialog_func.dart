@@ -1,19 +1,16 @@
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
-import 'package:ecommerce_app/core/localization/locale_controller.dart';
+import 'package:ecommerce_app/core/functions/get_text_direction_func.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 Future showMyDialog(context, String title, String body) async {
-  final LocaleController localCont = Get.find();
-
   return showDialog(
     context: context,
     // barrierDismissible: false, // user must tap button!
     builder: (BuildContext context) {
       return Directionality(
-        textDirection:
-            localCont.codeLang == "AR" ? TextDirection.rtl : TextDirection.ltr,
+        textDirection: getTextDirection(),
         child: AlertDialog(
           title: Text(
             title,

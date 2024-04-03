@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/core/constants/app_colors.dart';
-import 'package:ecommerce_app/core/localization/locale_controller.dart';
+import 'package:ecommerce_app/core/functions/get_text_direction_func.dart';
 import 'package:ecommerce_app/features/home/controller/home_tab_bar_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,11 +12,8 @@ class HomeBottomBar extends GetView<HomeTabBarControllerImpl> {
 
   @override
   Widget build(BuildContext context) {
-    final LocaleController localCont = Get.find();
-
     return Directionality(
-      textDirection:
-          localCont.codeLang == "AR" ? TextDirection.rtl : TextDirection.ltr,
+      textDirection: getTextDirection(),
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.primaryBackgroundColor,

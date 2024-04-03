@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
-import 'package:ecommerce_app/core/localization/locale_controller.dart';
+import 'package:ecommerce_app/core/functions/get_text_direction_func.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -59,12 +59,9 @@ class CustomSnakBar {
     required SnackBarType snackBarType,
     required String errMessage,
   }) {
-    LocaleController localCont = Get.find();
-
     SnackBar snackBar = SnackBar(
       content: Directionality(
-        textDirection:
-            localCont.codeLang == "AR" ? TextDirection.rtl : TextDirection.ltr,
+        textDirection: getTextDirection(),
         child: Container(
           // height: 100,
           width: double.infinity,

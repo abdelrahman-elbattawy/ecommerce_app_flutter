@@ -95,6 +95,7 @@ final class AppTranslationsKeys {
   static const snackBarLoginSuccess = "snackBarLoginSuccess";
   static const snackBarResetPasswordSuccess = "snackBarResetPasswordSuccess";
   static const snackBarDeleteAccountSuccess = "snackBarDeleteAccountSuccess";
+  static const snackBarNoData = "snackBarNoData";
 
   // Home View
   static const homeViewSeachHint = "homeViewSeachHint";
@@ -150,4 +151,7 @@ final class AppTranslationsKeys {
 
   // Items View
   static const itemsViewTitle = "itemsViewTitle";
+
+  // Categories View
+  static const categoriesViewTitle = "categoriesViewTitle";
 }
