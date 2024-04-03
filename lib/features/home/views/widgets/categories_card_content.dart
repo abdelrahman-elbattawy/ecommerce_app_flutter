@@ -10,9 +10,11 @@ class CategoryCardList extends StatelessWidget {
   const CategoryCardList({
     super.key,
     required this.categoryModel,
+    this.onTap,
   });
 
   final CategoryModel categoryModel;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +42,14 @@ class CategoryCardList extends StatelessWidget {
               bottom: 15,
               child: Align(
                 alignment: Alignment.center,
-                child: CachedNetworkImage(
-                  imageUrl:
-                      "${AppServerLinks.imageCategoriesPath}/${categoryModel.categoriesImage}",
-                  height: MediaQuery.of(context).size.width * .25,
-                  width: MediaQuery.of(context).size.width * .25,
+                child: GestureDetector(
+                  onTap: onTap,
+                  child: CachedNetworkImage(
+                    imageUrl:
+                        "${AppServerLinks.imageCategoriesPath}/${categoryModel.categoriesImage}",
+                    height: MediaQuery.of(context).size.width * .25,
+                    width: MediaQuery.of(context).size.width * .25,
+                  ),
                 ),
               ),
             ),

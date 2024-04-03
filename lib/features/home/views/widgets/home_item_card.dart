@@ -10,9 +10,11 @@ class HomeItemCard extends StatefulWidget {
   const HomeItemCard({
     super.key,
     required this.itemModel,
+    this.imageSize = .22,
   });
 
   final ItemModel itemModel;
+  final double imageSize;
 
   @override
   State<HomeItemCard> createState() => _HomeItemCardState();
@@ -24,7 +26,7 @@ class _HomeItemCardState extends State<HomeItemCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       child: Stack(
         children: [
           Container(
@@ -54,8 +56,10 @@ class _HomeItemCardState extends State<HomeItemCard> {
                     child: CachedNetworkImage(
                       imageUrl:
                           "${AppServerLinks.imageItemsPath}/${widget.itemModel.itemsImage}",
-                      height: MediaQuery.of(context).size.width * .22,
-                      width: MediaQuery.of(context).size.width * .22,
+                      height:
+                          MediaQuery.of(context).size.width * widget.imageSize,
+                      width:
+                          MediaQuery.of(context).size.width * widget.imageSize,
                     ),
                   ),
                   const SizedBox(height: 15),

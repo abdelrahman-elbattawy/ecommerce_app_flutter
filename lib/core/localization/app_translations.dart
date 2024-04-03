@@ -173,6 +173,9 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.tabProfileMyAccountTitleButton: "تحديث",
           AppTranslationsKeys.tabProfileMyAccountPersonalInfo: "معلومات شخصية",
           AppTranslationsKeys.tabProfileMyAccountSecurity: "الحماية",
+
+          // Items View
+          AppTranslationsKeys.itemsViewTitle: "كل المنتجات",
         },
         "EN": {
           // Language View
@@ -342,6 +345,9 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.tabProfileMyAccountPersonalInfo:
               "Personal Information",
           AppTranslationsKeys.tabProfileMyAccountSecurity: "Security",
+
+          // Items View
+          AppTranslationsKeys.itemsViewTitle: "All Products",
         },
       };
 }

@@ -61,7 +61,7 @@ class HomeViewBody extends StatelessWidget {
                       child: HomeSectionTitle(
                         title: AppTranslationsKeys.homeViewRecommendedLabel.tr,
                         buttonText: AppTranslationsKeys.homeViewSeeAllLabel.tr,
-                        onPressed: () {},
+                        onPressed: () => controller.goToItems(),
                       ),
                     ),
                     const SliverToBoxAdapter(child: HomeCategoriesTitleList()),

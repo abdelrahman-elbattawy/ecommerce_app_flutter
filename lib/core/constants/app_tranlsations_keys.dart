@@ -147,4 +147,7 @@ final class AppTranslationsKeys {
       "tabProfileMyAccountNewPassword";
   static const tabProfileMyAccountTitleButton =
       "tabProfileMyAccountTitleButton";
+
+  // Items View
+  static const itemsViewTitle = "itemsViewTitle";
 }

@@ -8,11 +8,11 @@ class CategoriesGrideView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CategoriesControllerImpl controller = Get.put(CategoriesControllerImpl());
+    Get.put(CategoriesControllerImpl());
 
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
-        child: CategoriesGridViewBody(controller: controller),
+        child: CategoriesGridViewBody(),
       ),
     );
   }

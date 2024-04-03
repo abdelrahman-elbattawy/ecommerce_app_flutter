@@ -20,6 +20,7 @@ abstract class HomeController extends GetxController {
   void setCategoyTitleIndex(int index);
   void goToCategories();
   void fetchItemsBy(String categoryID);
+  void goToItems();
 }
 
 class HomeControllerImpl extends HomeController {
@@ -125,6 +126,20 @@ class HomeControllerImpl extends HomeController {
       AppRoutes.categories,
       arguments: {
         "categoriesList": categoriesList,
+      },
+    );
+  }
+
+  @override
+  void goToItems() {
+    final categoryIndex = categoryTitleIndexSelected - 1;
+
+    Get.toNamed(
+      AppRoutes.items,
+      arguments: {
+        "categoryModel": categoryIndex == -1
+            ? "-1"
+            : categoriesList[categoryTitleIndexSelected - 1],
       },
     );
   }
