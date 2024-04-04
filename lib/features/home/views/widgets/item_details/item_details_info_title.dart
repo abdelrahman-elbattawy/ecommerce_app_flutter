@@ -26,7 +26,7 @@ class ItemDetailsInfoTitle extends StatelessWidget {
             color: AppColors.customGrey2,
           ),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 5),
         Text(
           getNameTrans(
             itemModel.itemsNameAr!,

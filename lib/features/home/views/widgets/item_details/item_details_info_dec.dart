@@ -23,7 +23,7 @@ class ItemDetailsInfoDec extends StatelessWidget {
           AppTranslationsKeys.itemDetailsInfoProductInfo.tr,
           style: AppTextStyle.textStyle18,
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 5),
         Text(
           getNameTrans(
             itemModel.itemsDecAr!,

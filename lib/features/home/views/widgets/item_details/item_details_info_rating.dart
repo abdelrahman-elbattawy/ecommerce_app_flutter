@@ -44,7 +44,7 @@ class ItemDetailsInfoRating extends StatelessWidget {
         ),
         Text(
           "(126 ${AppTranslationsKeys.itemDetailsInfoReviews.tr})",
-          style: AppTextStyle.textStyle14.copyWith(
+          style: AppTextStyle.textStyle12.copyWith(
             color: AppColors.customGrey2,
           ),
         ),

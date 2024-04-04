@@ -21,7 +21,7 @@ class ItemDetailsSliderContent extends StatelessWidget {
           height: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(28),
-            color: const Color(0xFFE2E2E2),
+            color: const Color(0xFFEBEBEB),
           ),
         ),
         CachedNetworkImage(

@@ -21,7 +21,7 @@ class ItemDetailsInformation extends StatelessWidget {
         ItemDetailsInfoTitle(itemModel: itemModel),
         const SizedBox(height: 10),
         ItemDetailsInfoRating(itemModel: itemModel),
-        const SizedBox(height: 20),
+        const SizedBox(height: 15),
         ItemDetailsInfoDec(itemModel: itemModel),
       ],
     );
