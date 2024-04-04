@@ -15,4 +15,5 @@ abstract class AppRoutes {
   static const home = '/home';
   static const categories = '/categories';
   static const items = '/items';
+  static const itemDetails = '/itemDetails';
 }

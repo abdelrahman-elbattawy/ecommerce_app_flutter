@@ -50,6 +50,9 @@ class ItemsGrideViewBody extends GetView<ItemsControllerImpl> {
                 itemBuilder: (context, index) => HomeItemCard(
                   itemModel: controller.itemsList[index],
                   imageSize: .18,
+                  onTap: () => controller.goToItemDetails(
+                    controller.itemsList[index],
+                  ),
                 ),
               );
             },

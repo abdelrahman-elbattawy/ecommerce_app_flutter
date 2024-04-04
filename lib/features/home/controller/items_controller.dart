@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/constants/app_routes.dart';
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
 import 'package:ecommerce_app/features/home/data/models/category_model.dart';
@@ -10,6 +11,7 @@ abstract class ItemsController extends GetxController {
   void intialData();
   void fetchItemsBy();
   void intialServices();
+  void goToItemDetails(ItemModel itemModel);
 }
 
 class ItemsControllerImpl extends ItemsController {
@@ -79,5 +81,15 @@ class ItemsControllerImpl extends ItemsController {
     );
 
     update();
+  }
+
+  @override
+  void goToItemDetails(ItemModel itemModel) {
+    Get.toNamed(
+      AppRoutes.itemDetails,
+      arguments: {
+        "itemModel": itemModel,
+      },
+    );
   }
 }

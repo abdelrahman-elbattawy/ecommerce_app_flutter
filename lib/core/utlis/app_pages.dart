@@ -7,6 +7,7 @@ import 'package:ecommerce_app/features/auth/views/reset_password_view.dart';
 import 'package:ecommerce_app/features/auth/views/verify_code_view.dart';
 import 'package:ecommerce_app/features/home/views/categories_gride_view.dart';
 import 'package:ecommerce_app/features/home/views/home_view.dart';
+import 'package:ecommerce_app/features/home/views/item_details_view.dart';
 import 'package:ecommerce_app/features/home/views/items_gride_view.dart';
 import 'package:ecommerce_app/features/language/views/language_view.dart';
 import 'package:ecommerce_app/features/onBoarding/views/onboarding_view.dart';
@@ -67,5 +68,9 @@ final getPages = [
   GetPage(
     name: AppRoutes.items,
     page: () => const ItemsGrideView(),
+  ),
+  GetPage(
+    name: AppRoutes.itemDetails,
+    page: () => const ItemDetailsView(),
   ),
 ];

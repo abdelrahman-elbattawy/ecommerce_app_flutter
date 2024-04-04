@@ -20,6 +20,9 @@ class HomeItemsList extends GetView<HomeControllerImpl> {
             itemCount: controller.itemsList.length,
             itemBuilder: (context, index) => HomeItemCard(
               itemModel: controller.itemsList[index],
+              onTap: () => controller.goToItemDetails(
+                controller.itemsList[index],
+              ),
             ),
           );
         },

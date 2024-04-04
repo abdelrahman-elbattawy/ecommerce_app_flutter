@@ -22,6 +22,7 @@ abstract class HomeController extends GetxController {
   void goToCategories();
   void fetchItemsBy(String categoryID);
   void goToItems();
+  void goToItemDetails(ItemModel itemModel);
 }
 
 class HomeControllerImpl extends HomeController {
@@ -175,5 +176,15 @@ class HomeControllerImpl extends HomeController {
     );
 
     update();
+  }
+
+  @override
+  void goToItemDetails(ItemModel itemModel) {
+    Get.toNamed(
+      AppRoutes.itemDetails,
+      arguments: {
+        "itemModel": itemModel,
+      },
+    );
   }
 }

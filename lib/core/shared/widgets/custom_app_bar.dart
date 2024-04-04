@@ -5,10 +5,10 @@ import 'package:get/get.dart';
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     super.key,
-    required this.title,
+    this.title,
   });
 
-  final String title;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +23,10 @@ class CustomAppBar extends StatelessWidget {
         ),
         const Spacer(),
         Text(
-          title,
+          title ?? "",
           style: AppTextStyle.textStyle20,
         ),
-        const Spacer(flex: 2),
+        const Spacer(flex: 3),
       ],
     );
   }
