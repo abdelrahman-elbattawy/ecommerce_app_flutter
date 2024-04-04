@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/functions/get_name_lang_func.dart';
 import 'package:ecommerce_app/features/home/controller/item_details_controller.dart';
 import 'package:ecommerce_app/features/home/data/models/item_model.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_details_image_indicator.dart';
@@ -29,7 +30,8 @@ class ItemDetailsSliderImages extends GetView<ItemDetailsControllerImpl> {
         ),
         Positioned(
           bottom: 30,
-          right: 50,
+          right: getNameLang() == "EN" ? 50 : null,
+          left: getNameLang() == "AR" ? 50 : null,
           child: GetBuilder<ItemDetailsControllerImpl>(
             builder: (controller) {
               return ItemDetailsImageIndicator(
