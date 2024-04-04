@@ -154,4 +154,13 @@ final class AppTranslationsKeys {
 
   // Categories View
   static const categoriesViewTitle = "categoriesViewTitle";
+
+  // Item Details
+  static const itemDetailsInfoAvailableStock = "itemDetailsInfoAvailableStock";
+  static const itemDetailsInfoNotAvailableStock =
+      "itemDetailsInfoNotAvailableStock";
+  static const itemDetailsInfoProductInfo = "itemDetailsInfoProductInfo";
+  static const itemDetailsInfoReviews = "itemDetailsInfoReviews";
+  static const itemDetailsInfoBuyNow = "itemDetailsInfoBuyNow";
+  static const itemDetailsInfoUnitPrice = "itemDetailsInfoUnitPrice";
 }

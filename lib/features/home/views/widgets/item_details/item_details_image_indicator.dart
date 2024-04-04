@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ItemDetailsImageIndicator extends StatelessWidget {
@@ -32,7 +33,7 @@ class ItemDetailsImageIndicator extends StatelessWidget {
               borderRadius: BorderRadiusDirectional.circular(10),
               color: index == currentValue
                   ? const Color(0xFFFFFFFF)
-                  : const Color(0xFF44454A),
+                  : AppColors.customGrey2,
             ),
           ),
         ),
