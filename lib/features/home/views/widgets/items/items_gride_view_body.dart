@@ -3,7 +3,7 @@ import 'package:ecommerce_app/core/functions/get_name_trans_func.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_app_bar.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_text_field.dart';
 import 'package:ecommerce_app/features/home/controller/items_controller.dart';
-import 'package:ecommerce_app/features/home/views/widgets/home_item_card.dart';
+import 'package:ecommerce_app/features/home/views/widgets/home_body/home_item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

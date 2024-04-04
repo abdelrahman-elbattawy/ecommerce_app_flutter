@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/features/home/controller/home_controller.dart';
-import 'package:ecommerce_app/features/home/views/widgets/home_category_title.dart';
+import 'package:ecommerce_app/features/home/views/widgets/home_body/home_category_title.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

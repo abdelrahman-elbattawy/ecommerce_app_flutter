@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/core/functions/get_text_direction_func.dart';
 import 'package:ecommerce_app/features/home/controller/home_controller.dart';
 import 'package:ecommerce_app/features/home/controller/home_tab_bar_controller.dart';
-import 'package:ecommerce_app/features/home/views/widgets/home_bottom_bar.dart';
+import 'package:ecommerce_app/features/home/views/widgets/home_body/home_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

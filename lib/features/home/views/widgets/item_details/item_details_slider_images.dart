@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/features/home/controller/item_details_controller.dart';
 import 'package:ecommerce_app/features/home/data/models/item_model.dart';
-import 'package:ecommerce_app/features/home/views/widgets/item_details_image_indicator.dart';
-import 'package:ecommerce_app/features/home/views/widgets/item_details_slider_content.dart';
+import 'package:ecommerce_app/features/home/views/widgets/item_details/item_details_image_indicator.dart';
+import 'package:ecommerce_app/features/home/views/widgets/item_details/item_details_slider_content.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
