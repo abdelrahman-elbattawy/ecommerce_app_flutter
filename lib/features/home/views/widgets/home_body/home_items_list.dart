@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/features/home/controller/home_controller.dart';
-import 'package:ecommerce_app/features/home/views/widgets/home_body/home_item_card.dart';
+import 'package:ecommerce_app/features/home/views/widgets/item_details/item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +18,7 @@ class HomeItemsList extends GetView<HomeControllerImpl> {
             padding: EdgeInsets.zero,
             scrollDirection: Axis.horizontal,
             itemCount: controller.itemsList.length,
-            itemBuilder: (context, index) => HomeItemCard(
+            itemBuilder: (context, index) => ItemCard(
               itemModel: controller.itemsList[index],
               onTap: () => controller.goToItemDetails(
                 controller.itemsList[index],
