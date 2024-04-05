@@ -44,14 +44,11 @@ class _ItemImageStackState extends State<ItemImageStack> {
           ),
         ),
         Positioned(
-          child: Hero(
-            tag: widget.itemModel.itemsId!,
-            child: CachedNetworkImage(
-              imageUrl:
-                  "${AppServerLinks.imageItemsPath}/${widget.itemModel.itemsImage}",
-              height: MediaQuery.of(context).size.width * widget.imageSize,
-              width: MediaQuery.of(context).size.width * widget.imageSize,
-            ),
+          child: CachedNetworkImage(
+            imageUrl:
+                "${AppServerLinks.imageItemsPath}/${widget.itemModel.itemsImage}",
+            height: MediaQuery.of(context).size.width * widget.imageSize,
+            width: MediaQuery.of(context).size.width * widget.imageSize,
           ),
         ),
         Positioned(

@@ -1,22 +1,35 @@
+import 'package:ecommerce_app/core/constants/app_routes.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
+import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
+import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
 import 'package:ecommerce_app/features/home/data/models/item_model.dart';
+import 'package:ecommerce_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:get/get.dart';
 
 abstract class ItemDetailsController extends GetxController {
   void intialData();
   void onSliderChanged(int index);
+  void goToItemDetails(ItemModel itemModel);
+  void intialServices();
+  void fetchItemsBy(String categoryID);
 }
 
 class ItemDetailsControllerImpl extends ItemDetailsController {
   late ItemModel itemModel;
   late List<String> imagesPath;
+  List<ItemModel> similarItemsList = [];
+  late final HomeRepoImpl _homeRepoImpl;
 
   int currentSlider = 0;
+  bool isLoading = true;
 
   @override
   void onInit() {
-    intialData();
     super.onInit();
+
+    intialServices();
+
+    intialData();
   }
 
   @override
@@ -28,6 +41,13 @@ class ItemDetailsControllerImpl extends ItemDetailsController {
       "${AppServerLinks.imageItemsPath}/${itemModel.itemsImage}",
       "${AppServerLinks.imageItemsPath}/${itemModel.itemsImage}",
     ];
+
+    fetchItemsBy(itemModel.categoryModel!.categoriesId!);
+  }
+
+  @override
+  void intialServices() {
+    _homeRepoImpl = Get.find();
   }
 
   @override
@@ -35,5 +55,51 @@ class ItemDetailsControllerImpl extends ItemDetailsController {
     currentSlider = index;
 
     update();
+  }
+
+  @override
+  void fetchItemsBy(String categoryID) async {
+    similarItemsList.clear();
+
+    final results = await _homeRepoImpl.fetchItemsBy(categoryID, "5");
+
+    results.fold(
+      (failure) {
+        if (failure.errMessage == "No data!") {
+          CustomSnakBar.showSnack(
+            context: Get.context!,
+            snackBarType: SnackBarType.warring,
+            errMessage: AppTranslationsKeys.snackBarNoData.tr,
+          );
+        } else {
+          CustomSnakBar.showSnack(
+            context: Get.context!,
+            snackBarType: SnackBarType.error,
+            errMessage: failure.errMessage,
+          );
+        }
+      },
+      (data) {
+        for (var category in data['data']) {
+          similarItemsList.add(ItemModel.fromJson(category));
+        }
+      },
+    );
+
+    isLoading = false;
+
+    update();
+  }
+
+  @override
+  void goToItemDetails(ItemModel itemModel) async {
+    await Get.delete<ItemDetailsControllerImpl>(force: true);
+
+    await Get.offAndToNamed(
+      AppRoutes.itemDetails,
+      arguments: {
+        "itemModel": itemModel,
+      },
+    );
   }
 }
