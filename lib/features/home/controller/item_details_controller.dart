@@ -1,23 +1,24 @@
 import 'dart:convert';
 
 import 'package:ecommerce_app/core/constants/app_preferences_keys.dart';
-import 'package:ecommerce_app/core/constants/app_routes.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/services/app_services.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
 import 'package:ecommerce_app/features/auth/data/models/user_model.dart';
 import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
+import 'package:ecommerce_app/features/home/controller/home_controller.dart';
 import 'package:ecommerce_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:get/get.dart';
 
 abstract class ItemDetailsController extends GetxController {
-  void intialData();
+  void intialData(ItemModel itemModel);
   void onSliderChanged(int index);
   void goToItemDetails(ItemModel itemModel);
   void intialServices();
   void fetchItemsBy(String categoryID);
   void getUserModel();
+  void setFavorite(ItemModel itemModel);
 }
 
 class ItemDetailsControllerImpl extends ItemDetailsController {
@@ -30,7 +31,7 @@ class ItemDetailsControllerImpl extends ItemDetailsController {
   late final HomeRepoImpl _homeRepoImpl;
 
   int currentSlider = 0;
-  bool isLoading = true;
+  bool isLoading = false;
 
   @override
   void onInit() {
@@ -39,7 +40,7 @@ class ItemDetailsControllerImpl extends ItemDetailsController {
     intialServices();
     getUserModel();
 
-    intialData();
+    intialData(Get.arguments["itemModel"]);
   }
 
   @override
@@ -51,8 +52,8 @@ class ItemDetailsControllerImpl extends ItemDetailsController {
   }
 
   @override
-  void intialData() {
-    itemModel = Get.arguments["itemModel"];
+  void intialData(ItemModel itemModel) async {
+    this.itemModel = itemModel;
 
     imagesPath = [
       "${AppServerLinks.imageItemsPath}/${itemModel.itemsImage}",
@@ -79,6 +80,7 @@ class ItemDetailsControllerImpl extends ItemDetailsController {
   @override
   void fetchItemsBy(String categoryID) async {
     similarItemsList.clear();
+    isLoading = true;
 
     final results = await _homeRepoImpl.fetchItemsBy(
       userModel.id!,
@@ -109,19 +111,26 @@ class ItemDetailsControllerImpl extends ItemDetailsController {
     );
 
     isLoading = false;
-
     update();
   }
 
   @override
   void goToItemDetails(ItemModel itemModel) async {
-    await Get.delete<ItemDetailsControllerImpl>(force: true);
+    Get.find<ItemDetailsControllerImpl>().intialData(itemModel);
+  }
 
-    await Get.offAndToNamed(
-      AppRoutes.itemDetails,
-      arguments: {
-        "itemModel": itemModel,
-      },
-    );
+  @override
+  void setFavorite(ItemModel itemModel) {
+    final itemIndex = similarItemsList
+        .indexWhere((element) => element.itemsId == itemModel.itemsId);
+
+    if (similarItemsList[itemIndex].favID == "0") {
+      similarItemsList[itemIndex].favID = "1";
+    } else {
+      similarItemsList[itemIndex].favID = "0";
+    }
+    update();
+
+    Get.find<HomeControllerImpl>().setFavorite(itemModel);
   }
 }

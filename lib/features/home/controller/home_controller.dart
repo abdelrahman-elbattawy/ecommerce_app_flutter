@@ -186,7 +186,7 @@ class HomeControllerImpl extends HomeController {
     final itemIndex =
         itemsList.indexWhere((element) => element.itemsId == itemModel.itemsId);
 
-    if (itemModel.favID == "0") {
+    if (itemsList[itemIndex].favID == "0") {
       itemsList[itemIndex].favID = "1";
 
       Get.find<FavoriteControllerImpl>().addFavorite(itemModel);

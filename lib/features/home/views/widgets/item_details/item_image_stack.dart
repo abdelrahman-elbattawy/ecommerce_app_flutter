@@ -2,12 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/functions/get_name_lang_func.dart';
-import 'package:ecommerce_app/features/home/controller/home_controller.dart';
 import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-class ItemImageStack extends GetView<HomeControllerImpl> {
+class ItemImageStack extends StatelessWidget {
   const ItemImageStack({
     super.key,
     required this.itemModel,
@@ -17,6 +15,7 @@ class ItemImageStack extends GetView<HomeControllerImpl> {
     this.borderCircular = 16,
     this.favoriteLoc = 8,
     this.visibleFavIcon = true,
+    this.onPressed,
   });
 
   final ItemModel itemModel;
@@ -26,6 +25,7 @@ class ItemImageStack extends GetView<HomeControllerImpl> {
   final double borderCircular;
   final double favoriteLoc;
   final bool visibleFavIcon;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -66,18 +66,14 @@ class ItemImageStack extends GetView<HomeControllerImpl> {
                 borderRadius: BorderRadius.circular(40),
                 color: AppColors.primaryBackgroundColor,
               ),
-              child: GetBuilder<HomeControllerImpl>(
-                builder: (controller) {
-                  return IconButton(
-                    onPressed: () => controller.setFavorite(itemModel),
-                    icon: Icon(
-                      itemModel.favID != "0"
-                          ? Icons.favorite
-                          : Icons.favorite_outline,
-                      color: Colors.red,
-                    ),
-                  );
-                },
+              child: IconButton(
+                onPressed: onPressed,
+                icon: Icon(
+                  itemModel.favID != "0"
+                      ? Icons.favorite
+                      : Icons.favorite_outline,
+                  color: Colors.red,
+                ),
               ),
             ),
           ),

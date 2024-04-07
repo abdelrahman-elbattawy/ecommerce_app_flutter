@@ -100,7 +100,6 @@ class FavoriteControllerImpl extends FavoriteController {
 
   @override
   void addFavorite(ItemModel itemModel) async {
-    itemModel.favID = "1";
     itemsList.add(itemModel);
 
     final results = await _favoriteRepoImpl.addFavorite(

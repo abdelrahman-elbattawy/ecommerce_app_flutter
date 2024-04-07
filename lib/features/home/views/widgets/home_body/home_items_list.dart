@@ -25,6 +25,9 @@ class HomeItemsList extends GetView<HomeControllerImpl> {
               onTap: () => controller.goToItemDetails(
                 controller.itemsList[index],
               ),
+              onPressed: () => controller.setFavorite(
+                controller.itemsList[index],
+              ),
             ),
           );
         },

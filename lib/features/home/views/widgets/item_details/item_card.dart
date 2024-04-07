@@ -10,11 +10,13 @@ class ItemCard extends StatelessWidget {
     required this.itemModel,
     this.onTap,
     this.imageSize = .3,
+    this.onPressed,
   });
 
   final ItemModel itemModel;
   final void Function()? onTap;
   final double imageSize;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +46,7 @@ class ItemCard extends StatelessWidget {
             ItemImageStack(
               itemModel: itemModel,
               imageSize: imageSize,
+              onPressed: onPressed,
             ),
             const SizedBox(height: 15),
             ItemCardInfo(itemModel: itemModel),

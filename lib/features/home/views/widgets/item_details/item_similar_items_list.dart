@@ -3,7 +3,7 @@ import 'package:ecommerce_app/features/home/views/widgets/item_details/item_card
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ItemSimilarItemsList extends GetView<ItemDetailsControllerImpl> {
+class ItemSimilarItemsList extends StatelessWidget {
   const ItemSimilarItemsList({
     super.key,
   });
@@ -23,6 +23,9 @@ class ItemSimilarItemsList extends GetView<ItemDetailsControllerImpl> {
             itemBuilder: (context, index) => ItemCard(
               itemModel: controller.similarItemsList[index],
               onTap: () => controller.goToItemDetails(
+                controller.similarItemsList[index],
+              ),
+              onPressed: () => controller.setFavorite(
                 controller.similarItemsList[index],
               ),
             ),
