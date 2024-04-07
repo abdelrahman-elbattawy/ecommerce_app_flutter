@@ -41,12 +41,6 @@ class HomeViewBody extends StatelessWidget {
                         onSuffixIcon: () => controller.searchController.clear(),
                       ),
                     ),
-                    // SliverToBoxAdapter(
-                    //   child: HomeSectionTitle(
-                    //     title: AppTranslationsKeys.homeViewTodayOffersLabel.tr,
-                    //     buttonText: "",
-                    //   ),
-                    // ),
                     const SliverToBoxAdapter(child: SizedBox(height: 20)),
                     const SliverToBoxAdapter(child: HomeOffersList()),
                     SliverToBoxAdapter(
@@ -61,7 +55,7 @@ class HomeViewBody extends StatelessWidget {
                       child: HomeSectionTitle(
                         title: AppTranslationsKeys.homeViewRecommendedLabel.tr,
                         buttonText: AppTranslationsKeys.homeViewSeeAllLabel.tr,
-                        onPressed: () => controller.goToItems(),
+                        onPressed: () => controller.goToItems(0),
                       ),
                     ),
                     const SliverToBoxAdapter(child: HomeItemsList()),

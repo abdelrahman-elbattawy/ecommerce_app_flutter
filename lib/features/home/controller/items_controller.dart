@@ -33,14 +33,18 @@ class ItemsControllerImpl extends ItemsController {
   late final HomeRepoImpl _homeRepoImpl;
   late final AppServices _appServices;
 
-  int categoryTitleIndexSelected = 0;
+  late int categoryTitleIndexSelected;
+
+  bool isLoading = false;
 
   @override
   void onInit() {
+    intialData();
+
     intialServices();
     getUserModel();
 
-    intialData();
+    setCategoyTitleIndex(categoryTitleIndexSelected);
 
     super.onInit();
   }
@@ -61,8 +65,8 @@ class ItemsControllerImpl extends ItemsController {
 
   @override
   void intialData() {
-    itemsList = Get.arguments["itemsList"];
     categoriesList = Get.arguments["categoriesList"];
+    categoryTitleIndexSelected = Get.arguments["selectedIndex"];
 
     searchController = TextEditingController();
   }
@@ -70,6 +74,7 @@ class ItemsControllerImpl extends ItemsController {
   @override
   void fetchItemsBy(String categoryID) async {
     itemsList.clear();
+    isLoading = true;
 
     final results = await _homeRepoImpl.fetchItemsBy(
       userModel.id!,
@@ -99,6 +104,8 @@ class ItemsControllerImpl extends ItemsController {
       },
     );
 
+    isLoading = false;
+
     update();
   }
 
@@ -118,6 +125,7 @@ class ItemsControllerImpl extends ItemsController {
 
     if (index != 0) {
       fetchItemsBy(categoriesList[index - 1].categoriesId!);
+      categoryModel = categoriesList[index - 1];
     } else {
       fetchItemsBy("All");
     }

@@ -21,7 +21,7 @@ abstract class HomeController extends GetxController {
   void fetchAllData();
   void goToCategories();
   void fetchItemsBy(String categoryID);
-  void goToItems();
+  void goToItems(int selectedIndex);
   void goToItemDetails(ItemModel itemModel);
   void setFavorite(ItemModel itemModel);
   onPageChanged(int index);
@@ -126,12 +126,12 @@ class HomeControllerImpl extends HomeController {
   }
 
   @override
-  void goToItems() {
+  void goToItems(int selectedIndex) {
     Get.toNamed(
       AppRoutes.items,
       arguments: {
         "categoriesList": categoriesList,
-        "itemsList": itemsList,
+        "selectedIndex": selectedIndex,
       },
     );
   }
