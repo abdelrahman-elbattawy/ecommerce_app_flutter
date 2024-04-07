@@ -18,7 +18,6 @@ abstract class HomeController extends GetxController {
   void intiailService();
   void intialTextControllers();
   void fetchAllData();
-  void setCategoyTitleIndex(int index);
   void goToCategories();
   void fetchItemsBy(String categoryID);
   void goToItems();
@@ -75,7 +74,7 @@ class HomeControllerImpl extends HomeController {
   void fetchAllData() async {
     isLoading = true;
 
-    final results = await _homeRepoImpl.fetchAllData();
+    final results = await _homeRepoImpl.fetchAllData(userModel.id!);
 
     Future.delayed(
       const Duration(milliseconds: 1500),
@@ -110,19 +109,6 @@ class HomeControllerImpl extends HomeController {
   }
 
   @override
-  void setCategoyTitleIndex(int index) {
-    categoryTitleIndexSelected = index;
-
-    if (index != 0) {
-      fetchItemsBy(categoriesList[index - 1].categoriesId!);
-    } else {
-      fetchItemsBy("All");
-    }
-
-    update();
-  }
-
-  @override
   void goToCategories() {
     Get.toNamed(
       AppRoutes.categories,
@@ -134,14 +120,11 @@ class HomeControllerImpl extends HomeController {
 
   @override
   void goToItems() {
-    final categoryIndex = categoryTitleIndexSelected - 1;
-
     Get.toNamed(
       AppRoutes.items,
       arguments: {
-        "categoryModel": categoryIndex == -1
-            ? "-1"
-            : categoriesList[categoryTitleIndexSelected - 1],
+        "categoriesList": categoriesList,
+        "itemsList": itemsList,
       },
     );
   }
@@ -150,7 +133,10 @@ class HomeControllerImpl extends HomeController {
   void fetchItemsBy(String categoryID) async {
     itemsList.clear();
 
-    final results = await _homeRepoImpl.fetchItemsBy(categoryID, "5");
+    final results = await _homeRepoImpl.fetchItemsBy(
+      userModel.id!,
+      categoryID,
+    );
 
     results.fold(
       (failure) {

@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/functions/get_name_lang_func.dart';
 import 'package:ecommerce_app/features/home/controller/item_details_controller.dart';
 import 'package:ecommerce_app/features/home/data/models/item_model.dart';
@@ -27,9 +28,9 @@ class ItemDetailsSliderImages extends GetView<ItemDetailsControllerImpl> {
               itemModel: itemModel,
               imageSize: .75,
               containerHeigth: 1,
-              borderCircular: 28,
-              marginHorizontal: 16,
-              favoriteLoc: 30,
+              borderCircular: 0,
+              marginHorizontal: 0,
+              visibleFavIcon: false,
             ),
           ),
         ),
@@ -44,6 +45,38 @@ class ItemDetailsSliderImages extends GetView<ItemDetailsControllerImpl> {
                 currentValue: controller.currentSlider,
               );
             },
+          ),
+        ),
+        Positioned(
+          left: getNameLang() == "EN" ? 10 : null,
+          right: getNameLang() == "AR" ? 10 : null,
+          child: IconButton(
+            onPressed: () => Get.back(),
+            icon: const Icon(Icons.arrow_back_ios_new),
+          ),
+        ),
+        Positioned(
+          top: 10,
+          right: getNameLang() == "EN" ? 30 : null,
+          left: getNameLang() == "AR" ? 30 : null,
+          child: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(40),
+              color: AppColors.primaryBackgroundColor,
+            ),
+            child: GetBuilder<ItemDetailsControllerImpl>(
+              builder: (controller) {
+                return IconButton(
+                  onPressed: () => controller.setFavorite(),
+                  icon: Icon(
+                    controller.favoriteIcon,
+                    color: Colors.red,
+                  ),
+                );
+              },
+            ),
           ),
         ),
       ],

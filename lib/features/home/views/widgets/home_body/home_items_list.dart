@@ -17,7 +17,9 @@ class HomeItemsList extends GetView<HomeControllerImpl> {
           return ListView.builder(
             padding: EdgeInsets.zero,
             scrollDirection: Axis.horizontal,
-            itemCount: controller.itemsList.length,
+            itemCount: controller.itemsList.length > 5
+                ? 5
+                : controller.itemsList.length,
             itemBuilder: (context, index) => ItemCard(
               itemModel: controller.itemsList[index],
               onTap: () => controller.goToItemDetails(

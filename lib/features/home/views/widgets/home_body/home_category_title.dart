@@ -20,7 +20,10 @@ class HomeCategoryTitle extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            width: .2,
+          ),
+          borderRadius: BorderRadius.circular(25),
           boxShadow: [
             isSelected
                 ? const BoxShadow(
@@ -33,7 +36,7 @@ class HomeCategoryTitle extends StatelessWidget {
           ],
           color: isSelected
               ? AppColors.primaryColor
-              : AppColors.primaryForegroundColor,
+              : AppColors.primaryBackgroundColor,
         ),
         child: Center(
           child: Padding(

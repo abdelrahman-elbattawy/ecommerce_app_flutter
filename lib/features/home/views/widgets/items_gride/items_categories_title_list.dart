@@ -1,11 +1,12 @@
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
-import 'package:ecommerce_app/features/home/controller/home_controller.dart';
+import 'package:ecommerce_app/core/functions/get_name_lang_func.dart';
+import 'package:ecommerce_app/features/home/controller/items_controller.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_body/home_category_title.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomeCategoriesTitleList extends StatelessWidget {
-  const HomeCategoriesTitleList({
+class ItemsCategoriesTitleList extends StatelessWidget {
+  const ItemsCategoriesTitleList({
     super.key,
   });
 
@@ -13,7 +14,7 @@ class HomeCategoriesTitleList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 50,
-      child: GetBuilder<HomeControllerImpl>(
+      child: GetBuilder<ItemsControllerImpl>(
         builder: (controller) {
           return ListView.builder(
             padding: EdgeInsets.zero,
@@ -24,7 +25,7 @@ class HomeCategoriesTitleList extends StatelessWidget {
               child: HomeCategoryTitle(
                 title: index == 0
                     ? AppTranslationsKeys.homeViewAllLabel.tr
-                    : controller.localCont.codeLang == "AR"
+                    : getNameLang() == "AR"
                         ? controller.categoriesList[index - 1].categoriesNameAr!
                         : controller.categoriesList[index - 1].categoriesName!,
                 isSelected: index == controller.categoryTitleIndexSelected,

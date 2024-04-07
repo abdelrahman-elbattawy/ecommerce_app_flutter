@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
-import 'package:ecommerce_app/core/shared/widgets/custom_app_bar.dart';
 import 'package:ecommerce_app/core/shared/widgets/page_loading_indicator.dart';
 import 'package:ecommerce_app/features/home/controller/item_details_controller.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_details_information.dart';
@@ -20,7 +19,6 @@ class ItemDetailsViewBody extends StatelessWidget {
             : ListView(
                 padding: EdgeInsets.zero,
                 children: [
-                  const CustomAppBar(),
                   ItemDetailsSliderImages(
                     itemModel: controller.itemModel,
                   ),

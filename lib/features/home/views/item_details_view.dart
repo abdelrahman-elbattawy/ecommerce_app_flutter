@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/functions/get_text_direction_func.dart';
 import 'package:ecommerce_app/features/home/controller/item_details_controller.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_details_floating_button.dart';
@@ -13,6 +14,12 @@ class ItemDetailsView extends StatelessWidget {
     Get.put(ItemDetailsControllerImpl());
 
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: const Size(0.0, 0.0),
+        child: Container(
+          color: AppColors.primaryForegroundColor,
+        ),
+      ),
       floatingActionButton: const ItemDetailsFloatingButton(),
       body: SafeArea(
         child: Directionality(

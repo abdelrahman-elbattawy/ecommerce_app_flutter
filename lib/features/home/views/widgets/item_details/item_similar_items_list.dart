@@ -17,7 +17,9 @@ class ItemSimilarItemsList extends GetView<ItemDetailsControllerImpl> {
           return ListView.builder(
             padding: EdgeInsets.zero,
             scrollDirection: Axis.horizontal,
-            itemCount: controller.similarItemsList.length,
+            itemCount: controller.similarItemsList.length > 5
+                ? 5
+                : controller.similarItemsList.length,
             itemBuilder: (context, index) => ItemCard(
               itemModel: controller.similarItemsList[index],
               onTap: () => controller.goToItemDetails(

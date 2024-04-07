@@ -11,22 +11,27 @@ class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl({required this.apiService});
 
   @override
-  Future<Either<AppFailure, Map>> fetchAllData() async {
-    final results = await apiService.post(AppServerLinks.home);
+  Future<Either<AppFailure, Map>> fetchAllData(String userID) async {
+    final results = await apiService.post(
+      AppServerLinks.home,
+      {
+        "userID": userID,
+      },
+    );
 
     return foldMethod(results);
   }
 
   @override
   Future<Either<AppFailure, Map>> fetchItemsBy(
+    String userID,
     String categoryID,
-    String countLimit,
   ) async {
     final results = await apiService.post(
       AppServerLinks.itemsPage,
       {
+        "userID": userID,
         "categoryID": categoryID,
-        "countLimit": countLimit,
       },
     );
 

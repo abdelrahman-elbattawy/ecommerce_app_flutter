@@ -4,17 +4,18 @@ import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/functions/get_name_lang_func.dart';
 import 'package:ecommerce_app/features/home/data/models/item_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ItemImageStack extends StatefulWidget {
-  const ItemImageStack({
-    super.key,
-    required this.itemModel,
-    required this.imageSize,
-    this.containerHeigth = .35,
-    this.marginHorizontal = 0,
-    this.borderCircular = 16,
-    this.favoriteLoc = 8,
-  });
+  const ItemImageStack(
+      {super.key,
+      required this.itemModel,
+      required this.imageSize,
+      this.containerHeigth = .35,
+      this.marginHorizontal = 0,
+      this.borderCircular = 16,
+      this.favoriteLoc = 8,
+      this.visibleFavIcon = true});
 
   final ItemModel itemModel;
   final double imageSize;
@@ -22,6 +23,7 @@ class ItemImageStack extends StatefulWidget {
   final double marginHorizontal;
   final double borderCircular;
   final double favoriteLoc;
+  final bool visibleFavIcon;
 
   @override
   State<ItemImageStack> createState() => _ItemImageStackState();
@@ -39,38 +41,46 @@ class _ItemImageStackState extends State<ItemImageStack> {
           margin: EdgeInsets.symmetric(horizontal: widget.marginHorizontal),
           height: MediaQuery.of(context).size.width * widget.containerHeigth,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(widget.borderCircular),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(widget.borderCircular),
+              topRight: Radius.circular(widget.borderCircular),
+            ),
             color: AppColors.primaryForegroundColor,
           ),
         ),
         Positioned(
+          bottom: 0,
           child: CachedNetworkImage(
             imageUrl:
                 "${AppServerLinks.imageItemsPath}/${widget.itemModel.itemsImage}",
             height: MediaQuery.of(context).size.width * widget.imageSize,
-            width: MediaQuery.of(context).size.width * widget.imageSize,
+            width: MediaQuery.of(context).size.width * widget.imageSize * .8,
+            fit: BoxFit.fill,
           ),
         ),
-        Positioned(
-          top: 10,
-          right: getNameLang() == "EN" ? widget.favoriteLoc : null,
-          left: getNameLang() == "AR" ? widget.favoriteLoc : null,
-          child: Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(40),
-              color: AppColors.primaryBackgroundColor,
-            ),
-            child: IconButton(
-              onPressed: () => setState(
-                () => favoriteIcon == Icons.favorite_outline
-                    ? favoriteIcon = Icons.favorite
-                    : favoriteIcon = Icons.favorite_outline,
+        Visibility(
+          visible: widget.visibleFavIcon,
+          child: Positioned(
+            top: 10,
+            right: getNameLang() == "EN" ? widget.favoriteLoc : null,
+            left: getNameLang() == "AR" ? widget.favoriteLoc : null,
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40),
+                color: AppColors.primaryBackgroundColor,
               ),
-              icon: Icon(
-                favoriteIcon,
-                color: Colors.red,
+              child: IconButton(
+                onPressed: () => setState(
+                  () => favoriteIcon == Icons.favorite_outline
+                      ? favoriteIcon = Icons.favorite
+                      : favoriteIcon = Icons.favorite_outline,
+                ),
+                icon: Icon(
+                  favoriteIcon,
+                  color: Colors.red,
+                ),
               ),
             ),
           ),
