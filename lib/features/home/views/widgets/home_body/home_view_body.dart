@@ -6,7 +6,7 @@ import 'package:ecommerce_app/features/home/views/widgets/home_body/home_app_bar
 import 'package:ecommerce_app/features/home/views/widgets/home_body/home_categories_list.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_body/home_items_list.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_body/home_items_list_vertical.dart';
-import 'package:ecommerce_app/features/home/views/widgets/home_body/home_offers_card.dart';
+import 'package:ecommerce_app/features/home/views/widgets/home_body/home_offers_list.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_body/home_section_title.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -41,6 +41,14 @@ class HomeViewBody extends StatelessWidget {
                         onSuffixIcon: () => controller.searchController.clear(),
                       ),
                     ),
+                    // SliverToBoxAdapter(
+                    //   child: HomeSectionTitle(
+                    //     title: AppTranslationsKeys.homeViewTodayOffersLabel.tr,
+                    //     buttonText: "",
+                    //   ),
+                    // ),
+                    const SliverToBoxAdapter(child: SizedBox(height: 20)),
+                    const SliverToBoxAdapter(child: HomeOffersList()),
                     SliverToBoxAdapter(
                       child: HomeSectionTitle(
                         title: AppTranslationsKeys.homeViewCategoriesLabel.tr,
@@ -49,13 +57,6 @@ class HomeViewBody extends StatelessWidget {
                       ),
                     ),
                     const SliverToBoxAdapter(child: HomeCategoriesList()),
-                    SliverToBoxAdapter(
-                      child: HomeSectionTitle(
-                        title: AppTranslationsKeys.homeViewTodayOffersLabel.tr,
-                        buttonText: "",
-                      ),
-                    ),
-                    const SliverToBoxAdapter(child: HomeOffersCard()),
                     SliverToBoxAdapter(
                       child: HomeSectionTitle(
                         title: AppTranslationsKeys.homeViewRecommendedLabel.tr,

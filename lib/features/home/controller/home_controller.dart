@@ -17,13 +17,14 @@ import 'package:get/get.dart';
 abstract class HomeController extends GetxController {
   void getUserModel();
   void intiailService();
-  void intialTextControllers();
+  void intialControllers();
   void fetchAllData();
   void goToCategories();
   void fetchItemsBy(String categoryID);
   void goToItems();
   void goToItemDetails(ItemModel itemModel);
   void setFavorite(ItemModel itemModel);
+  onPageChanged(int index);
 }
 
 class HomeControllerImpl extends HomeController {
@@ -41,10 +42,13 @@ class HomeControllerImpl extends HomeController {
 
   int categoryTitleIndexSelected = 0;
 
+  late PageController pageController;
+  int currentPage = 0;
+
   @override
   void onInit() {
     intiailService();
-    intialTextControllers();
+    intialControllers();
 
     getUserModel();
 
@@ -68,8 +72,9 @@ class HomeControllerImpl extends HomeController {
   }
 
   @override
-  void intialTextControllers() {
+  void intialControllers() {
     searchController = TextEditingController();
+    pageController = PageController();
   }
 
   @override
@@ -191,6 +196,12 @@ class HomeControllerImpl extends HomeController {
       Get.find<FavoriteControllerImpl>().removeFavorite(itemModel);
     }
 
+    update();
+  }
+
+  @override
+  onPageChanged(int index) {
+    currentPage = index;
     update();
   }
 }

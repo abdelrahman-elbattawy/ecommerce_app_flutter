@@ -17,12 +17,13 @@ class HomeOffersCard extends StatelessWidget {
     return Stack(
       children: [
         Container(
+          margin: const EdgeInsets.symmetric(horizontal: 8),
           height: MediaQuery.of(context).size.width * .4,
           decoration: BoxDecoration(
             boxShadow: const [
               BoxShadow(
                 color: Colors.grey,
-                blurRadius: 10,
+                blurRadius: 2,
                 offset: Offset(0, -0),
                 blurStyle: BlurStyle.solid,
               )
