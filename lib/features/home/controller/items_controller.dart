@@ -7,7 +7,7 @@ import 'package:ecommerce_app/core/services/app_services.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
 import 'package:ecommerce_app/features/auth/data/models/user_model.dart';
 import 'package:ecommerce_app/features/home/data/models/category_model.dart';
-import 'package:ecommerce_app/features/home/data/models/item_model.dart';
+import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
 import 'package:ecommerce_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

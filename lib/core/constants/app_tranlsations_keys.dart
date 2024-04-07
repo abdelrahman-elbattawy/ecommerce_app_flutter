@@ -96,6 +96,8 @@ final class AppTranslationsKeys {
   static const snackBarResetPasswordSuccess = "snackBarResetPasswordSuccess";
   static const snackBarDeleteAccountSuccess = "snackBarDeleteAccountSuccess";
   static const snackBarNoData = "snackBarNoData";
+  static const snackBarAddFavorite = "snackBarAddFavorite";
+  static const snackBarRemoveFavorite = "snackBarRemoveFavorite";
 
   // Home View
   static const homeViewSeachHint = "homeViewSeachHint";

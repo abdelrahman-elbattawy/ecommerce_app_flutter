@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
-import 'package:ecommerce_app/core/shared/datasources/static_data.dart';
+import 'package:ecommerce_app/core/shared/data/static_data.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_button.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_circle_positioned.dart';
 import 'package:ecommerce_app/features/onBoarding/controller/onboarding_controller.dart';

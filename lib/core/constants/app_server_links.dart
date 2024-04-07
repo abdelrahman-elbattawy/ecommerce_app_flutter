@@ -1,10 +1,9 @@
 final class AppServerLinks {
-  // Base Paths
+  // Base Path
   static const _baseUrl = "https://localhost/ecommerce";
-  static const _authPath = "$_baseUrl/modules/auth";
-  static const _profilePath = "$_baseUrl/modules/profile";
 
   // Auth
+  static const _authPath = "$_baseUrl/modules/auth";
   static const verifyCode = "$_authPath/verifycode.php";
   static const register = "$_authPath/register.php";
   static const login = "$_authPath/login.php";
@@ -23,7 +22,14 @@ final class AppServerLinks {
   static const home = "$_homePath/home_page.php";
   static const itemsPage = "$_homePath/items_page.php";
 
+  // Favorite
+  static const _favoritePath = "$_baseUrl/modules/favorite";
+  static const addFavorite = "$_favoritePath/add_favorite.php";
+  static const removeFavorite = "$_favoritePath/remove_favorite.php";
+  static const viewFavorite = "$_favoritePath/view_favorite.php";
+
   // Profile
+  static const _profilePath = "$_baseUrl/modules/profile";
   static const deleteAccount = "$_profilePath/delete_account.php";
   static const uploadAvatar = "$_profilePath/upload_avatar.php";
   static const updateAccountInfo =

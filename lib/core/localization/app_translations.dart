@@ -120,6 +120,10 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.snackBarDeleteAccountSuccess:
               "لقد تم حذف حسابك بنجاح!",
           AppTranslationsKeys.snackBarNoData: "لا يوجد بيانات",
+          AppTranslationsKeys.snackBarAddFavorite:
+              "تمت إضافة العنصر إلى المفضلة",
+          AppTranslationsKeys.snackBarRemoveFavorite:
+              "تمت إزالة العنصر من المفضلة",
 
           // Home View
           AppTranslationsKeys.homeViewSeachHint: "بحث",
@@ -305,6 +309,10 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.snackBarDeleteAccountSuccess:
               "Your account has been deleted successfully!",
           AppTranslationsKeys.snackBarNoData: "No Data!",
+          AppTranslationsKeys.snackBarAddFavorite:
+              "Item has been added to favorite",
+          AppTranslationsKeys.snackBarRemoveFavorite:
+              "Item has been removed from favorite",
 
           // Home View
           AppTranslationsKeys.homeViewSeachHint: "Search",

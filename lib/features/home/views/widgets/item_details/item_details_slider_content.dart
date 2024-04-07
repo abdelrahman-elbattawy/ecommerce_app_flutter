@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
-import 'package:ecommerce_app/features/home/data/models/item_model.dart';
+import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

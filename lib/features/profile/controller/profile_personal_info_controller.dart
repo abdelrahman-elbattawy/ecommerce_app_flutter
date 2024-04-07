@@ -156,7 +156,7 @@ class ProfilePersonalInfoControllerImpl extends ProfilePersonalInfoController {
           jsonEncode(data['data']),
         );
 
-        Get.find<HomeControllerImpl>().getUserMode();
+        Get.find<HomeControllerImpl>().getUserModel();
 
         CustomSnakBar.showSnack(
           context: Get.context!,

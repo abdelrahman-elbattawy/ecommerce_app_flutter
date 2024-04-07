@@ -7,14 +7,15 @@ import 'package:ecommerce_app/core/localization/locale_controller.dart';
 import 'package:ecommerce_app/core/services/app_services.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
 import 'package:ecommerce_app/features/auth/data/models/user_model.dart';
+import 'package:ecommerce_app/features/favorite/controller/myfavorite_controller.dart';
 import 'package:ecommerce_app/features/home/data/models/category_model.dart';
-import 'package:ecommerce_app/features/home/data/models/item_model.dart';
+import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
 import 'package:ecommerce_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 abstract class HomeController extends GetxController {
-  void getUserMode();
+  void getUserModel();
   void intiailService();
   void intialTextControllers();
   void fetchAllData();
@@ -22,6 +23,7 @@ abstract class HomeController extends GetxController {
   void fetchItemsBy(String categoryID);
   void goToItems();
   void goToItemDetails(ItemModel itemModel);
+  void setFavorite(ItemModel itemModel);
 }
 
 class HomeControllerImpl extends HomeController {
@@ -44,14 +46,14 @@ class HomeControllerImpl extends HomeController {
     intiailService();
     intialTextControllers();
 
-    getUserMode();
+    getUserModel();
 
     fetchAllData();
     super.onInit();
   }
 
   @override
-  void getUserMode() {
+  void getUserModel() {
     final String? userData =
         _appServices.sharedPreferences.getString(AppPreferencesKeys.userModel);
 
@@ -172,5 +174,23 @@ class HomeControllerImpl extends HomeController {
         "itemModel": itemModel,
       },
     );
+  }
+
+  @override
+  void setFavorite(ItemModel itemModel) {
+    final itemIndex =
+        itemsList.indexWhere((element) => element.itemsId == itemModel.itemsId);
+
+    if (itemModel.favID == "0") {
+      itemsList[itemIndex].favID = "1";
+
+      Get.find<FavoriteControllerImpl>().addFavorite(itemModel);
+    } else {
+      itemsList[itemIndex].favID = "0";
+
+      Get.find<FavoriteControllerImpl>().removeFavorite(itemModel);
+    }
+
+    update();
   }
 }

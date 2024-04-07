@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/features/home/data/models/item_model.dart';
+import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_details_info_dec.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_details_info_rating.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_details_info_title.dart';

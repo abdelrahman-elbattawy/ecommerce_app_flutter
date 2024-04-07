@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/core/localization/locale_controller.dart';
-import 'package:ecommerce_app/core/shared/datasources/static_data.dart';
+import 'package:ecommerce_app/core/shared/data/static_data.dart';
 import 'package:ecommerce_app/features/language/controller/language_controller.dart';
 import 'package:ecommerce_app/features/language/views/widgets/language_list_tile.dart';
 import 'package:flutter/cupertino.dart';

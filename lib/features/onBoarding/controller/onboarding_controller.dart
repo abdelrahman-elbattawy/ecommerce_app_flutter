@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/core/constants/app_preferences_keys.dart';
 import 'package:ecommerce_app/core/constants/app_routes.dart';
 import 'package:ecommerce_app/core/services/app_services.dart';
-import 'package:ecommerce_app/core/shared/datasources/static_data.dart';
+import 'package:ecommerce_app/core/shared/data/static_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

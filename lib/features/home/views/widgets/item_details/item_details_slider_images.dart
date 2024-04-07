@@ -1,7 +1,8 @@
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/functions/get_name_lang_func.dart';
+import 'package:ecommerce_app/features/home/controller/home_controller.dart';
 import 'package:ecommerce_app/features/home/controller/item_details_controller.dart';
-import 'package:ecommerce_app/features/home/data/models/item_model.dart';
+import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_image_stack.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_details_image_indicator.dart';
 import 'package:flutter/material.dart';
@@ -66,12 +67,14 @@ class ItemDetailsSliderImages extends GetView<ItemDetailsControllerImpl> {
               borderRadius: BorderRadius.circular(40),
               color: AppColors.primaryBackgroundColor,
             ),
-            child: GetBuilder<ItemDetailsControllerImpl>(
+            child: GetBuilder<HomeControllerImpl>(
               builder: (controller) {
                 return IconButton(
-                  onPressed: () => controller.setFavorite(),
+                  onPressed: () => controller.setFavorite(itemModel),
                   icon: Icon(
-                    controller.favoriteIcon,
+                    itemModel.favID != "0"
+                        ? Icons.favorite
+                        : Icons.favorite_outline,
                     color: Colors.red,
                   ),
                 );

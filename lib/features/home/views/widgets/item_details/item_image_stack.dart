@@ -2,20 +2,22 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/functions/get_name_lang_func.dart';
-import 'package:ecommerce_app/features/home/data/models/item_model.dart';
+import 'package:ecommerce_app/features/home/controller/home_controller.dart';
+import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
-class ItemImageStack extends StatefulWidget {
-  const ItemImageStack(
-      {super.key,
-      required this.itemModel,
-      required this.imageSize,
-      this.containerHeigth = .35,
-      this.marginHorizontal = 0,
-      this.borderCircular = 16,
-      this.favoriteLoc = 8,
-      this.visibleFavIcon = true});
+class ItemImageStack extends GetView<HomeControllerImpl> {
+  const ItemImageStack({
+    super.key,
+    required this.itemModel,
+    required this.imageSize,
+    this.containerHeigth = .35,
+    this.marginHorizontal = 0,
+    this.borderCircular = 16,
+    this.favoriteLoc = 8,
+    this.visibleFavIcon = true,
+  });
 
   final ItemModel itemModel;
   final double imageSize;
@@ -26,24 +28,17 @@ class ItemImageStack extends StatefulWidget {
   final bool visibleFavIcon;
 
   @override
-  State<ItemImageStack> createState() => _ItemImageStackState();
-}
-
-class _ItemImageStackState extends State<ItemImageStack> {
-  IconData favoriteIcon = Icons.favorite_outline;
-
-  @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
       children: [
         Container(
-          margin: EdgeInsets.symmetric(horizontal: widget.marginHorizontal),
-          height: MediaQuery.of(context).size.width * widget.containerHeigth,
+          margin: EdgeInsets.symmetric(horizontal: marginHorizontal),
+          height: MediaQuery.of(context).size.width * containerHeigth,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(widget.borderCircular),
-              topRight: Radius.circular(widget.borderCircular),
+              topLeft: Radius.circular(borderCircular),
+              topRight: Radius.circular(borderCircular),
             ),
             color: AppColors.primaryForegroundColor,
           ),
@@ -52,18 +47,18 @@ class _ItemImageStackState extends State<ItemImageStack> {
           bottom: 0,
           child: CachedNetworkImage(
             imageUrl:
-                "${AppServerLinks.imageItemsPath}/${widget.itemModel.itemsImage}",
-            height: MediaQuery.of(context).size.width * widget.imageSize,
-            width: MediaQuery.of(context).size.width * widget.imageSize * .8,
+                "${AppServerLinks.imageItemsPath}/${itemModel.itemsImage}",
+            height: MediaQuery.of(context).size.width * imageSize,
+            width: MediaQuery.of(context).size.width * imageSize * .8,
             fit: BoxFit.fill,
           ),
         ),
         Visibility(
-          visible: widget.visibleFavIcon,
+          visible: visibleFavIcon,
           child: Positioned(
             top: 10,
-            right: getNameLang() == "EN" ? widget.favoriteLoc : null,
-            left: getNameLang() == "AR" ? widget.favoriteLoc : null,
+            right: getNameLang() == "EN" ? favoriteLoc : null,
+            left: getNameLang() == "AR" ? favoriteLoc : null,
             child: Container(
               height: 40,
               width: 40,
@@ -71,16 +66,18 @@ class _ItemImageStackState extends State<ItemImageStack> {
                 borderRadius: BorderRadius.circular(40),
                 color: AppColors.primaryBackgroundColor,
               ),
-              child: IconButton(
-                onPressed: () => setState(
-                  () => favoriteIcon == Icons.favorite_outline
-                      ? favoriteIcon = Icons.favorite
-                      : favoriteIcon = Icons.favorite_outline,
-                ),
-                icon: Icon(
-                  favoriteIcon,
-                  color: Colors.red,
-                ),
+              child: GetBuilder<HomeControllerImpl>(
+                builder: (controller) {
+                  return IconButton(
+                    onPressed: () => controller.setFavorite(itemModel),
+                    icon: Icon(
+                      itemModel.favID != "0"
+                          ? Icons.favorite
+                          : Icons.favorite_outline,
+                      color: Colors.red,
+                    ),
+                  );
+                },
               ),
             ),
           ),
