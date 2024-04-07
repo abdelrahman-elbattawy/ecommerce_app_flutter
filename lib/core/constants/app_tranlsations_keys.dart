@@ -106,6 +106,8 @@ final class AppTranslationsKeys {
   static const homeViewTodayOffersLabel = "homeViewTodayOffersLabel";
   static const homeViewRecommendedLabel = "homeViewRecommendedLabel";
   static const homeViewAllLabel = "homeViewAllLabel";
+  static const homeViewBestSellerLabel = "homeViewBestSellerLabel";
+  static const homeViewMostViewedLabel = "homeViewMostViewedLabel";
 
   // Home Tab Bar
   static const homeTabBarHome = "homeTabBarHome";

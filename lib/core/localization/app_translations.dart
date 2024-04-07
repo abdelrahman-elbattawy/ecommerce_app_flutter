@@ -132,6 +132,8 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.homeViewTodayOffersLabel: "عروض اليوم",
           AppTranslationsKeys.homeViewRecommendedLabel: "من اجلك",
           AppTranslationsKeys.homeViewAllLabel: "الكل",
+          AppTranslationsKeys.homeViewBestSellerLabel: "الأكثر مبيعًا",
+          AppTranslationsKeys.homeViewMostViewedLabel: "الأكثر مشاهدة",
 
           // Home Tab Bar
           AppTranslationsKeys.homeTabBarHome: "الرئيسية",
@@ -321,6 +323,8 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.homeViewTodayOffersLabel: "Today's Offers",
           AppTranslationsKeys.homeViewRecommendedLabel: "Recommended For You",
           AppTranslationsKeys.homeViewAllLabel: "All",
+          AppTranslationsKeys.homeViewBestSellerLabel: "Best Seller",
+          AppTranslationsKeys.homeViewMostViewedLabel: "Most Viewed",
 
           // Home Tab Bar
           AppTranslationsKeys.homeTabBarHome: "Home",
