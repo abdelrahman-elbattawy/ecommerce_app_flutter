@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/functions/get_name_trans_func.dart';
+import 'package:ecommerce_app/core/functions/goto_item_details.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_app_bar.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_text_field.dart';
 import 'package:ecommerce_app/features/home/controller/items_controller.dart';
@@ -56,8 +57,9 @@ class ItemsGrideViewBody extends StatelessWidget {
                 itemCount: controller.itemsList.length,
                 itemBuilder: (context, index) => ItemCard(
                   itemModel: controller.itemsList[index],
-                  onTap: () => controller.goToItemDetails(
+                  onTap: () => goToItemDetails(
                     controller.itemsList[index],
+                    controller,
                   ),
                   onPressed: () => controller.setFavorite(
                     controller.itemsList[index],

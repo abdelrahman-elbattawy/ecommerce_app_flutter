@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:ecommerce_app/core/constants/app_preferences_keys.dart';
-import 'package:ecommerce_app/core/constants/app_routes.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/services/app_services.dart';
@@ -15,7 +14,6 @@ import 'package:get/get.dart';
 abstract class ItemDetailsController extends GetxController {
   void intialData();
   void onSliderChanged(int index);
-  void goToItemDetails(ItemModel itemModel);
   void intialServices();
   void fetchItemsBy(String categoryID);
   void getUserModel();
@@ -112,20 +110,6 @@ class ItemDetailsControllerImpl extends ItemDetailsController {
     );
 
     isLoading = false;
-    update();
-  }
-
-  @override
-  void goToItemDetails(ItemModel itemModel) async {
-    Get.delete<ItemDetailsControllerImpl>();
-
-    await Get.offAndToNamed(
-      AppRoutes.itemDetails,
-      arguments: {
-        "itemModel": itemModel,
-      },
-    );
-
     update();
   }
 

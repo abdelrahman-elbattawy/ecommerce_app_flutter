@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/functions/goto_item_details.dart';
 import 'package:ecommerce_app/features/home/controller/item_details_controller.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_card.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +23,10 @@ class ItemSimilarItemsList extends StatelessWidget {
                 : controller.similarItemsList.length,
             itemBuilder: (context, index) => ItemCard(
               itemModel: controller.similarItemsList[index],
-              onTap: () => controller.goToItemDetails(
+              onTap: () =>
+                  goToItemDetailsWithRemoveOld<ItemDetailsControllerImpl>(
                 controller.similarItemsList[index],
+                controller,
               ),
               onPressed: () => controller.setFavorite(
                 controller.similarItemsList[index],

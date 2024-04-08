@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/core/constants/app_text_style.dart';
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
+import 'package:ecommerce_app/core/functions/goto_item_details.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_text_field.dart';
 import 'package:ecommerce_app/features/favorite/controller/myfavorite_controller.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_card.dart';
@@ -47,8 +48,9 @@ class MyFavoriteViewBody extends GetView<MyFavoriteControllerImpl> {
                 itemCount: controller.itemsList.length,
                 itemBuilder: (context, index) => ItemCard(
                   itemModel: controller.itemsList[index],
-                  onTap: () => controller.goToItemDetails(
+                  onTap: () => goToItemDetails(
                     controller.itemsList[index],
+                    controller,
                   ),
                   onPressed: () => controller.setFavorite(
                     controller.itemsList[index],

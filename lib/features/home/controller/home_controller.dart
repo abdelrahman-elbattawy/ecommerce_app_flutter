@@ -22,7 +22,6 @@ abstract class HomeController extends GetxController {
   void goToCategories();
   void fetchItemsBy(String categoryID);
   void goToItems(int selectedIndex);
-  void goToItemDetails(ItemModel itemModel);
   void setFavorite(ItemModel itemModel);
   onPageChanged(int index);
 }
@@ -178,18 +177,6 @@ class HomeControllerImpl extends HomeController {
         for (var category in data['data']) {
           itemsList.add(ItemModel.fromJson(category));
         }
-      },
-    );
-
-    update();
-  }
-
-  @override
-  void goToItemDetails(ItemModel itemModel) async {
-    await Get.toNamed(
-      AppRoutes.itemDetails,
-      arguments: {
-        "itemModel": itemModel,
       },
     );
 

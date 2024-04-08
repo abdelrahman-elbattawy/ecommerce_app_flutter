@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/functions/goto_item_details.dart';
 import 'package:ecommerce_app/features/home/controller/home_controller.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_card.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +23,9 @@ class HomeItemsList extends GetView<HomeControllerImpl> {
                 : controller.itemsList.length,
             itemBuilder: (context, index) => ItemCard(
               itemModel: controller.itemsList[index],
-              onTap: () => controller.goToItemDetails(
+              onTap: () => goToItemDetails(
                 controller.itemsList[index],
+                controller,
               ),
               onPressed: () => controller.setFavorite(
                 controller.itemsList[index],
