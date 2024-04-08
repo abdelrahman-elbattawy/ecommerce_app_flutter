@@ -2,7 +2,6 @@ import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/functions/get_name_trans_func.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_app_bar.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_text_field.dart';
-import 'package:ecommerce_app/features/home/controller/home_controller.dart';
 import 'package:ecommerce_app/features/home/controller/items_controller.dart';
 import 'package:ecommerce_app/features/home/views/widgets/items_gride/items_categories_title_list.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_card.dart';
@@ -60,7 +59,7 @@ class ItemsGrideViewBody extends StatelessWidget {
                   onTap: () => controller.goToItemDetails(
                     controller.itemsList[index],
                   ),
-                  onPressed: () => Get.find<HomeControllerImpl>().setFavorite(
+                  onPressed: () => controller.setFavorite(
                     controller.itemsList[index],
                   ),
                 ),

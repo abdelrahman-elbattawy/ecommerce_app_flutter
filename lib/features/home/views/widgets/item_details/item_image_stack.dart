@@ -3,7 +3,9 @@ import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/functions/get_name_lang_func.dart';
 import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
+import 'package:ecommerce_app/features/favorite/controller/favorite_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ItemImageStack extends StatelessWidget {
   const ItemImageStack({
@@ -69,7 +71,7 @@ class ItemImageStack extends StatelessWidget {
               child: IconButton(
                 onPressed: onPressed,
                 icon: Icon(
-                  itemModel.favID != "0"
+                  Get.find<FavoriteControllerImpl>().isFavorite(itemModel)
                       ? Icons.favorite
                       : Icons.favorite_outline,
                   color: Colors.red,

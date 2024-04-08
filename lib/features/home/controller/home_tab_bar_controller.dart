@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
-import 'package:ecommerce_app/features/favorite/views/favorite_view.dart';
+import 'package:ecommerce_app/features/favorite/views/myfavorite_view.dart';
 import 'package:ecommerce_app/features/home/data/models/tab_model.dart';
 import 'package:ecommerce_app/features/home/views/categories_gride_view.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_body/home_view_body.dart';
@@ -28,7 +28,7 @@ class HomeTabBarControllerImpl extends HomeTabBarController {
 
   List widgets = [
     const HomeViewBody(),
-    const FavoriteView(),
+    const MyFavoriteView(),
     const Center(child: Text("Cart")),
     const ProfileView(),
     const ProfileSettingsView(),

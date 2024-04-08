@@ -41,18 +41,4 @@ class FavoriteRepoImpl implements FavoriteRepo {
 
     return foldMethod(results);
   }
-
-  @override
-  Future<Either<AppFailure, Map>> viewFavorite(
-    String userID,
-  ) async {
-    final results = await apiService.post(
-      AppServerLinks.viewFavorite,
-      {
-        "userID": userID,
-      },
-    );
-
-    return foldMethod(results);
-  }
 }

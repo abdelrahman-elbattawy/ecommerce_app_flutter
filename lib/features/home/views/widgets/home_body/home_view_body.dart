@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_text_field.dart';
 import 'package:ecommerce_app/core/shared/widgets/page_loading_indicator.dart';
+import 'package:ecommerce_app/features/favorite/controller/favorite_controller.dart';
 import 'package:ecommerce_app/features/home/controller/home_controller.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_body/home_app_bar.dart';
 import 'package:ecommerce_app/features/home/views/widgets/home_body/home_categories_list.dart';
@@ -16,6 +17,7 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(Get.find<FavoriteControllerImpl>().favoritesList.length);
     return GetBuilder<HomeControllerImpl>(
       builder: (controller) {
         return controller.isLoading

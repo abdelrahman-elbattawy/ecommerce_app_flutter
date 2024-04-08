@@ -7,7 +7,7 @@ import 'package:ecommerce_app/core/localization/locale_controller.dart';
 import 'package:ecommerce_app/core/services/app_services.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
 import 'package:ecommerce_app/features/auth/data/models/user_model.dart';
-import 'package:ecommerce_app/features/favorite/controller/myfavorite_controller.dart';
+import 'package:ecommerce_app/features/favorite/controller/favorite_controller.dart';
 import 'package:ecommerce_app/features/home/data/models/category_model.dart';
 import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
 import 'package:ecommerce_app/features/home/data/repos/home_repo_impl.dart';
@@ -104,9 +104,18 @@ class HomeControllerImpl extends HomeController {
               categoriesList.add(CategoryModel.fromJson(category));
             }
 
-            for (var category in data['data']['items']) {
-              itemsList.add(ItemModel.fromJson(category));
+            for (var item in data['data']['items']) {
+              itemsList.add(ItemModel.fromJson(item));
             }
+
+            List<ItemModel> favoritesList = [];
+
+            for (var item in data['data']['favoriteItems']) {
+              favoritesList.add(ItemModel.fromJson(item));
+            }
+
+            Get.find<FavoriteControllerImpl>()
+                .intialFavoritesList(favoritesList);
           },
         );
 
@@ -116,24 +125,28 @@ class HomeControllerImpl extends HomeController {
   }
 
   @override
-  void goToCategories() {
-    Get.toNamed(
+  void goToCategories() async {
+    await Get.toNamed(
       AppRoutes.categories,
       arguments: {
         "categoriesList": categoriesList,
       },
     );
+
+    update();
   }
 
   @override
-  void goToItems(int selectedIndex) {
-    Get.toNamed(
+  void goToItems(int selectedIndex) async {
+    await Get.toNamed(
       AppRoutes.items,
       arguments: {
         "categoriesList": categoriesList,
         "selectedIndex": selectedIndex,
       },
     );
+
+    update();
   }
 
   @override
@@ -172,29 +185,20 @@ class HomeControllerImpl extends HomeController {
   }
 
   @override
-  void goToItemDetails(ItemModel itemModel) {
-    Get.toNamed(
+  void goToItemDetails(ItemModel itemModel) async {
+    await Get.toNamed(
       AppRoutes.itemDetails,
       arguments: {
         "itemModel": itemModel,
       },
     );
+
+    update();
   }
 
   @override
   void setFavorite(ItemModel itemModel) {
-    final itemIndex =
-        itemsList.indexWhere((element) => element.itemsId == itemModel.itemsId);
-
-    if (itemsList[itemIndex].favID == "0") {
-      itemsList[itemIndex].favID = "1";
-
-      Get.find<FavoriteControllerImpl>().addFavorite(itemModel);
-    } else {
-      itemsList[itemIndex].favID = "0";
-
-      Get.find<FavoriteControllerImpl>().removeFavorite(itemModel);
-    }
+    Get.find<FavoriteControllerImpl>().setFavorite(itemModel);
 
     update();
   }

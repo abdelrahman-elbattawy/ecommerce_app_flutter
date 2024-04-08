@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/functions/get_name_lang_func.dart';
+import 'package:ecommerce_app/features/favorite/controller/favorite_controller.dart';
 import 'package:ecommerce_app/features/home/controller/item_details_controller.dart';
 import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_image_stack.dart';
@@ -71,7 +72,7 @@ class ItemDetailsSliderImages extends GetView<ItemDetailsControllerImpl> {
                 return IconButton(
                   onPressed: () => controller.setFavorite(itemModel),
                   icon: Icon(
-                    itemModel.favID != "0"
+                    Get.find<FavoriteControllerImpl>().isFavorite(itemModel)
                         ? Icons.favorite
                         : Icons.favorite_outline,
                     color: Colors.red,

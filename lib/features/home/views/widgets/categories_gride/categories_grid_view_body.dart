@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/core/constants/app_routes.dart';
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_app_bar.dart';
 import 'package:ecommerce_app/features/home/controller/categories_controller.dart';
@@ -30,12 +29,7 @@ class CategoriesGridViewBody extends GetView<CategoriesControllerImpl> {
             itemCount: controller.categoriesList.length,
             itemBuilder: (context, index) => CategoryCardList(
               categoryModel: controller.categoriesList[index],
-              onTap: () => Get.toNamed(
-                AppRoutes.items,
-                arguments: {
-                  "categoryModel": controller.categoriesList[index],
-                },
-              ),
+              onTap: () => controller.goToItems(index + 1),
             ),
           ),
         ),

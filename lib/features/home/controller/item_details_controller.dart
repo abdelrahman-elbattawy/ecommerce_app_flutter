@@ -1,18 +1,19 @@
 import 'dart:convert';
 
 import 'package:ecommerce_app/core/constants/app_preferences_keys.dart';
+import 'package:ecommerce_app/core/constants/app_routes.dart';
 import 'package:ecommerce_app/core/constants/app_server_links.dart';
 import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/services/app_services.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
 import 'package:ecommerce_app/features/auth/data/models/user_model.dart';
 import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
-import 'package:ecommerce_app/features/home/controller/home_controller.dart';
+import 'package:ecommerce_app/features/favorite/controller/favorite_controller.dart';
 import 'package:ecommerce_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:get/get.dart';
 
 abstract class ItemDetailsController extends GetxController {
-  void intialData(ItemModel itemModel);
+  void intialData();
   void onSliderChanged(int index);
   void goToItemDetails(ItemModel itemModel);
   void intialServices();
@@ -40,7 +41,7 @@ class ItemDetailsControllerImpl extends ItemDetailsController {
     intialServices();
     getUserModel();
 
-    intialData(Get.arguments["itemModel"]);
+    intialData();
   }
 
   @override
@@ -52,8 +53,8 @@ class ItemDetailsControllerImpl extends ItemDetailsController {
   }
 
   @override
-  void intialData(ItemModel itemModel) async {
-    this.itemModel = itemModel;
+  void intialData() async {
+    itemModel = Get.arguments["itemModel"];
 
     imagesPath = [
       "${AppServerLinks.imageItemsPath}/${itemModel.itemsImage}",
@@ -116,21 +117,22 @@ class ItemDetailsControllerImpl extends ItemDetailsController {
 
   @override
   void goToItemDetails(ItemModel itemModel) async {
-    Get.find<ItemDetailsControllerImpl>().intialData(itemModel);
+    Get.delete<ItemDetailsControllerImpl>();
+
+    await Get.offAndToNamed(
+      AppRoutes.itemDetails,
+      arguments: {
+        "itemModel": itemModel,
+      },
+    );
+
+    update();
   }
 
   @override
   void setFavorite(ItemModel itemModel) {
-    final itemIndex = similarItemsList
-        .indexWhere((element) => element.itemsId == itemModel.itemsId);
+    Get.find<FavoriteControllerImpl>().setFavorite(itemModel);
 
-    if (similarItemsList[itemIndex].favID == "0") {
-      similarItemsList[itemIndex].favID = "1";
-    } else {
-      similarItemsList[itemIndex].favID = "0";
-    }
     update();
-
-    Get.find<HomeControllerImpl>().setFavorite(itemModel);
   }
 }

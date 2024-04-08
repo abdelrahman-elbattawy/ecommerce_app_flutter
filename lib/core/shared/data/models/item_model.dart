@@ -13,7 +13,6 @@ class ItemModel {
   String? itemsDiscount;
   String? itemsCreated;
   String? itemsCat;
-  String? favID;
   CategoryModel? categoryModel;
 
   ItemModel({
@@ -29,7 +28,6 @@ class ItemModel {
     this.itemsDiscount,
     this.itemsCreated,
     this.itemsCat,
-    this.favID,
     this.categoryModel,
   });
 
@@ -46,7 +44,6 @@ class ItemModel {
     itemsDiscount = json['items_discount'].toString();
     itemsCreated = json['items_created'];
     itemsCat = json['items_cat'].toString();
-    favID = json['fav_id'].toString();
 
     categoryModel = CategoryModel.fromJson(json);
   }

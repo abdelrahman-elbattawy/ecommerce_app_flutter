@@ -11,8 +11,4 @@ abstract class FavoriteRepo {
     String userID,
     String itemID,
   );
-
-  Future<Either<AppFailure, Map>> viewFavorite(
-    String userID,
-  );
 }

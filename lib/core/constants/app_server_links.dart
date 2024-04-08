@@ -26,7 +26,6 @@ final class AppServerLinks {
   static const _favoritePath = "$_baseUrl/modules/favorite";
   static const addFavorite = "$_favoritePath/add_favorite.php";
   static const removeFavorite = "$_favoritePath/remove_favorite.php";
-  static const viewFavorite = "$_favoritePath/view_favorite.php";
 
   // Profile
   static const _profilePath = "$_baseUrl/modules/profile";
