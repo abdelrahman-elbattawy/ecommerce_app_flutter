@@ -19,7 +19,7 @@ void goToItemDetailsWithRemoveOld<T>(
 ) async {
   Get.delete<T>();
 
-  await Get.toNamed(
+  await Get.offNamed(
     AppRoutes.itemDetails,
     arguments: {
       "itemModel": itemModel,
