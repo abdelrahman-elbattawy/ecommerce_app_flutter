@@ -38,10 +38,26 @@ class ItemDetailsFloatingButton extends GetView<ItemDetailsControllerImpl> {
                     ? CrossAxisAlignment.end
                     : CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    r"$" + controller.itemModel.itemsPrice!,
-                    style: AppTextStyle.textStyle16.copyWith(
-                      color: Colors.black,
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: r"$" + controller.itemModel.itemsPrice!,
+                          style: AppTextStyle.textStyle16.copyWith(
+                            color: Colors.black,
+                          ),
+                        ),
+                        const WidgetSpan(
+                          child: SizedBox(width: 5),
+                        ),
+                        TextSpan(
+                          text: r"$1000",
+                          style: AppTextStyle.textStyle12.copyWith(
+                            color: AppColors.customGrey2,
+                            decoration: TextDecoration.lineThrough,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Text(
