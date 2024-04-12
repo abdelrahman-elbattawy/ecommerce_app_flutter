@@ -196,6 +196,13 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.itemDetailsInfoReviews: "تعليقات المنتج",
           AppTranslationsKeys.itemDetailsInfoBuyNow: "اشتري الآن",
           AppTranslationsKeys.itemDetailsInfoUnitPrice: "سعر الوحدة",
+
+          // Bottom Sheet
+          AppTranslationsKeys.bottomSheetQuantityLabel: "كمية",
+          AppTranslationsKeys.bottomSheetColorLabel: "إختر لون",
+          AppTranslationsKeys.bottomSheetSizeLabel: "أختر الحجم",
+          AppTranslationsKeys.bottomSheetTotalPriceLabel: "السعر الكلي",
+          AppTranslationsKeys.bottomSheetAddToCartButton: "أضف إلى السلة",
         },
         "EN": {
           // Language View
@@ -388,6 +395,13 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.itemDetailsInfoReviews: "Reviews",
           AppTranslationsKeys.itemDetailsInfoBuyNow: "Buy Now",
           AppTranslationsKeys.itemDetailsInfoUnitPrice: "Unit price",
+
+          // Bottom Sheet
+          AppTranslationsKeys.bottomSheetQuantityLabel: "Quantity",
+          AppTranslationsKeys.bottomSheetColorLabel: "Select Color",
+          AppTranslationsKeys.bottomSheetSizeLabel: "Select Size",
+          AppTranslationsKeys.bottomSheetTotalPriceLabel: "Total Price",
+          AppTranslationsKeys.bottomSheetAddToCartButton: "Add To Cart",
         },
       };
 }

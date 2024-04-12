@@ -167,4 +167,11 @@ final class AppTranslationsKeys {
   static const itemDetailsInfoReviews = "itemDetailsInfoReviews";
   static const itemDetailsInfoBuyNow = "itemDetailsInfoBuyNow";
   static const itemDetailsInfoUnitPrice = "itemDetailsInfoUnitPrice";
+
+  // Bottom Sheet
+  static const bottomSheetQuantityLabel = "bottomSheetQuantityLabel";
+  static const bottomSheetColorLabel = "bottomSheetColorLabel";
+  static const bottomSheetSizeLabel = "bottomSheetSizeLabel";
+  static const bottomSheetTotalPriceLabel = "bottomSheetTotalPriceLabel";
+  static const bottomSheetAddToCartButton = "bottomSheetAddToCartButton";
 }

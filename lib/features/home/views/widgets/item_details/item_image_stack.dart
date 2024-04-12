@@ -14,7 +14,8 @@ class ItemImageStack extends StatelessWidget {
     required this.imageSize,
     this.containerHeigth = .35,
     this.marginHorizontal = 0,
-    this.borderCircular = 16,
+    this.topBorderCircular = 16,
+    this.bottomBorderCircular = 0,
     this.favoriteLoc = 8,
     this.visibleFavIcon = true,
     this.onPressed,
@@ -24,7 +25,8 @@ class ItemImageStack extends StatelessWidget {
   final double imageSize;
   final double containerHeigth;
   final double marginHorizontal;
-  final double borderCircular;
+  final double topBorderCircular;
+  final double bottomBorderCircular;
   final double favoriteLoc;
   final bool visibleFavIcon;
   final void Function()? onPressed;
@@ -39,8 +41,10 @@ class ItemImageStack extends StatelessWidget {
           height: MediaQuery.of(context).size.width * containerHeigth,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(borderCircular),
-              topRight: Radius.circular(borderCircular),
+              topLeft: Radius.circular(topBorderCircular),
+              topRight: Radius.circular(topBorderCircular),
+              bottomLeft: Radius.circular(bottomBorderCircular),
+              bottomRight: Radius.circular(bottomBorderCircular),
             ),
             color: AppColors.primaryForegroundColor,
           ),

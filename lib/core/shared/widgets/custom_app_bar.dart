@@ -8,17 +8,24 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     this.title,
     this.color = AppColors.primaryBackgroundColor,
+    this.textStyle = AppTextStyle.textStyle20,
+    this.horizontalPadding = 8,
   });
 
   final String? title;
   final Color color;
+  final TextStyle textStyle;
+  final double horizontalPadding;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: color,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(16),
+      ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
+        padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
         child: Row(
           children: [
             Align(
@@ -34,7 +41,7 @@ class CustomAppBar extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(
                   title ?? "",
-                  style: AppTextStyle.textStyle20,
+                  style: textStyle,
                 ),
               ),
             ),

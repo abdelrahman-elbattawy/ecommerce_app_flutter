@@ -29,7 +29,7 @@ class ItemDetailsSliderImages extends GetView<ItemDetailsControllerImpl> {
               itemModel: itemModel,
               imageSize: .75,
               containerHeigth: 1,
-              borderCircular: 0,
+              topBorderCircular: 0,
               marginHorizontal: 0,
               visibleFavIcon: false,
             ),
