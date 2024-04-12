@@ -21,26 +21,29 @@ class CustomActionControl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.width * .16,
-      width: double.infinity,
-      margin: const EdgeInsets.only(left: 36, right: 12),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: AppColors.primaryForegroundColor,
-      ),
-      child: Row(
-        children: [
-          ActionControlLeft(
-            textLabel: textLabel,
-            textSpan1: textSpan1,
-            textSpan2: textSpan2,
-          ),
-          ActionControlRight(
-            onTap: onTap,
-            titleButton: titleButton,
-          ),
-        ],
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Container(
+        height: MediaQuery.of(context).size.width * .16,
+        width: double.infinity,
+        margin: const EdgeInsets.only(left: 36, right: 12),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          color: AppColors.primaryForegroundColor,
+        ),
+        child: Row(
+          children: [
+            ActionControlLeft(
+              textLabel: textLabel,
+              textSpan1: textSpan1,
+              textSpan2: textSpan2,
+            ),
+            ActionControlRight(
+              onTap: onTap,
+              titleButton: titleButton,
+            ),
+          ],
+        ),
       ),
     );
   }
