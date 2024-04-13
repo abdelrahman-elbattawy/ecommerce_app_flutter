@@ -23,8 +23,7 @@ class ItemSimilarItemsList extends StatelessWidget {
                 : controller.similarItemsList.length,
             itemBuilder: (context, index) => ItemCard(
               itemModel: controller.similarItemsList[index],
-              onTap: () =>
-                  goToItemDetailsWithRemoveOld<ItemDetailsControllerImpl>(
+              onTap: () => goToItemDetailsWithRemoveOld(
                 controller.similarItemsList[index],
                 controller,
               ),

@@ -13,12 +13,10 @@ void goToItemDetails(ItemModel itemModel, GetxController controller) async {
   controller.update();
 }
 
-void goToItemDetailsWithRemoveOld<T>(
+void goToItemDetailsWithRemoveOld(
   ItemModel itemModel,
   GetxController controller,
 ) async {
-  Get.delete<T>();
-
   await Get.offNamed(
     AppRoutes.itemDetails,
     arguments: {

@@ -34,4 +34,9 @@ final class AppServerLinks {
   static const updateAccountInfo =
       "$_profilePath/upload_personal_informations.php";
   static const updatePassword = "$_profilePath/update_password.php";
+
+  // Cart
+  static const _cartPath = "$_baseUrl/modules/cart";
+  static const addCart = "$_cartPath/add_cart.php";
+  static const removeCart = "$_cartPath/remove_cart.php";
 }

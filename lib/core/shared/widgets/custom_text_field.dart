@@ -34,7 +34,7 @@ class CustomTextField extends StatelessWidget {
         ),
         hintText: hintText,
         suffixIcon: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 12),
           child: InkWell(
             onTap: onSuffixIcon,
             child: Icon(
@@ -45,7 +45,7 @@ class CustomTextField extends StatelessWidget {
         ),
         // prefixIconColor: AppColors.primaryColor,
         prefixIcon: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 12),
           child: InkWell(
             onTap: onPrefixIcon,
             child: Icon(

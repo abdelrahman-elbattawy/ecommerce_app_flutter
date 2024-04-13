@@ -7,6 +7,8 @@ import 'package:ecommerce_app/core/localization/locale_controller.dart';
 import 'package:ecommerce_app/core/services/app_services.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
 import 'package:ecommerce_app/features/auth/data/models/user_model.dart';
+import 'package:ecommerce_app/features/cart/controller/mycart_controller.dart';
+import 'package:ecommerce_app/features/cart/data/models/cart_model.dart';
 import 'package:ecommerce_app/features/favorite/controller/favorite_controller.dart';
 import 'package:ecommerce_app/features/home/data/models/category_model.dart';
 import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
@@ -115,6 +117,14 @@ class HomeControllerImpl extends HomeController {
 
             Get.find<FavoriteControllerImpl>()
                 .intialFavoritesList(favoritesList);
+
+            List<CartModel> cartList = [];
+
+            for (var item in data['data']['cartItems']) {
+              cartList.add(CartModel.fromJson(item));
+            }
+
+            Get.find<MyCartControllerImpl>().intialList(cartList);
           },
         );
 

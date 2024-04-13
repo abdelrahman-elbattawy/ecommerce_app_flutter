@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/constants/app_colors.dart';
 import 'package:ecommerce_app/core/functions/get_name_lang_func.dart';
 import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_image_stack.dart';
@@ -36,7 +37,7 @@ class ItemCard extends StatelessWidget {
             ),
           ],
           borderRadius: BorderRadius.circular(16),
-          color: Colors.white,
+          color: AppColors.primaryBackgroundColor,
         ),
         child: Column(
           crossAxisAlignment: getNameLang() == "EN"

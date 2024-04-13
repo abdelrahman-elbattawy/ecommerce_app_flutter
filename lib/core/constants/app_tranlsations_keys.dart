@@ -98,6 +98,7 @@ final class AppTranslationsKeys {
   static const snackBarNoData = "snackBarNoData";
   static const snackBarAddFavorite = "snackBarAddFavorite";
   static const snackBarRemoveFavorite = "snackBarRemoveFavorite";
+  static const snackBarAddCart = "snackBarAddCart";
 
   // Home View
   static const homeViewSeachHint = "homeViewSeachHint";
@@ -174,4 +175,15 @@ final class AppTranslationsKeys {
   static const bottomSheetSizeLabel = "bottomSheetSizeLabel";
   static const bottomSheetTotalPriceLabel = "bottomSheetTotalPriceLabel";
   static const bottomSheetAddToCartButton = "bottomSheetAddToCartButton";
+
+  // My Cart
+  static const myCartReviewYourOrder = "myCartReviewYourOrder";
+  static const myCartYourCouponCode = "myCartYourCouponCode";
+  static const myCartTypeCouponCode = "myCartTypeCouponCode";
+  static const myCartOrderSummary = "myCartOrderSummary";
+  static const myCartSubTotal = "myCartSubTotal";
+  static const myCartShippingFee = "myCartShippingFee";
+  static const myCartDiscount = "myCartDiscount";
+  static const myCartTotalPrice = "myCartTotalPrice";
+  static const myCartButtonCheckout = "myCartButtonCheckout";
 }

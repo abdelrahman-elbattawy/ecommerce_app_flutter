@@ -124,6 +124,8 @@ class AppTranslations extends Translations {
               "تمت إضافة العنصر إلى المفضلة",
           AppTranslationsKeys.snackBarRemoveFavorite:
               "تمت إزالة العنصر من المفضلة",
+          AppTranslationsKeys.snackBarAddCart:
+              "تمت إضافة العنصر إلى سلة التسوق",
 
           // Home View
           AppTranslationsKeys.homeViewSeachHint: "بحث",
@@ -203,6 +205,18 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.bottomSheetSizeLabel: "أختر الحجم",
           AppTranslationsKeys.bottomSheetTotalPriceLabel: "السعر الكلي",
           AppTranslationsKeys.bottomSheetAddToCartButton: "أضف إلى السلة",
+
+          // My Cart
+          AppTranslationsKeys.myCartReviewYourOrder: "راجع طلباتك",
+          AppTranslationsKeys.myCartYourCouponCode: "رمز القسيمة الخاص بك",
+          AppTranslationsKeys.myCartTypeCouponCode: "اكتب رمز القسيمة",
+          AppTranslationsKeys.myCartOrderSummary: "ملخص الطلب",
+          AppTranslationsKeys.myCartSubTotal: "المجموع الفرعي",
+          AppTranslationsKeys.myCartShippingFee: "رسوم الشحن",
+          AppTranslationsKeys.myCartDiscount: "تخفيض",
+          AppTranslationsKeys.myCartTotalPrice:
+              "الإجمالي (شامل ضريبة القيمة المضافة)",
+          AppTranslationsKeys.myCartButtonCheckout: "الدفع",
         },
         "EN": {
           // Language View
@@ -322,6 +336,7 @@ class AppTranslations extends Translations {
               "Item has been added to favorite",
           AppTranslationsKeys.snackBarRemoveFavorite:
               "Item has been removed from favorite",
+          AppTranslationsKeys.snackBarAddCart: "Item added to cart",
 
           // Home View
           AppTranslationsKeys.homeViewSeachHint: "Search",
@@ -402,6 +417,17 @@ class AppTranslations extends Translations {
           AppTranslationsKeys.bottomSheetSizeLabel: "Select Size",
           AppTranslationsKeys.bottomSheetTotalPriceLabel: "Total Price",
           AppTranslationsKeys.bottomSheetAddToCartButton: "Add To Cart",
+
+          // My Cart
+          AppTranslationsKeys.myCartReviewYourOrder: "Review your order",
+          AppTranslationsKeys.myCartYourCouponCode: "Your coupon code",
+          AppTranslationsKeys.myCartTypeCouponCode: "Type coupon code",
+          AppTranslationsKeys.myCartOrderSummary: "Order Summary",
+          AppTranslationsKeys.myCartSubTotal: "Subtotal",
+          AppTranslationsKeys.myCartShippingFee: "Shipping Fee",
+          AppTranslationsKeys.myCartDiscount: "Discount",
+          AppTranslationsKeys.myCartTotalPrice: "Total (Include of VAT)",
+          AppTranslationsKeys.myCartButtonCheckout: "Checkout",
         },
       };
 }

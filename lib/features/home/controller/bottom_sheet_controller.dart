@@ -1,3 +1,7 @@
+import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
+import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
+import 'package:ecommerce_app/core/shared/widgets/custom_snack_bar.dart';
+import 'package:ecommerce_app/features/cart/controller/mycart_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,6 +11,7 @@ abstract class BottomSheetController extends GetxController {
   void setColorIndex(int index);
   void setSizeIndex(int index);
   String getTotalPrice(String unitPrice);
+  void addToCart(ItemModel itemModel);
 }
 
 class BottomSheetControllerImpl extends BottomSheetController {
@@ -66,5 +71,18 @@ class BottomSheetControllerImpl extends BottomSheetController {
     final int totalPrice = itemQuantity == 0 ? price : price * itemQuantity;
 
     return totalPrice.toString();
+  }
+
+  @override
+  void addToCart(ItemModel itemModel) {
+    Get.find<MyCartControllerImpl>().createNewItem(itemModel, itemQuantity);
+
+    CustomSnakBar.showSnack(
+      context: Get.context!,
+      snackBarType: SnackBarType.success,
+      errMessage: AppTranslationsKeys.snackBarAddCart.tr,
+    );
+
+    Get.back();
   }
 }

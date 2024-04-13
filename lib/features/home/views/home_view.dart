@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/core/functions/get_text_direction_func.dart';
+import 'package:ecommerce_app/features/cart/controller/mycart_controller.dart';
 import 'package:ecommerce_app/features/favorite/controller/favorite_controller.dart';
 import 'package:ecommerce_app/features/home/controller/home_controller.dart';
 import 'package:ecommerce_app/features/home/controller/home_tab_bar_controller.dart';
@@ -14,6 +15,7 @@ class HomeView extends StatelessWidget {
     Get.put(HomeControllerImpl());
     Get.put(HomeTabBarControllerImpl());
     Get.put(FavoriteControllerImpl());
+    Get.put(MyCartControllerImpl());
 
     return Scaffold(
       bottomNavigationBar: const HomeBottomBar(),

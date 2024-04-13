@@ -2,7 +2,7 @@ import 'package:ecommerce_app/core/constants/app_tranlsations_keys.dart';
 import 'package:ecommerce_app/core/functions/get_text_direction_func.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_action_control.dart';
 import 'package:ecommerce_app/features/home/controller/item_details_controller.dart';
-import 'package:ecommerce_app/features/home/views/widgets/item_details/item_bottom_sheet_view.dart';
+import 'package:ecommerce_app/features/home/views/item_bottom_sheet_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
