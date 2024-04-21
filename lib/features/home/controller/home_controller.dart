@@ -222,40 +222,21 @@ class HomeControllerImpl extends HomeController {
 
     Timer(
       twentyMillis,
-      () async {
+      () {
         if (currentPage < 4) {
-          onPageChanged(currentPage + 1);
+          currentPage += 1;
         } else {
-          onPageChanged(0);
+          currentPage = 0;
         }
 
         pageController.animateToPage(
           currentPage,
-          duration: const Duration(milliseconds: 500),
-          curve: Curves.easeIn,
+          duration: const Duration(milliseconds: 900),
+          curve: Curves.easeInOut,
         );
 
         intialPageDuration();
       },
     );
-
-    // Future.delayed(
-    //   const Duration(seconds: 5),
-    //   () {
-    //     if (currentPage < 4) {
-    //       onPageChanged(currentPage + 1);
-    //     } else {
-    //       onPageChanged(0);
-    //     }
-
-    //     pageController.animateToPage(
-    //       currentPage,
-    //       duration: const Duration(milliseconds: 500),
-    //       curve: Curves.easeIn,
-    //     );
-
-    //     intialPageDuration();
-    //   },
-    // );
   }
 }
