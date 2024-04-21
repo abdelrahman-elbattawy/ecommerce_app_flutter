@@ -12,10 +12,11 @@ class SearchViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
       child: ListView(
         children: [
           const SearchAppBar(),
+          const SizedBox(height: 20),
           GetBuilder<SearchControllerImpl>(
             builder: (controller) {
               return GridView.builder(
