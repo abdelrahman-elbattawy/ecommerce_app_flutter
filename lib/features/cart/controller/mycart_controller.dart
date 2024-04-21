@@ -14,7 +14,7 @@ abstract class MyCartController extends GetxController {
   void addItem(String itemId);
   void removeItem(String itemId);
   String getQuantity(String itemId);
-  CartModel getItem(String itemId);
+  getItem(String itemId);
   void intialServices();
   void getUserModel();
   void removeItemFromDatabase(CartModel item);
@@ -93,12 +93,16 @@ class MyCartControllerImpl extends MyCartController {
   }
 
   @override
-  CartModel getItem(String itemId) {
-    final itemIndex = cartList.indexWhere(
-      (element) => element.itemModel!.itemsId == itemId,
-    );
+  getItem(String itemId) {
+    try {
+      final itemIndex = cartList.indexWhere(
+        (element) => element.itemModel!.itemsId == itemId,
+      );
 
-    return cartList[itemIndex];
+      return cartList[itemIndex];
+    } catch (_) {
+      return null;
+    }
   }
 
   @override
@@ -141,10 +145,16 @@ class MyCartControllerImpl extends MyCartController {
 
   @override
   void createNewItem(ItemModel itemModel, int itemQuantity) {
+    final item = getItem(itemModel.itemsId!);
+
     final itemCart =
         CartModel(itemModel: itemModel, quantity: itemQuantity.toString());
 
-    cartList.add(itemCart);
+    if (item == null) {
+      cartList.add(itemCart);
+    } else {
+      item.quantity = (itemQuantity + 1).toString();
+    }
 
     for (var i = 0; i < itemQuantity; i++) {
       addItemToDatabase(itemCart);

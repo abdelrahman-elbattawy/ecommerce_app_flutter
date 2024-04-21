@@ -2,14 +2,12 @@ import 'package:ecommerce_app/core/constants/app_text_style.dart';
 import 'package:ecommerce_app/core/functions/get_name_trans_func.dart';
 import 'package:ecommerce_app/core/shared/data/models/item_model.dart';
 import 'package:ecommerce_app/core/shared/widgets/custom_app_bar.dart';
-import 'package:ecommerce_app/features/home/controller/bottom_sheet_controller.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_bottom_sheet/item_bottom_sheet_action_control.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_bottom_sheet/item_bottom_sheet_price_quantity.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_bottom_sheet/item_bottom_sheet_select_color.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_bottom_sheet/item_bottom_sheet_select_size.dart';
 import 'package:ecommerce_app/features/home/views/widgets/item_details/item_image_stack.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ItemBottomSheetView extends StatelessWidget {
   const ItemBottomSheetView({
@@ -21,8 +19,6 @@ class ItemBottomSheetView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(BottomSheetControllerImpl());
-
     return Stack(
       children: [
         ListView(
