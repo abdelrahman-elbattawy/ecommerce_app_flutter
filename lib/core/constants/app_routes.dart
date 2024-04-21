@@ -16,4 +16,5 @@ abstract class AppRoutes {
   static const categories = '/categories';
   static const items = '/items';
   static const itemDetails = '/itemDetails';
+  static const searchView = '/searchView';
 }

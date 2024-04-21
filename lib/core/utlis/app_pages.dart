@@ -11,6 +11,7 @@ import 'package:ecommerce_app/features/home/views/item_details_view.dart';
 import 'package:ecommerce_app/features/home/views/items_gride_view.dart';
 import 'package:ecommerce_app/features/language/views/language_view.dart';
 import 'package:ecommerce_app/features/onBoarding/views/onboarding_view.dart';
+import 'package:ecommerce_app/features/search/views/search_view.dart';
 import 'package:ecommerce_app/features/splash/views/splash_view.dart';
 import 'package:ecommerce_app/features/success/views/success_view.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
@@ -72,5 +73,9 @@ final getPages = [
   GetPage(
     name: AppRoutes.itemDetails,
     page: () => const ItemDetailsView(),
+  ),
+  GetPage(
+    name: AppRoutes.searchView,
+    page: () => const SearchView(),
   ),
 ];

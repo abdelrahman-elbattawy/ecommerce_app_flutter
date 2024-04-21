@@ -26,6 +26,7 @@ abstract class HomeController extends GetxController {
   void goToItems(int selectedIndex);
   void setFavorite(ItemModel itemModel);
   onPageChanged(int index);
+  void goToSearchView();
 }
 
 class HomeControllerImpl extends HomeController {
@@ -204,5 +205,10 @@ class HomeControllerImpl extends HomeController {
   onPageChanged(int index) {
     currentPage = index;
     update();
+  }
+
+  @override
+  void goToSearchView() {
+    Get.toNamed(AppRoutes.searchView);
   }
 }

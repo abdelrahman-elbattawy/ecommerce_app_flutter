@@ -21,6 +21,7 @@ final class AppServerLinks {
   static const _homePath = "$_baseUrl/modules/home";
   static const home = "$_homePath/home_page.php";
   static const itemsPage = "$_homePath/items_page.php";
+  static const searchPage = "$_homePath/search_page.php";
 
   // Favorite
   static const _favoritePath = "$_baseUrl/modules/favorite";

@@ -39,6 +39,7 @@ class HomeViewBody extends StatelessWidget {
                         suffixIcon: Icons.cancel,
                         onPrefixIcon: () {},
                         onSuffixIcon: () => controller.searchController.clear(),
+                        onTap: () => controller.goToSearchView(),
                       ),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 20)),
