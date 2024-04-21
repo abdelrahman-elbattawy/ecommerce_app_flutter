@@ -27,6 +27,7 @@ abstract class HomeController extends GetxController {
   void setFavorite(ItemModel itemModel);
   onPageChanged(int index);
   void goToSearchView();
+  void intialPageDuration();
 }
 
 class HomeControllerImpl extends HomeController {
@@ -55,6 +56,7 @@ class HomeControllerImpl extends HomeController {
     getUserModel();
 
     fetchAllData();
+    intialPageDuration();
     super.onInit();
   }
 
@@ -204,11 +206,36 @@ class HomeControllerImpl extends HomeController {
   @override
   onPageChanged(int index) {
     currentPage = index;
+
     update();
   }
 
   @override
   void goToSearchView() {
     Get.toNamed(AppRoutes.searchView);
+  }
+
+  @override
+  void intialPageDuration() {
+    Future.delayed(
+      const Duration(seconds: 10),
+      () {
+        if (currentPage < 4) {
+          onPageChanged(currentPage + 1);
+          pageController.animateToPage(
+            currentPage,
+            duration: const Duration(milliseconds: 900),
+            curve: Curves.easeIn,
+          );
+        } else {
+          onPageChanged(0);
+          pageController.jumpToPage(
+            currentPage,
+          );
+        }
+
+        intialPageDuration();
+      },
+    );
   }
 }
