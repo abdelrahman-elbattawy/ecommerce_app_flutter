@@ -218,21 +218,19 @@ class HomeControllerImpl extends HomeController {
   @override
   void intialPageDuration() {
     Future.delayed(
-      const Duration(seconds: 10),
+      const Duration(seconds: 5),
       () {
         if (currentPage < 4) {
           onPageChanged(currentPage + 1);
-          pageController.animateToPage(
-            currentPage,
-            duration: const Duration(milliseconds: 900),
-            curve: Curves.easeIn,
-          );
         } else {
           onPageChanged(0);
-          pageController.jumpToPage(
-            currentPage,
-          );
         }
+
+        pageController.animateToPage(
+          currentPage,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeIn,
+        );
 
         intialPageDuration();
       },
