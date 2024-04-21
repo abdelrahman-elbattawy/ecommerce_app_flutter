@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:ecommerce_app/core/constants/app_preferences_keys.dart';
@@ -217,9 +218,11 @@ class HomeControllerImpl extends HomeController {
 
   @override
   void intialPageDuration() {
-    Future.delayed(
-      const Duration(seconds: 5),
-      () {
+    const twentyMillis = Duration(seconds: 5);
+
+    Timer(
+      twentyMillis,
+      () async {
         if (currentPage < 4) {
           onPageChanged(currentPage + 1);
         } else {
@@ -235,5 +238,24 @@ class HomeControllerImpl extends HomeController {
         intialPageDuration();
       },
     );
+
+    // Future.delayed(
+    //   const Duration(seconds: 5),
+    //   () {
+    //     if (currentPage < 4) {
+    //       onPageChanged(currentPage + 1);
+    //     } else {
+    //       onPageChanged(0);
+    //     }
+
+    //     pageController.animateToPage(
+    //       currentPage,
+    //       duration: const Duration(milliseconds: 500),
+    //       curve: Curves.easeIn,
+    //     );
+
+    //     intialPageDuration();
+    //   },
+    // );
   }
 }
